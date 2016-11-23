@@ -19,7 +19,7 @@
         <li><a href="#">Menu 5</a></li>
       </ul>
     </div>
-    <div class="col-3">
+    <div class="col-25">
       <ul>
         <% @novelties.limit(10).each do |novelty| %>
             <li><%= link_to novelty.title, novelty %> <span>(<%= novelty.source %>)</span></li>
@@ -27,9 +27,9 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-3">
+    <div class="col-50">
       <%= yield %>
     </div>
-    <div class="col-3"></div>
+    <div class="col-25"></div>
   </body>
 </html>

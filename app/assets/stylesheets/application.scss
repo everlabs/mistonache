@@ -105,8 +105,14 @@ ul, ol {
   color: #00ffff
 }
 
-.col-3 {
-  width: 33%;
+.col-25 {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
+
+.col-50 {
+  width: 50%;
   height: 200px;
   float: left;
 }
