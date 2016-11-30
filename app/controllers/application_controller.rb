@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :news_index
 
   def news_index
-    @novelties = Novelty.all
+    @novelties = Novelty.order(created_at: :desc).all.shuffle
   end
 end
