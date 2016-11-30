@@ -22,7 +22,7 @@
     <div class="col-25">
       <ul>
         <% @novelties.limit(10).each do |novelty| %>
-            <li><%= link_to novelty.title, novelty %> <span>(<%= novelty.source %>)</span></li>
+            <li><a href="<%= novelty.url %>"><%= novelty.title %></a><span>(<%= novelty.source %>)</span></li>
             <hr>
         <% end %>
       </ul>

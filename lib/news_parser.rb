@@ -22,8 +22,8 @@ class ProcherkParser
     end
     novelty = Novelty.new
     novelty.title = page.css('h1 a').text
+    novelty.url = url
     novelty.source = 'procherk.info'
-    novelty.body = page.css('.rt-article p').slice(0...-2).text
     novelty.save
   end
 
@@ -68,8 +68,8 @@ class VikkaParser
     end
     novelty = Novelty.new
     novelty.title = page.at_css('.article h1').text
+    novelty.url = url
     novelty.source = 'vikka.ua'
-    novelty.body = page.css('.article-txt p').text
     novelty.save
   end
 
@@ -114,8 +114,8 @@ class InfomistParser
     end
     novelty = Novelty.new
     novelty.title = page.at_css('#main h1:nth-child(3)').text
+    novelty.url = url
     novelty.source = 'infomist.ck.ua'
-    novelty.body = page.css('.content-wrapp p').text
     novelty.save
   end
 
@@ -159,8 +159,8 @@ class ZmiParser
     end
     novelty = Novelty.new
     novelty.title = page.at_css('.news_one h2').text
+    novelty.url = url
     novelty.source = 'zmi.ck.ua'
-    novelty.body = page.css('#news-text p').text
     novelty.save
   end
 
@@ -204,8 +204,8 @@ class VycherpnoParser
     end
     novelty = Novelty.new
     novelty.title = page.at_css('.entry-header h1').text
+    novelty.url = url
     novelty.source = 'vycherpno.ck.ua'
-    novelty.body = page.css('.entry-content p').text
     novelty.save
   end
 
@@ -249,8 +249,8 @@ class ProvceParser
     end
     novelty = Novelty.new
     novelty.title = page.at_css('h2').text
+    novelty.url = url
     novelty.source = 'provce.ck.ua'
-    novelty.body = page.css('.entry-content p').text
     novelty.save
   end
 
