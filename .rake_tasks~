@@ -28,6 +28,7 @@ dev:cache
 initializers
 log:clear
 middleware
+news_parser:parse_news
 notes
 notes:custom
 restart
