@@ -1,9 +1,9 @@
-ActiveAdmin.register Novelty do
+ActiveAdmin.register Announcement do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-  permit_params :title, :source, :body
+  permit_params :title, :body
 #
 # or
 #
@@ -13,5 +13,12 @@ ActiveAdmin.register Novelty do
 #   permitted
 # end
 
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :body, as: :ckeditor
+    end
+    f.actions
+  end
 
 end

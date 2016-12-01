@@ -33,6 +33,9 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'whenever', :require => false
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
