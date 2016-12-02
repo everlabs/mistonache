@@ -17,6 +17,46 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@font-face {
+  font-family: Narbut_Abetka;
+  src: url(Narbut_Abetka.ttf);
+}
+
+@font-face {
+  font-family: Narbut_Classic;
+  src: url(Narbut_Classic.ttf);
+}
+
+@font-face {
+  font-family: Narbut_Extra_Wide;
+  src: url(Narbut_Extra_Wide.ttf);
+}
+
+@font-face {
+  font-family: Narbut_Narrow_Contrast;
+  src: url(Narbut_Narrow_Contrast.ttf);
+}
+
+@font-face {
+  font-family: Narbut_Whirl;
+  src: url(Narbut_Whirl.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-CondBold;
+  src: url(OpenSans-CondBold.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-CondLight;
+  src: url(OpenSans-CondLight.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-CondLightItalic;
+  src: url(OpenSans-CondLightItalic.ttf);
+}
+
 html {
   height: 100%;
 }
@@ -159,6 +199,9 @@ ul hr:last-child {
   color: #fff;
   margin-left: 60px;
   padding-top: 20px;
+  font: 20px 'Narbut_Classic', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .divider {
