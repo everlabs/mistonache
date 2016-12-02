@@ -107,6 +107,7 @@ ul, ol {
   width: 100%;
   height: 315px;
   background-color: #fff;
+  border-bottom: 1px solid #000000;
 }
 
 .logo {
@@ -114,7 +115,7 @@ ul, ol {
   height: 30px;
   float: left;
   margin-left: 60px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .logo a {
@@ -124,8 +125,8 @@ ul, ol {
 }
 
 .nav {
-  float: right;
-  margin-right: 60px;
+  float: left;
+  margin-left: 60px;
   margin-top: 20px;
 }
 
@@ -208,4 +209,10 @@ ul hr:last-child {
   display: block;
   border-bottom: 1px solid #000;
   margin-top: 1px;
+}
+
+.divider-nav {
+  display: block;
+  border-bottom: 1px solid #a9a9a9;
+  margin-top: 200px;
 }
