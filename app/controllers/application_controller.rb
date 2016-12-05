@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def news_index
-    @novelties = Novelty.order(created_at: :desc).all.take(10).shuffle
+    @novelties_ = Novelty.order(created_at: :desc).all.take(15).shuffle
   end
 
   def set_locale

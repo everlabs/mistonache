@@ -13,7 +13,7 @@
       <div class="wrapper">
         <div id="header">
           <div class="social-header">
-            <p><%= l DateTime.now, format: :header %></p>
+            <p><%= l Time.zone.now.to_date, format: :header %></p>
             <ul class="social-icons">
               <li><a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
               <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
@@ -26,7 +26,7 @@
           <%= render 'layouts/weather-widget' %>
           <div class="divider-nav"></div>
           <ul class="nav">
-            <li><a href="#">Новини</a></li>
+            <li><a href="/">Новини</a></li>
             <li class="nav-divider">//</li>
             <li><a href="#">Історії</a></li>
             <li class="nav-divider">//</li>
@@ -53,7 +53,7 @@
                 <p>Новини</p></div>
             </div>
             <ul class="news">
-              <% @novelties.take(7).each do |novelty| %>
+              <% @novelties_.take(7).each do |novelty| %>
                 <div class="novelties">
                   <li><a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a></li>
                   <p>(<%= novelty.source %>)</p>
