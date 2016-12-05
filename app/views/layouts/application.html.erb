@@ -9,56 +9,66 @@
   </head>
 
   <body>
-    <div id="header">
-      <div class="social-header">
-        <p><%= l DateTime.now, format: :header %></p>
-        <ul class="social-icons">
-          <li><a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-      <div class="divider"></div>
-      <div class="logo"><%= link_to '', root_path %></div>
-      <div class="divider-nav"></div>
-      <ul class="nav">
-        <li><a href="#">Menu 1</a></li>
-        <li><a href="#">Menu 2</a></li>
-        <li><a href="#">Menu 3</a></li>
-        <li><a href="#">Menu 4</a></li>
-        <li><a href="#">Menu 5</a></li>
-      </ul>
-    </div>
-    <div class="solid-divider"></div>
-    <div id="content">
-      <div class="col-25">
-        <div class="container">
-          <div class="latest-news">
-            <p>Новини</p></div>
+    <div class="background">
+      <div class="wrapper">
+        <div id="header">
+          <div class="social-header">
+            <p><%= l DateTime.now, format: :header %></p>
+            <ul class="social-icons">
+              <li><a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <div class="logo"><%= link_to '', root_path %></div>
+          <div class="divider-nav"></div>
+          <ul class="nav">
+            <li><a href="#">Новини</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">Історії</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">Малий Академічний Театр</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">КіноШот</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">Афіша подій</a></li>
+            <li class="nav-divider">//</li>
+          </ul>
+          <div class="solid-divider"></div>
         </div>
-        <ul class="news">
-          <% @novelties.take(5).each do |novelty| %>
-            <div class="novelties">
-              <li><a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a></li>
-              <p>(<%= novelty.source %>)</p>
+        <!--<div class="solid-divider"></div>-->
+        <div id="content">
+          <div class="col-25">
+            <div class="container">
+              <div class="latest-news">
+                <p>Новини</p></div>
             </div>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col-50">
-        <%= yield %>
-      </div>
-      <div class="col-25">
-        <div class="container_2">
-          <div class="categories">
-            <p>Наші рубрики</p>
+            <ul class="news">
+              <% @novelties.take(5).each do |novelty| %>
+                <div class="novelties">
+                  <li><a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a></li>
+                  <p>(<%= novelty.source %>)</p>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-50">
+            <%= yield %>
+          </div>
+          <div class="col-25">
+            <div class="container_2">
+              <div class="categories">
+                <p>Наші рубрики</p>
+              </div>
+            </div>
           </div>
         </div>
+        <div id="footer">
+          <p class="copyright">&copy; Місто на [ЧЕ]</p>
+        </div>
       </div>
     </div>
-  <div id="footer">
-    <p class="copyright">&copy; Місто на [ЧЕ]</p>
-  </div>
   </body>
 </html>

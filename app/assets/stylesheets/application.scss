@@ -113,6 +113,19 @@ ul, ol {
   float: right;
 }
 
+div.background {
+  background: url("body_background.jpg") no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+div.wrapper {
+  width: 1300px;
+  margin: auto;
+}
+
 #header {
   width: 100%;
   height: 315px;
@@ -155,13 +168,18 @@ ul, ol {
 }
 
 .nav li a {
-  font: 18px 'Times New Roman', sans-serif;
-  font-weight: bold;
+  font: 20px 'Narbut_Narrow_Contrast', sans-serif;
   color: #000;
 }
 
 .nav li a:hover {
   color: #ff0000
+}
+
+.nav .nav-divider {
+  color: #a9a9a9;
+  font: 16px 'Bookman_Old_Style_Regular', sans-serif;
+  font-weight: bold;
 }
 
 .col-25 {
@@ -234,12 +252,15 @@ ul hr:last-child {
 .solid-divider {
   display: block;
   border-bottom: 2px solid #000000;
-  margin-top: 2px;
+  margin-top: 58px;
+  position: relative;
+  z-index: 1;
 }
 
 #content {
   width: 100%;
   height: 1000px;
+  background-color: #fff;
 }
 
 .container {
