@@ -312,6 +312,7 @@ ul hr:last-child {
 
 .news p {
   margin-top: 5px;
+  margin-bottom: 5px;
   font: 10px 'Bookman_Old_Style_Regular', sans-serif;
 }
 
@@ -320,7 +321,7 @@ ul hr:last-child {
   margin-left: 60px;
   margin-bottom: 10px;
   width: 170px;
-  height: 145px;
+  height: auto;
   border-bottom: 1px solid #a9a9a9;
 }
 

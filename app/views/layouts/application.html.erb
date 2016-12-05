@@ -46,7 +46,7 @@
                 <p>Новини</p></div>
             </div>
             <ul class="news">
-              <% @novelties.take(5).each do |novelty| %>
+              <% @novelties.take(7).each do |novelty| %>
                 <div class="novelties">
                   <li><a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a></li>
                   <p>(<%= novelty.source %>)</p>
