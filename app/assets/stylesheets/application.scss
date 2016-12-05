@@ -141,7 +141,7 @@ div.wrapper {
   height: 100px;
   float: left;
   margin-left: 60px;
-  margin-top: 40px;
+  margin-top: 45px;
   background: url("logo.png") no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -153,6 +153,11 @@ div.wrapper {
   display: block;
   width: 500px;
   height: 100px;
+}
+
+#SinoptikInformer {
+  float: right;
+  margin-top: 40px;
 }
 
 .nav {
