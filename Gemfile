@@ -37,6 +37,7 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
+gem 'fog', '1.38.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
