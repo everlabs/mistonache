@@ -4,5 +4,7 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :name, presence: true
+
   has_many :announcements
 end
