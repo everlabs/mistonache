@@ -1,5 +1,10 @@
 uk:
   activerecord:
+    models:
+      admin_user: Адміністратори
+      comment: Коментарі
+      novelty: Новини
+      announcement: Наші новини
     errors:
       messages:
         record_invalid: 'Виникли помилки: %{errors}'
