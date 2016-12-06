@@ -293,14 +293,14 @@ class NovaDobaParser
       return
     end
     novelty = Novelty.new
-    novelty.title = page.at_css('h2').text
+    novelty.title = page.at_css('h1 a').text
     novelty.url = url
     novelty.source = 'novadoba.com.ua'
     novelty.save
   end
 
   def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'novyny/').css('.news a').each_with_object([]) do |link, array|
+    @novelties_urls ||= load_page(BASE_URL + 'novyny/').css('.newsfoto .indexText-Bold2 a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end
