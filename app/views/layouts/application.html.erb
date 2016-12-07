@@ -14,6 +14,11 @@
         <div id="header">
           <div class="social-header">
             <p><%= l Time.zone.now.to_date, format: :header %></p>
+            <p class="weather">
+              <% set_weather.each do |parameter| %>
+                <%= parameter %>
+              <% end %>
+            </p>
             <ul class="social-icons">
               <li><a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
               <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
