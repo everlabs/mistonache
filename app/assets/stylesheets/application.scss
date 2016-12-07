@@ -163,6 +163,7 @@ div.wrapper {
 #SinoptikInformer {
   float: right;
   margin-top: 40px;
+  margin-right: -100px !important;
 }
 
 .nav {
@@ -198,7 +199,7 @@ div.wrapper {
 .search {
   float: right;
   margin-top: 14px;
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 .search input {
@@ -231,10 +232,18 @@ div.wrapper {
   float: left;
 }
 
+.col-20 {
+  width: 20%;
+  height: 200px;
+  float: left;
+  margin-right: 5px;
+}
+
 .col-50 {
   width: 50%;
   height: 200px;
   float: left;
+  margin-right: 15px;
 }
 
 ul hr:last-child {

@@ -129,7 +129,7 @@ $(document).ready(function () {
       fallbacks: {
         simplifyAll:"off",
         nextSlideOnWindowFocus:"off",
-        disableFocusListener:false,
+        disableFocusListener:false
       }
     });
   }
