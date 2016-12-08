@@ -163,11 +163,17 @@ div.wrapper {
   height: 100px;
 }
 
-#SinoptikInformer {
+#header iframe {
+  float: right;
+  margin-top: 9px !important;
+  margin-right: -100px !important;
+}
+
+/*#SinoptikInformer {
   float: right;
   margin-top: 40px;
   margin-right: -100px !important;
-}
+}*/
 
 .nav {
   float: left;
