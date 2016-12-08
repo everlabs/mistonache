@@ -27,7 +27,7 @@
 //= require ckeditor/init
 //= require_tree .
 
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
 
   var tpj=jQuery;
   var revapi34;
@@ -210,5 +210,7 @@ $(document).ready(function () {
       caseElement.addClass('wi wi-night-fog').text('').html('&nbsp;');
     break;
   }
+
+  console.log('ready');
 
 });
