@@ -16,11 +16,14 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'font-awesome.min';
 @import 'layers';
 @import 'navigation';
 @import 'pe-icon-7-stroke';
 @import 'settings';
+@import "weather/weather-icons";
+@import "weather/weather-icons.min";
+@import "weather/weather-icons-wind";
+@import "weather/weather-icons-wind.min";
 
 @font-face {
   font-family: Narbut_Abetka;
@@ -476,4 +479,5 @@ section.example {
 
 .weather {
   color: #fff !important;
+  margin-left: 25px !important;
 }

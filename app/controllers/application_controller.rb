@@ -22,10 +22,7 @@ def set_weather
   weather_hash['weather'].each do |key|
     weather << key['icon']
   end
-  weather_hash['main'].each do |key, value|
-    #value.map{|values| values.to_s}
-    #weather << key['temp']
-    puts value.to_s
-  end
+  weather << weather_hash['main']['temp'].to_i
   weather
 end
+

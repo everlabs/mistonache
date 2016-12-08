@@ -112,7 +112,7 @@ $(document).ready(function () {
         type:"scroll",
         origo:"enterpoint",
         speed:400,
-        levels:[5,10,15,20,25,30,35,40,45,50],
+        levels:[5,10,15,20,25,30,35,40,45,50]
       },
       shadow:0,
       spinner:"off",
@@ -132,6 +132,83 @@ $(document).ready(function () {
         disableFocusListener:false
       }
     });
+  }
+
+  var element = $('.icon').first().text();
+  var caseElement = $('.icon').first();
+  switch (element) {
+
+    case '01d':
+      caseElement.addClass('wi wi-day-sunny').text('').html('&nbsp;');
+    break;
+
+    case '01n':
+      caseElement.addClass('wi wi-night-clear').text('').html('&nbsp;');
+    break;
+
+    case '02d':
+      caseElement.addClass('wi wi-day-cloudy').text('').html('&nbsp;');
+    break;
+
+    case '02n':
+      caseElement.addClass('wi wi-night-alt-cloudy').text('').html('&nbsp;');
+    break;
+
+    case '03d':
+      caseElement.addClass('wi wi-cloud').text('').html('&nbsp;');
+    break;
+
+    case '03n':
+      caseElement.addClass('wi wi-cloud').text('').html('&nbsp;');
+    break;
+
+    case '04d':
+      caseElement.addClass('wi wi-cloudy').text('').html('&nbsp;');
+    break;
+
+    case '04n':
+      caseElement.addClass('wi wi-cloudy').text('').html('&nbsp;');
+    break;
+
+    case '09d':
+      caseElement.addClass('wi wi-day-showers').text('').html('&nbsp;');
+    break;
+
+    case '09n':
+      caseElement.addClass('wi wi-night-alt-showers').text('').html('&nbsp;');
+    break;
+
+    case '10d':
+      caseElement.addClass('wi wi-day-rain').text('').html('&nbsp;');
+    break;
+
+    case '10n':
+      caseElement.addClass('wi wi-night-alt-rain').text('').html('&nbsp;');
+    break;
+
+    case '11d':
+      caseElement.addClass('wi wi-day-thunderstorm').text('').html('&nbsp;');
+    break;
+
+    case '11n':
+      caseElement.addClass('wi wi-night-thunderstorm').text('').html('&nbsp;');
+    break;
+
+    case '13d':
+      caseElement.addClass('wi wi-day-snow').text('').html('&nbsp;');
+    break;
+
+    case '13n':
+      caseElement.addClass('wi wi-night-alt-snow').text('').html('&nbsp;');
+    break;
+
+    case '50d':
+      caseElement.addClass('wi wi-day-fog').text('').html('&nbsp;');
+    break;
+
+    case '50n':
+      caseElement.addClass('wi wi-night-fog').text('').html('&nbsp;');
+    break;
   }
 
 });
