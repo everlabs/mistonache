@@ -211,6 +211,4 @@ $(document).on('turbolinks:load', function () {
     break;
   }
 
-  console.log('ready');
-
 });
