@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
+//= require jquery.mousewheel.min
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
 //= require extensions/revolution.extension.kenburn.min
@@ -210,5 +211,11 @@ $(document).on('turbolinks:load', function () {
       caseElement.addClass('wi wi-night-fog').text('').html('&nbsp;');
     break;
   }
+
+  $('.col-50').mousewheel(function(event) {
+    event.preventDefault();
+    var scrollTop = this.scrollTop;
+    this.scrollTop = (scrollTop + ((event.deltaY * event.deltaFactor) * -1));
+  });
 
 });
