@@ -470,12 +470,14 @@ ul hr:last-child {
   color: #ff0000;
 }
 
-.announcement .body {
+.announcement .body,
+.category-article .body {
   margin-top: 7px;
   margin-bottom: 10px;
 }
 
-.announcement .author {
+.announcement .author,
+.category-article .author {
   margin-top: 5px;
   float: left;
   color: #999999;
@@ -500,14 +502,16 @@ ul hr:last-child {
   color: #000000;
 }
 
-.announcement .created_at {
+.announcement .created_at,
+.category-article .created_at{
   float: right;
   margin-top: 5px;
   color: #999999;
   font: 17px 'Bookman_Old_Style_Regular', sans-serif;
 }
 
-.announcement .created_at i {
+.announcement .created_at i,
+.category-article .created_at i {
   color: #000000;
 }
 
@@ -522,4 +526,35 @@ section.example {
 .weather {
   color: #fff !important;
   margin-left: 25px !important;
+}
+
+/*announcements show page*/
+
+.category-name {
+  margin-top: 25px;
+  font: 25px 'Bookman_Old_Style_Regular', sans-serif;
+  font-weight: bold;
+}
+
+.category-article {
+  border-bottom: 5px solid #b05155;
+  margin-top: 20px;
+  height: 150px;
+}
+
+.category-article:last-child {
+  border: none;
+}
+
+.category-article h3 {
+  text-align: center;
+}
+
+.category-article h3 a {
+  color: #000000;
+  font: 20px 'Bookman_Old_Style_Bold', sans-serif;
+}
+
+.category-article h3 a:hover {
+  color: #ff0000;
 }

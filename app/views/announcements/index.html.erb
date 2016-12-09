@@ -100,7 +100,7 @@
 
 <% @announcements.each do |announcement| %>
   <div class="announcement">
-    <p class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to announcement.category.name, '#' %></p>
+    <p class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to announcement.category.name, announcement.category %></p>
     <h2><%= link_to announcement.title, announcement %></h2>
     <div class="body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
     <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %></p>
