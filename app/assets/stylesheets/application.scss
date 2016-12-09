@@ -572,5 +572,12 @@ section.example {
 /*announcement show page*/
 
 .main-image {
+  margin-top: 10px;
+  margin-left: 60px;
   text-align: center;
+}
+
+.announcement .title {
+  color: #000000;
+  font: 20px 'Bookman_Old_Style_Bold', sans-serif;
 }
