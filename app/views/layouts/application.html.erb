@@ -14,6 +14,7 @@
         <div id="header">
           <div class="social-header">
             <p><%= l Time.zone.now.to_date, format: :header %></p>
+            <p class="dot"><i class="fa fa-circle" aria-hidden="true"></i></p>
             <p class="weather">
               <% weather.each do |parameter| %>
                 <span class="icon"><%= parameter %></span>
