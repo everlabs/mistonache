@@ -5,6 +5,7 @@ uk:
       comment: Коментарі
       novelty: Новини
       announcement: Наші новини
+      category: Рубрики
     errors:
       messages:
         record_invalid: 'Виникли помилки: %{errors}'

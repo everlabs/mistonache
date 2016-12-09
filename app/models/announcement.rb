@@ -6,6 +6,7 @@ class Announcement < ApplicationRecord
   validates :body, length: { minimum: 150 }
 
   belongs_to :admin_user
+  belongs_to :category
 
   mount_uploader :main_image, MainImageUploader
 end

@@ -3,11 +3,16 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   before_action :news_index
+  before_action :categories_index
   before_action :set_locale
-  before_action :set_weather
+  #before_action :set_weather
 
   def news_index
     @novelties_ = Novelty.order(created_at: :desc).all.take(15).shuffle
+  end
+
+  def categories_index
+    @categories_ = Category.all
   end
 
   def set_locale
@@ -15,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 end
 
-def set_weather
+def weather
   weather = []
   options = { units: 'metric', APPID: 'd366877a830fd551c370e5686fcfb037' }
   weather_hash = OpenWeather::Current.city_id('710791', options)
