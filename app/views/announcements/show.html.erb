@@ -1,3 +1,8 @@
-<h1><%= @announcement.title %></h1>
-<div><%= image_tag(@announcement.main_image.url(:big)) %></div>
-<div><%= @announcement.body.html_safe %></div>
+<div class="announcement">
+  <p class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to @announcement.category.name, @announcement.category %></p>
+  <h2><%= @announcement.title %></h2>
+  <div class="main-image"><%= image_tag(@announcement.main_image.url(:big)) %></div>
+  <div class="body"><%= @announcement.body.html_safe %></div>
+  <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= @announcement.admin_user.name %></p>
+  <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l @announcement.created_at, format: :short %></p>
+</div>
