@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
-//= require jquery.mousewheel.min
+//= require jquery.mCustomScrollbar.concat.min
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
 //= require extensions/revolution.extension.kenburn.min
@@ -212,10 +212,12 @@ $(document).on('turbolinks:load', function () {
     break;
   }
 
-  $('.col-50').mousewheel(function(event) {
-    event.preventDefault();
-    var scrollTop = this.scrollTop;
-    this.scrollTop = (scrollTop + ((event.deltaY * event.deltaFactor) * -1));
-  });
+  (function ($) {
+    $(window).on('load', function () {
+      $('.col-50').mCustomScrollbar({
+        theme: 'dark'
+      });
+    });
+  })(jQuery);
 
 });

@@ -24,6 +24,7 @@
 @import "weather/weather-icons.min";
 @import "weather/weather-icons-wind";
 @import "weather/weather-icons-wind.min";
+@import "jquery.mCustomScrollbar";
 
 @font-face {
   font-family: Narbut_Abetka;
@@ -247,8 +248,6 @@ div.wrapper {
   height: 1060px;
   float: left;
   margin-right: 15px;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
   overflow-y: hidden;
 }
 
@@ -493,6 +492,7 @@ ul hr:last-child {
 .announcement .author,
 .category-article .author {
   margin-top: 5px;
+  margin-left: 1px;
   float: left;
   color: #999999;
   font: 17px 'Bookman_Old_Style_Regular', sans-serif;
