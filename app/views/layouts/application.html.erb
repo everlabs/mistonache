@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mistonache</title>
+    <title>Misto-na-4e</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
     <div class="background">
       <div class="wrapper">
         <div id="header">
@@ -35,13 +36,17 @@
           <ul class="nav">
             <li><a href="/">Новини</a></li>
             <li class="nav-divider">//</li>
-            <li><a href="#">Історії</a></li>
+            <li><a href="#">Для гостей</a></li>
             <li class="nav-divider">//</li>
-            <li><a href="#">МАТ</a></li>
+            <li><a href="#">Афіша</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">Наша команда</a></li>
             <li class="nav-divider">//</li>
             <li><a href="#">КіноШот</a></li>
             <li class="nav-divider">//</li>
-            <li><a href="#">Афіша подій</a></li>
+            <li><a href="#">МАТ</a></li>
+            <li class="nav-divider">//</li>
+            <li><a href="#">Медіа</a></li>
             <li class="nav-divider">//</li>
           </ul>
           <div class="search">
@@ -78,7 +83,7 @@
           <div class="col-25">
             <div class="container_2">
               <div class="categories">
-                <p>Наші рубрики</p>
+                <p><%= link_to 'Наші рубрики', categories_path, class: 'all_categories' %></p>
               </div>
             </div>
             <ul class="categories_index">
@@ -87,7 +92,12 @@
               <% end %>
             </ul>
             <div class="facebook">
-              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmistoche&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1092747934095391" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+              <div class="fb-page" data-href="https://www.facebook.com/mistoche" data-tabs="timeline,events,messages"
+                   data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                   data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/mistoche" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/mistoche">Місто на &quot;Че&quot;</a></blockquote>
+              </div>
             </div>
           </div>
         </div>

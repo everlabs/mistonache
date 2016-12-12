@@ -24,11 +24,11 @@
 //= require extensions/revolution.extension.parallax.min
 //= require extensions/revolution.extension.slideanims.min
 //= require extensions/revolution.extension.video.min
-//= require turbolinks
+// require turbolinks
 //= require ckeditor/init
 //= require_tree .
 
-$(document).on('turbolinks:load', function () {
+$(document).ready( function () {
 
   var tpj=jQuery;
   var revapi34;
@@ -219,5 +219,14 @@ $(document).on('turbolinks:load', function () {
       });
     });
   })(jQuery);
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.8&appId=1092747934095391";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
 });

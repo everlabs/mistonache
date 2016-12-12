@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   root 'announcements#index'
   resources :announcements, only: [:show, :index]
-  resources :categories, only: :show
+  resources :categories, only: [:show, :index]
 end
