@@ -15,6 +15,7 @@
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require jquery.mCustomScrollbar.concat.min
+//= require slick.min
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
 //= require extensions/revolution.extension.kenburn.min
@@ -29,6 +30,8 @@
 //= require_tree .
 
 $(document).ready( function () {
+
+  /*revolution slider for announcements index page*/
 
   var tpj=jQuery;
   var revapi34;
@@ -135,6 +138,8 @@ $(document).ready( function () {
     });
   }
 
+  /*weather icons*/
+
   var element = $('.icon').first().text();
   var caseElement = $('.icon').first();
   switch (element) {
@@ -212,6 +217,8 @@ $(document).ready( function () {
     break;
   }
 
+  /*customizing scroll-bar*/
+
   (function ($) {
     $(window).on('load', function () {
       $('.col-50').mCustomScrollbar({
@@ -219,6 +226,8 @@ $(document).ready( function () {
       });
     });
   })(jQuery);
+
+  /*facebook widget*/
 
   (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -228,5 +237,43 @@ $(document).ready( function () {
     js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.8&appId=1092747934095391";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+  /*slick carousel*/
+
+  $('.carousel-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
 
 });

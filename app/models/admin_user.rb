@@ -7,4 +7,5 @@ class AdminUser < ApplicationRecord
   validates :name, presence: true
 
   has_many :announcements
+  has_many :galleries
 end

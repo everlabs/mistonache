@@ -25,6 +25,8 @@
 @import "weather/weather-icons-wind";
 @import "weather/weather-icons-wind.min";
 @import "jquery.mCustomScrollbar";
+@import "slick";
+@import "slick-theme";
 
 @font-face {
   font-family: Narbut_Abetka;
@@ -610,4 +612,25 @@ section.example {
   font: 18px 'Narbut_Narrow_Contrast', sans-serif;
   padding-top: 5px;
   margin-left: 5px;
+}
+
+.carousel-slider {
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+}
+
+.carousel-slider .album {
+  margin-left: 10px;
+  background-color: deeppink;
+  width: 155px !important;
+  height: 100px !important;
+}
+
+.slick-prev {
+  left: 0 !important;
+}
+
+.slick-next {
+  right: 0 !important;
 }

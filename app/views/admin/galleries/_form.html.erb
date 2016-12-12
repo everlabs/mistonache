@@ -1,0 +1,20 @@
+<%= semantic_form_for [:admin, @gallery], builder: ActiveAdmin::FormBuilder do |f| %>
+  <%= f.semantic_errors :state %>
+  <%= f.inputs do %>
+    <%= f.input :title, label: 'Назва' %>
+    <div class="photo-inputs">
+      <legend class="label"><label>Фото</label></legend>
+      <p>
+        <input type="file" id="photo-1" name="gallery[photo]" class="gallery-photo">
+      </p>
+      <div class="box">
+      </div>
+      <br>
+      <div class="clearfix"></div>
+    </div>
+     <br>
+    <%= link_to 'Додати фото', '#', class: 'add_another_photo_btn' %>
+    <%= f.input :admin_user_id, as: :hidden %>
+  <% end %>
+  <%= f.actions %>
+<% end %>
