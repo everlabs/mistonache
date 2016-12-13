@@ -3,4 +3,6 @@ class Gallery < ApplicationRecord
   validates :title, length: { minimum: 10 }
 
   belongs_to :admin_user
+
+  mount_uploader :photo, PhotoUploader
 end
