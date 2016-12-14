@@ -13,30 +13,58 @@ ActiveAdmin.register Gallery do
 #   permitted
 # end
 
-  #param = {"gallery"=>{"title"=>"Перший альбом", "photo-0"=>#<ActionDispatch::Http::UploadedFile:0x0000000318fda0 @tempfile=#<Tempfile:/tmp/RackMultipart20161213-31291-l69ygl.jpg>, @original_filename="17.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gallery[photo-0]\"; filename=\"17.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo-1"=>#<ActionDispatch::Http::UploadedFile:0x0000000318fa80 @tempfile=#<Tempfile:/tmp/RackMultipart20161213-31291-s5ekzm.jpg>, @original_filename="18.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gallery[photo-1]\"; filename=\"18.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin_user_id"=>"1"}}
-  #array = []
-  #array << param
-  #gallery = array[0].select{|a| a =~ /\A(photo_)\d/}
-  #gallery.values
+#param = {"gallery"=>{"title"=>"Перший альбом", "photo-0"=>#<ActionDispatch::Http::UploadedFile:0x0000000318fda0 @tempfile=#<Tempfile:/tmp/RackMultipart20161213-31291-l69ygl.jpg>, @original_filename="17.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gallery[photo-0]\"; filename=\"17.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo-1"=>#<ActionDispatch::Http::UploadedFile:0x0000000318fa80 @tempfile=#<Tempfile:/tmp/RackMultipart20161213-31291-s5ekzm.jpg>, @original_filename="18.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"gallery[photo-1]\"; filename=\"18.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin_user_id"=>"1"}}
+#array = []
+#array << param
+#gallery = array[0].select{|a| a =~ /\A(photo_)\d/}
+#gallery.values
 
   form partial: 'form'
 
   controller do
     def create
       @gallery = Gallery.new(permitted_params[:gallery])
-      param = params[:gallery]
-      array = []
-      array << param
-      gallery = array[0].select { |a| a =~ /\A(photo_)\d/ }
-      gallery.values.map do |photo|
-        @gallery.photo = photo.original_filename
-      end
       @gallery.admin_user_id = current_admin_user.id
-      @gallery.save
-      redirect_to admin_gallery_path(@gallery)
+      if @gallery.save
+        redirect_to admin_gallery_path(@gallery)
+      else
+        render 'new', notice: 'На жаль, не вдалося зберегти альбом, спробуйте ще раз.'
+      end
     end
   end
 
+  index do
+    column :id
+    column 'Назва', :title
+    column 'Фото' do |gallery|
+      ul do
+        gallery.photo.each do |photo|
+          li do
+            image_tag(photo.url(:thumb))
+          end
+        end
+      end
+    end
+    column :admin_user_id
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :title
+      row :photo do
+        ul do
+          gallery.photo.each do |photo|
+            li do
+              image_tag(photo.url(:medium))
+            end
+          end
+        end
+      end
+      row :admin_user_id
+    end
+  end
 =begin
   form html: { multipart: true } do |f|
     f.inputs do

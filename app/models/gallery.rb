@@ -4,5 +4,5 @@ class Gallery < ApplicationRecord
 
   belongs_to :admin_user
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploaders :photo, PhotoUploader
 end
