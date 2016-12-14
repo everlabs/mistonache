@@ -1,16 +1,38 @@
-<%= semantic_form_for [:admin, @gallery], html: {multipart: true}, builder: ActiveAdmin::FormBuilder do |f| %>
-  <%= f.semantic_errors :state %>
-  <%= f.inputs do %>
-    <%= f.input :title, label: 'Назва' %>
-    <div class="photo-inputs">
-      <legend class="label"><label>Фото</label></legend>
-      <p>
-        <input type="file" name="gallery[photo][]" class="gallery-photo"><br><br>
-      </p>
-    </div>
-     <br>
-    <%= link_to 'Додати фото', '#', class: 'add_another_photo_btn' %>
-    <%= f.input :admin_user_id, as: :hidden %>
+<% if controller.action_name == 'new' %>
+  <%= semantic_form_for [:admin, @gallery], html: {multipart: true}, builder: ActiveAdmin::FormBuilder do |f| %>
+    <%= f.semantic_errors :state %>
+    <%= f.inputs do %>
+      <%= f.input :title, label: 'Назва' %>
+      <div class="photo-inputs">
+        <legend class="label"><label>Фото</label></legend>
+        <p>
+          <input type="file" name="gallery[photo][]" class="gallery-photo"><br><br>
+        </p>
+      </div>
+       <br>
+      <%= link_to 'Додати фото', '#', class: 'add_another_photo_btn' %>
+      <%= f.input :admin_user_id, as: :hidden %>
+    <% end %>
+    <%= f.actions %>
   <% end %>
-  <%= f.actions %>
+<% else %>
+  <%= semantic_form_for [:admin, @gallery], html: {multipart: true}, builder: ActiveAdmin::FormBuilder do |f| %>
+    <%= f.semantic_errors :state %>
+    <%= f.inputs 'Novelties' do %>
+      <%= f.input :title %>
+      <%= f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|admin_user| [admin_user.name, admin_user.id] } %>
+      <div class="photo-inputs">
+        <p>
+          <%= f.inputs 'Фото' do %>
+            <% f.object.photo.each do |image| %>
+              <%= f.input :photo, as: :file, hint: image_tag(image.url(:thumb)), input_html: { multiple: true } %> <br>
+              <%= f.input :photo_cache, as: :hidden %>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+      <%= link_to 'Додати фото', '#', class: 'add_another_photo_btn' %>
+    <% end %>
+    <%= f.actions %>
+  <% end %>
 <% end %>

@@ -31,6 +31,14 @@ ActiveAdmin.register Gallery do
         render 'new', notice: 'На жаль, не вдалося зберегти альбом, спробуйте ще раз.'
       end
     end
+
+    def update
+      @gallery = Gallery.find(params[:id])
+      @gallery.photo += params[:gallery][:photo]
+      @gallery.save
+      redirect_to admin_gallery_path(@gallery)
+    end
+
   end
 
   index do
@@ -40,7 +48,7 @@ ActiveAdmin.register Gallery do
       ul do
         gallery.photo.each do |photo|
           li do
-            image_tag(photo.url(:thumb))
+            image_tag(photo.url(:medium))
           end
         end
       end
@@ -65,15 +73,5 @@ ActiveAdmin.register Gallery do
       row :admin_user_id
     end
   end
-=begin
-  form html: { multipart: true } do |f|
-    f.inputs do
-      f.input :title
-      f.input :photo, as: :file, input_html: { multiple: true }
-      f.input :admin_user_id, as: :hidden
-    end
-    f.actions
-  end
-=end
 
 end
