@@ -18,14 +18,14 @@
 <% else %>
   <%= semantic_form_for [:admin, @gallery], html: {multipart: true}, builder: ActiveAdmin::FormBuilder do |f| %>
     <%= f.semantic_errors :state %>
-    <%= f.inputs 'Novelties' do %>
+    <%= f.inputs 'Галерея' do %>
       <%= f.input :title %>
       <%= f.input :admin_user_id, as: :select, collection: AdminUser.all.collect {|admin_user| [admin_user.name, admin_user.id] } %>
       <div class="photo-inputs">
         <p>
           <%= f.inputs 'Фото' do %>
             <% f.object.photo.each do |image| %>
-              <%= f.input :photo, as: :file, hint: image_tag(image.url(:thumb)), input_html: { multiple: true } %> <br>
+              <%= f.input :photo, as: :file, hint: image_tag(image.url(:thumb)), input_html: { multiple: true, value: image } if image.present? %> <br>
               <%= f.input :photo_cache, as: :hidden %>
             <% end %>
           <% end %>
