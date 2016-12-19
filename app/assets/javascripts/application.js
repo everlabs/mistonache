@@ -15,6 +15,11 @@
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require jquery.mCustomScrollbar.concat.min
+//= require fancybox/jquery.fancybox
+//= require fancybox/jquery.fancybox.pack
+//= require fancybox/jquery.fancybox-buttons
+//= require fancybox/jquery.fancybox-media
+//= require fancybox/jquery.fancybox-thumbs
 //= require slick.min
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
@@ -274,6 +279,12 @@ $(document).ready( function () {
       // settings: "unslick"
       // instead of a settings object
     ]
+  });
+
+  /*fancybox*/
+
+  $('.fancybox').fancybox({
+
   });
 
 });

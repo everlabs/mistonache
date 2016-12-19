@@ -58,7 +58,7 @@ ActiveAdmin.register Gallery do
   show do
     attributes_table do
       row :id
-      row :title
+      row('Назва') { |r| r.title }
       row :photo do
         ul do
           gallery.photo.each do |photo|
@@ -68,7 +68,7 @@ ActiveAdmin.register Gallery do
           end
         end
       end
-      row :admin_user_id
+      row('Автор') { |r| link_to r.admin_user.name, admin_admin_user_path(r.admin_user_id) }
     end
   end
 

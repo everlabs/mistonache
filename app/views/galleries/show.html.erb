@@ -1,1 +1,7 @@
 <h1><%= @gallery.title %></h1>
+
+<div class="fancybox-outer">
+  <% @gallery.photo.each do |gallery| %>
+    <a href="<%= gallery %>" class="fancybox"><%= image_tag gallery %></a>
+  <% end %>
+</div>
