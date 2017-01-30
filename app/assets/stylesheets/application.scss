@@ -31,6 +31,11 @@
 @import "fancybox/jquery.fancybox-buttons";
 @import "fancybox/jquery.fancybox-thumbs";
 
+@import "bootstrap_variables";
+@import "bootstrap-grid";
+
+@import "configuration";
+
 @font-face {
   font-family: Narbut_Abetka;
   src: url(Narbut_Abetka.ttf);
@@ -112,19 +117,11 @@ ul, ol {
 
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: "";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
 }
 
 div.background {
@@ -148,6 +145,25 @@ div.wrapper {
   height: 315px;
   background-color: #fff;
   border-bottom: 1px solid #000000;
+}
+
+#content {
+  background: $white;
+  padding-top: 20px;
+}
+.novelties {
+  .novelty {
+    margin-top: 10px;
+    &-title a {
+      @extend .link;
+      font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
+      font-weight: 600;
+    }
+    &-source {
+      color: $gray2;
+      font-size: 12px;
+    }
+  }
 }
 
 .logo {
@@ -179,85 +195,60 @@ div.wrapper {
   float: left;
   margin-left: 60px;
   margin-top: 20px;
-}
 
-.nav li {
-  float: left;
-  margin-right: 15px;
-}
+  li {
+    float: left;
+    margin-right: 15px;
+  }
 
-.nav li:last-child {
-  margin-right: 0;
-}
+  li:last-child {
+    margin-right: 0;
+  }
 
-.nav li a {
-  font: 20px 'Narbut_Narrow_Contrast', sans-serif;
-  color: #000;
-}
+  li a {
+    font: 20px 'Narbut_Narrow_Contrast', sans-serif;
+    color: #000;
+  }
 
-.nav li a:hover {
-  color: #ff0000
-}
+  li a:hover {
+    color: #ff0000
+  }
 
-.nav .nav-divider {
-  color: #a9a9a9;
-  font: 16px 'Bookman_Old_Style_Regular', sans-serif;
-  font-weight: bold;
+  &-divider {
+    color: #a9a9a9;
+    font: 16px 'Bookman_Old_Style_Regular', sans-serif;
+    font-weight: bold;
+  }
 }
 
 .search {
   float: right;
   margin-top: 14px;
   margin-right: 50px;
-}
 
-.search input {
-  width: 280px;
-  height: 30px;
-  padding-left: 5px;
-}
+  input {
+    width: 280px;
+    height: 30px;
+    padding-left: 5px;
+  }
 
-.search button {
-  height: 30px;
-  width: 30px;
-  position: relative;
-  right: 5px;
-  background-color: #fff;
-  border: 1px solid #a9a9a9;
-}
+  button {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    right: 5px;
+    background-color: #fff;
+    border: 1px solid #a9a9a9;
+  }
 
-.search button i {
-  color: #000000;
-}
+  button i {
+    color: #000000;
+  }
 
-.search button:hover {
-  background-color: #d9dae3;
-  cursor: pointer;
-}
-
-.col-25 {
-  width: 25%;
-  height: 1150px;
-  float: left;
-}
-
-.col-20 {
-  width: 20%;
-  height: 1150px;
-  float: left;
-  margin-right: 5px;
-}
-
-.col-50 {
-  width: 50%;
-  height: 1150px;
-  float: left;
-  margin-right: 15px;
-  overflow-y: hidden;
-}
-
-.col-50 .yield {
-  height: 940px;
+  button:hover {
+    background-color: #d9dae3;
+    cursor: pointer;
+  }
 }
 
 ul hr:last-child {
@@ -268,49 +259,50 @@ ul hr:last-child {
   width: 100%;
   height: 55px;
   background-color: #000;
-}
 
-.social-icons {
-  float: right;
-  margin-right: 60px;
-  margin-top: 20px;
-}
+  p {
+    float: left;
+    color: #fff;
+    margin-left: 60px;
+    padding-top: 18px;
+    font: 18px 'Bookman_Old_Style_Bold', sans-serif;
+    text-transform: uppercase;
+  }
 
-.social-icons li {
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 20px;
-}
+  .social {
+    &-icons {
+      float: right;
+      margin-right: 60px;
+      margin-top: 20px;
+    }
 
-.social-icons li:last-child {
-  margin-right: 0;
-}
+    &-icons li {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
 
-.social-icons li a {
-  color: #fff;
-}
+    & li:last-child {
+      margin-right: 0;
+    }
 
-.social-icons li a:hover {
-  color: #ff0000;
-}
+    &-icons li a {
+      color: #fff;
+    }
 
-.social-header p {
-  float: left;
-  color: #fff;
-  margin-left: 60px;
-  padding-top: 18px;
-  font: 18px 'Bookman_Old_Style_Bold', sans-serif;
-  text-transform: uppercase;
+    &-icons li a:hover {
+      color: #ff0000;
+    }
+  }
 }
 
 .dot {
   margin-left: 20px !important;
   padding-top: 15px !important;
-}
-
-.dot i {
-  font-size: 8px;
-  padding-bottom: 10px !important;
+  i {
+    font-size: 8px;
+    padding-bottom: 10px !important;
+  }
 }
 
 .divider {
@@ -331,136 +323,6 @@ ul hr:last-child {
   margin-top: 58px;
   position: relative;
   z-index: 1;
-}
-
-#content {
-  width: 100%;
-  height: 1150px;
-  background-color: #fff;
-  padding-top: 5px;
-}
-
-.container {
-  margin-top: 25px;
-  margin-left: 60px;
-  display: block;
-  width: 170px;
-  height: 75px;
-  border: 1px solid #a9a9a9;
-}
-
-.container .latest-news {
-  margin: auto;
-  margin-top: 12px;
-  display: block;
-  width: 145px;
-  height: 50px;
-  border: 1px solid #a9a9a9;
-}
-
-.container .latest-news p {
-  font: 20px 'Narbut_Whirl', sans-serif;
-  text-transform: uppercase;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.news {
-  margin-top: 20px;
-}
-
-.news li {
-  margin-top: 10px;
-}
-
-.news li:first-child {
-  margin-top: 0;
-}
-
-.news li a {
-  color: #000000;
-  font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
-  font-weight: bold;
-}
-
-.news li a:hover {
-  color: #ff0000;
-}
-
-.news p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font: 10px 'Bookman_Old_Style_Regular', sans-serif;
-}
-
-.novelties {
-  display: block;
-  margin-left: 60px;
-  margin-bottom: 10px;
-  width: 170px;
-  height: auto;
-  border-bottom: 1px solid #a9a9a9;
-}
-
-.novelties:last-child {
-  border-bottom: none;
-}
-
-.container_2 {
-  margin-top: 25px;
-  margin-right: 60px;
-  display: block;
-  width: 315px;
-  height: 75px;
-  border: 1px solid #a9a9a9;
-}
-
-.container_2 .categories {
-  margin: auto;
-  margin-top: 12px;
-  display: block;
-  width: 285px;
-  height: 50px;
-  border: 1px solid #a9a9a9;
-}
-
-.container_2 .categories p {
-  font: 20px 'Narbut_Whirl', sans-serif;
-  text-transform: uppercase;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.all_categories {
-  color: #000000;
-}
-
-.all_categories:hover {
-  color: #ff0000;
-}
-
-.categories_index {
-  margin-top: 20px;
-}
-
-.categories_index li {
-  margin-bottom: 5px;
-  margin-right: 10px;
-  text-align: right;
-}
-
-.categories_index li:last-child {
-  margin-bottom: 0;
-}
-
-.categories_index li a {
-  color: #000000;
-  font: 20px 'Bookman_Old_Style_Regular', sans-serif;
-  font-weight: bold;
-}
-
-.categories_index li a:hover {
-  color: #ff0000;
 }
 
 #footer {

@@ -1,0 +1,41 @@
+
+$white: #fff;
+$gray: #cccccc;
+$gray2: #525252;
+
+$black: #000;
+
+$red: #ff0000;
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.link {
+  color: $black;
+  &:hover {
+    color: $red;
+  }
+}
+
+.column-header {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  font: 20px 'Narbut_Whirl', sans-serif;
+  width: 100%;
+  text-align: center;
+
+  span {
+    border: 1px solid $gray;
+    display: table;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 class AnnouncementsController < ApplicationController
 
   def index
-    @announcements = Announcement.order(visits: :desc).limit(4).all
+    @announcements = Announcement.all
   end
 
   def show
