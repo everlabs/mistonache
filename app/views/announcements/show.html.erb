@@ -1,8 +1,10 @@
-<div class="announcement">
-  <p class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to @announcement.category.name, @announcement.category %></p>
-  <h2 class="title"><%= @announcement.title %></h2>
-  <div class="main-image"><%= image_tag(@announcement.main_image.url(:big))%></div>
-  <div class="body"><%= @announcement.body.html_safe %></div>
-  <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= @announcement.admin_user.name %></p>
-  <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l @announcement.created_at, format: :short %></p>
+<div class="single-announcement">
+  <div class="single-announcement-image">
+    <%= image_tag(@announcement.main_image.url(:biggest))%>
+    <h2><%= @announcement.title %></h2>
+  </div>
+  <div class="announcement-body"><%= @announcement.body.html_safe %></div>
+  <span class="announcement-author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= @announcement.admin_user.name %></span>
+  <span class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to @announcement.category.name, @announcement.category %></span>
+  <span class="announcement-date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l @announcement.created_at, format: :short %></span>
 </div>

@@ -130,11 +130,11 @@
         <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
         <span class="announcement-author">
           <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %></span>
-        <span class="announcement-date">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.created_at, format: :short %>
-        </span>
         <span class="announcement-category">
           <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to announcement.category.name, announcement.category %>
+        </span>
+        <span class="announcement-date">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.created_at, format: :short %>
         </span>
       </div>
   <% end %>

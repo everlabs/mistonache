@@ -27,6 +27,10 @@ $red: #ff0000;
   padding-right: 0;
 }
 
+.transition {
+  transition: all 0.3s ease;
+}
+
 .secondary-text {
   color: $gray2;
   font-size: 13px;

@@ -1,18 +1,25 @@
-<div class="announcements">
+<div class="container announcements">
   <% @announcements.each do |announcement| %>
       <div class="row announcement">
-        <p class="announcement-category">
-          <i class="fa fa-tags" aria-hidden="true"></i>
-          <%= link_to announcement.category.name, announcement.category %>
-        </p>
-        <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
-        <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
-        <p class="announcement-author">
-          <i class="fa fa-user" aria-hidden="true"></i><%= announcement.admin_user.name %>
-        </p>
-        <p class="announcement-created-date">
-          <i class="fa fa-clock-o" aria-hidden="true"></i><%= l announcement.created_at, format: :short %>
-        </p>
+        <div class="col-lg-4">
+          <div class="announcement-image">
+            <%= image_tag(announcement.main_image.url(:big)) %>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
+          <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 400, escape: false) %></div>
+          <span class="announcement-author">
+            <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %>
+          </span>
+          <span class="announcement-category">
+            <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to announcement.category.name, announcement.category %>
+          </span>
+          <span class="announcement-date">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.created_at, format: :short %>
+        </span>
+        </div>
       </div>
   <% end %>
+  <%= will_paginate @announcements %>
 </div>

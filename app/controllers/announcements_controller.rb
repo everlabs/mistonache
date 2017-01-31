@@ -1,7 +1,7 @@
 class AnnouncementsController < ApplicationController
 
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.paginate(:page => params[:page], :per_page => 3)
   end
 
   def show

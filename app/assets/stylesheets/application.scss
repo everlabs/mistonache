@@ -29,9 +29,12 @@
 @import "fancybox/jquery.fancybox";
 @import "fancybox/jquery.fancybox-buttons";
 @import "fancybox/jquery.fancybox-thumbs";
+
 @import "bootstrap_variables";
 @import "bootstrap-grid";
+
 @import "configuration";
+@import "single-announcement";
 
 @font-face {
   font-family: Narbut_Abetka;
@@ -324,6 +327,37 @@ ul hr:last-child {
   margin-top: 58px;
   position: relative;
   z-index: 1;
+}
+
+.pagination-button {
+  @extend .transition;
+
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin: 10px 1px 20px 1px;
+  border: 1px solid $gray2;
+  color: $gray2;
+  font-weight: 700;
+
+  &:hover {
+    border: 1px solid black;
+    cursor: pointer;
+    background: black;
+    color: white;
+  }
+}
+
+.pagination {
+  text-align: center;
+  a, em, span {
+    @extend .pagination-button;
+  }
+  a {
+    @extend .link;
+  }
 }
 
 #footer {

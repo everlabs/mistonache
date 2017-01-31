@@ -34,6 +34,12 @@
           <iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
           <div class="divider-nav"></div>
           <ul class="nav">
+            <li>
+              <%= link_to root_path do%>
+                  <i class="fa fa-home" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li class="nav-divider">//</li>
             <li><%= link_to 'Новини', announcements_path %></li>
             <li class="nav-divider">//</li>
             <li><a href="#">Для гостей</a></li>

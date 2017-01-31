@@ -262,3 +262,6 @@ uk:
       short: "%d %b, %H:%M"
       header: '%A, %e %B, %Y'
     pm: по полудні
+  will_paginate:
+    previous_label: '<'
+    next_label: '>'
