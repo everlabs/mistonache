@@ -5,10 +5,28 @@
       <div id="rev_slider_34_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
         <ul>  <!-- SLIDE  -->
           <% @announcements.limit(5).each_with_index do |announcement, index| %>
-              <li data-index="rs-129-<%= index %>" data-transition="parallaxvertical" data-slotamount="default" data-easein="default"
-                  data-easeout="default" data-masterspeed="default" data-thumb="../../assets/images/newscarousel1-100x50.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="<%= announcement.title %>" data-description="<%= truncate(announcement.body, length: 50, escape: false) %>">
+              <li data-index="rs-129-<%= index %>"
+                  data-transition="parallaxvertical"
+                  data-slotamount="default"
+                  data-easein="default"
+                  data-easeout="default"
+                  data-masterspeed="default"
+                  data-thumb="../../assets/images/newscarousel1-100x50.jpg"
+                  data-rotate="0"
+                  data-fstransition="fade"
+                  data-fsmasterspeed="1500"
+                  data-fsslotamount="7"
+                  data-saveperformance="off"
+                  data-title="<%= announcement.title %>"
+                  data-description="<%= truncate(announcement.body, length: 50, escape: false) %>">
                 <!-- MAIN IMAGE -->
-                <%= image_tag(announcement.main_image, alt: '', 'data-bgposition' => 'center center', 'data-bgfit' => 'cover', 'data-bgrepeat' => 'no-repeat', 'data-bgparallax' => '10', class: 'rev-slidebg') %>
+                <%= image_tag(announcement.main_image,
+                              alt: '',
+                              'data-bgposition' => 'center center',
+                              'data-bgfit' => 'cover',
+                              'data-bgrepeat' => 'no-repeat',
+                              'data-bgparallax' => '10',
+                              class: 'rev-slidebg') %>
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption tp-shape tp-shapewrapper   tp-resizeme rs-parallaxlevel-0"
@@ -87,8 +105,7 @@
                      data-responsive_offset="on"
                      data-responsive="off"
                      onclick="location.href='<%= announcement_path(announcement) %>'"
-                     style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">ДІЗНАТИСЯ
-                  БІЛЬШЕ
+                     style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">ДІЗНАТИСЯ БІЛЬШЕ
                 </div>
               </li>
           <% end %>
@@ -107,7 +124,7 @@
   <% @announcements.each do |announcement| %>
       <div class="col-lg-6 announcement">
         <div class="announcement-image">
-          <%= image_tag(announcement.main_image.url(:big))%>
+          <%= image_tag(announcement.main_image.url(:large))%>
         </div>
         <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
         <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>

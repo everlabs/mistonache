@@ -68,5 +68,9 @@ $red: #ff0000;
     line-height: 45px;
     width: 100%;
     text-transform: uppercase;
+
+    a {
+      @extend .link;
+    }
   }
 }
