@@ -13,7 +13,6 @@
  * require_tree .
  *= require_self
  */
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'layers';
@@ -30,10 +29,8 @@
 @import "fancybox/jquery.fancybox";
 @import "fancybox/jquery.fancybox-buttons";
 @import "fancybox/jquery.fancybox-thumbs";
-
 @import "bootstrap_variables";
 @import "bootstrap-grid";
-
 @import "configuration";
 
 @font-face {
@@ -151,9 +148,10 @@ div.wrapper {
   background: $white;
   padding-top: 20px;
 }
+
 .novelties {
   .novelty {
-    margin-top: 10px;
+    margin-bottom: 10px;
     &-title a {
       @extend .link;
       font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
@@ -162,6 +160,9 @@ div.wrapper {
     &-source {
       color: $gray2;
       font-size: 12px;
+    }
+    &:after {
+      @extend .horizontal-divider;
     }
   }
 }
@@ -339,76 +340,97 @@ ul hr:last-child {
 }
 
 .announcement {
-  width: 45%;
-  float: left;
-  margin-top: 50px;
-  margin-left: 10px;
-  height: 150px;
+  margin-bottom: 5px;
+  &-author, &-date, &-category {
+    @extend .secondary-text;
+  }
+
+  &-title {
+    margin-bottom: 10px;
+    a {
+      @extend .link;
+    }
+  }
+  &-body {
+    margin-bottom: 5px;
+  }
+
+  &:after {
+    @extend .horizontal-divider;
+  }
 }
 
-.announcement h2 {
-  text-align: center;
-}
-
-.announcement h2 a {
-  text-decoration: none;
-  color: #000000;
-  font: 20px 'Bookman_Old_Style_Bold', sans-serif;
-}
-
-.announcement h2 a:hover {
-  color: #ff0000;
-}
-
-.announcement .body,
-.category-article .body {
-  margin-top: 7px;
-  margin-bottom: 10px;
-}
-
-.announcement .author,
-.category-article .author {
-  margin-top: 5px;
-  margin-left: 1px;
-  float: left;
-  color: #999999;
-  font: 17px 'Bookman_Old_Style_Regular', sans-serif;
-}
-
-.announcement-category {
-  float: left;
-  margin-top: 5px;
-}
-
-.announcement-category a {
-  color: #999999;
-  font: 15px 'Bookman_Old_Style_Regular', sans-serif;
-}
-
-.announcement-category a:hover {
-  color: #ff0000;
-}
-
-.announcement-category i {
-  color: #000000;
-}
-
-.announcement .created_at,
-.category-article .created_at{
-  float: right;
-  margin-top: 5px;
-  color: #999999;
-  font: 17px 'Bookman_Old_Style_Regular', sans-serif;
-}
-
-.announcement .created_at i,
-.category-article .created_at i {
-  color: #000000;
-}
-
-.announcement .author i {
-  color: #000000;
-}
+//.announcement {
+//  width: 45%;
+//  float: left;
+//  margin-top: 50px;
+//  margin-left: 10px;
+//  height: 150px;
+//}
+//
+//.announcement h2 {
+//  text-align: center;
+//}
+//
+//.announcement h2 a {
+//  text-decoration: none;
+//  color: #000000;
+//  font: 20px 'Bookman_Old_Style_Bold', sans-serif;
+//}
+//
+//.announcement h2 a:hover {
+//  color: #ff0000;
+//}
+//
+//.announcement .body,
+//.category-article .body {
+//  margin-top: 7px;
+//  margin-bottom: 10px;
+//}
+//
+//.announcement .author,
+//.category-article .author {
+//  margin-top: 5px;
+//  margin-left: 1px;
+//  float: left;
+//  color: #999999;
+//  font: 17px 'Bookman_Old_Style_Regular', sans-serif;
+//}
+//
+//.announcement-category {
+//  float: left;
+//  margin-top: 5px;
+//}
+//
+//.announcement-category a {
+//  color: #999999;
+//  font: 15px 'Bookman_Old_Style_Regular', sans-serif;
+//}
+//
+//.announcement-category a:hover {
+//  color: #ff0000;
+//}
+//
+//.announcement-category i {
+//  color: #000000;
+//}
+//
+//.announcement .created_at,
+//.category-article .created_at {
+//  float: right;
+//  margin-top: 5px;
+//  color: #999999;
+//  font: 17px 'Bookman_Old_Style_Regular', sans-serif;
+//}
+//
+//.announcement .created_at i,
+//.category-article .created_at i {
+//  color: #000000;
+//}
+//
+//.announcement .author i {
+//  color: #000000;
+//}
 
 section.example {
   margin-top: 25px;

@@ -59,38 +59,28 @@
         </div>
         <div id="content" class="container">
           <div class="row">
-            <div class="col-lg-8">
-              <div class="col-lg-4">
-                <h5 class="column-header">
-                  <span>Стрічка Новин</span>
-                </h5>
-                <div class="novelties">
-                  <ul>
+            <div class="col-lg-2">
+              <h5 class="section-header">
+                <span>Новини</span>
+              </h5>
+              <div class="novelties">
+                <ul>
+                  <% @novelties_.take(7).each do |novelty| %>
                     <li class="novelty">
                       <h5 class="novelty-title">
-                        <a href="#">1 лютого відбудеться засідання архітектурно-будівельної ради</a>
+                        <a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a>
                       </h5>
-                      <span class="novelty-source">(procherk.info)</span>
+                      <span class="novelty-source">(<%= novelty.source %>)</span>
                     </li>
-                    <li class="novelty">
-                      <h5 class="novelty-title">
-                        <a href="#">1 лютого відбудеться засідання архітектурно-будівельної ради</a>
-                      </h5>
-                      <span class="novelty-source">(procherk.info)</span>
-                    </li>
-                    <li class="novelty">
-                      <h5 class="novelty-title">
-                        <a href="#">1 лютого відбудеться засідання архітектурно-будівельної ради</a>
-                      </h5>
-                      <span class="novelty-source">(procherk.info)</span>
-                    </li>
-                  </ul>
-                </div>
+                  <% end %>
+                </ul>
               </div>
-              <div class="col-lg-8"></div>
             </div>
-            <div class="col-lg-4">
-              <h5 class="column-header">
+            <div class="col-lg-7">
+              <%= yield %>
+            </div>
+            <div class="col-lg-3">
+              <h5 class="section-header">
                 <span>Публікації</span>
               </h5>
             </div>
