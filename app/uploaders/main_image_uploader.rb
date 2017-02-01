@@ -37,23 +37,23 @@ class MainImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
    version :thumb do
-     process :resize_to_fit => [50, 50]
+     process :resize_to_fill => [50, 50]
    end
 
   version :medium do
-    process :resize_to_fit => [100, 100]
+    process :resize_to_fill => [100, 100]
   end
 
   version :big do
-    process :resize_to_fit => [300, 300]
+    process :resize_to_fill => [300, 300]
   end
 
   version :large do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_fill => [400, 400]
   end
 
   version :biggest do
-    process :resize_to_fit => [500, 500]
+    process :resize_to_fill => [800, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -67,5 +67,30 @@ class MainImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  private
+
+  # Simplest way
+  def crop(geometry)
+    manipulate! do |img|
+      img.crop(geometry)
+      img
+    end
+  end
+
+  # Resize and crop square from Center
+  def resize_and_crop(size)
+    manipulate! do |image|
+      if image[:width] < image[:height]
+        remove = ((image[:height] - image[:width])/2).round
+        image.shave("0x#{remove}")
+      elsif image[:width] > image[:height]
+        remove = ((image[:width] - image[:height])/2).round
+        image.shave("#{remove}x0")
+      end
+      image.resize("#{size}x#{size}")
+      image
+    end
+  end
 
 end
