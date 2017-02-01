@@ -96,7 +96,7 @@
               <% @latest_announcements.each do |announcement| %>
                   <li class="announcement">
                     <div class="announcement-image">
-                      <%= image_tag(announcement.main_image.url(:big)) %>
+                      <%= image_tag(announcement.main_image.url(:medium)) %>
                     </div>
                     <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
                     <div class="announcement-info">
