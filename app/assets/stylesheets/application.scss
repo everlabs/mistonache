@@ -33,96 +33,11 @@
 @import "bootstrap_variables";
 @import "bootstrap-grid";
 
+@import "fonts";
 @import "configuration";
+
+@import "header";
 @import "single-announcement";
-
-@font-face {
-  font-family: Narbut_Abetka;
-  src: url(Narbut_Abetka.ttf);
-}
-
-@font-face {
-  font-family: Narbut_Classic;
-  src: url(Narbut_Classic.ttf);
-}
-
-@font-face {
-  font-family: Narbut_Extra_Wide;
-  src: url(Narbut_Extra_Wide.ttf);
-}
-
-@font-face {
-  font-family: Narbut_Narrow_Contrast;
-  src: url(Narbut_Narrow_Contrast.ttf);
-}
-
-@font-face {
-  font-family: Narbut_Whirl;
-  src: url(Narbut_Whirl.ttf);
-}
-
-@font-face {
-  font-family: OpenSans-CondBold;
-  src: url(OpenSans-CondBold.ttf);
-}
-
-@font-face {
-  font-family: OpenSans-CondLight;
-  src: url(OpenSans-CondLight.ttf);
-}
-
-@font-face {
-  font-family: OpenSans-CondLightItalic;
-  src: url(OpenSans-CondLightItalic.ttf);
-}
-
-@font-face {
-  font-family: Bookman_Old_Style_Bold;
-  src: url(Bookman_Old_Style_Bold.ttf);
-}
-
-@font-face {
-  font-family: Bookman_Old_Style_Regular;
-  src: url(Bookman_Old_Style_Regular.ttf);
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  background-color: #f9f9f9;
-  font: 14px/18px 'Times New Roman', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-a, a:hover {
-  text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
 
 div.background {
   min-height: 100%;
@@ -140,16 +55,9 @@ div.wrapper {
   margin: auto;
 }
 
-#header {
-  width: 100%;
-  height: 315px;
-  background-color: #fff;
-  border-bottom: 1px solid #000000;
-}
-
 #content {
   background: $white;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 .novelties {
@@ -170,163 +78,8 @@ div.wrapper {
   }
 }
 
-.logo {
-  width: 500px;
-  height: 100px;
-  float: left;
-  margin-left: 60px;
-  margin-top: 45px;
-  background: url("logo.png") no-repeat;
-  background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-}
-
-.logo a {
-  display: block;
-  width: 500px;
-  height: 100px;
-}
-
-#header iframe {
-  float: right;
-  margin-top: 9px !important;
-  margin-right: -100px !important;
-}
-
-.nav {
-  float: left;
-  margin-left: 60px;
-  margin-top: 20px;
-
-  li {
-    float: left;
-    margin-right: 15px;
-  }
-
-  li:last-child {
-    margin-right: 0;
-  }
-
-  li a {
-    font: 20px 'Narbut_Narrow_Contrast', sans-serif;
-    color: #000;
-  }
-
-  li a:hover {
-    color: #ff0000
-  }
-
-  &-divider {
-    color: #a9a9a9;
-    font: 16px 'Bookman_Old_Style_Regular', sans-serif;
-    font-weight: bold;
-  }
-}
-
-.search {
-  float: right;
-  margin-top: 14px;
-  margin-right: 50px;
-
-  input {
-    width: 280px;
-    height: 30px;
-    padding-left: 5px;
-  }
-
-  button {
-    height: 30px;
-    width: 30px;
-    position: relative;
-    right: 5px;
-    background-color: #fff;
-    border: 1px solid #a9a9a9;
-  }
-
-  button i {
-    color: #000000;
-  }
-
-  button:hover {
-    background-color: #d9dae3;
-    cursor: pointer;
-  }
-}
-
 ul hr:last-child {
   display: none;
-}
-
-.social-header {
-  width: 100%;
-  height: 55px;
-  background-color: #000;
-
-  p {
-    float: left;
-    color: #fff;
-    margin-left: 60px;
-    padding-top: 18px;
-    font: 18px 'Bookman_Old_Style_Bold', sans-serif;
-    text-transform: uppercase;
-  }
-
-  .social {
-    &-icons {
-      float: right;
-      margin-right: 60px;
-      margin-top: 20px;
-    }
-
-    &-icons li {
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 20px;
-    }
-
-    & li:last-child {
-      margin-right: 0;
-    }
-
-    &-icons li a {
-      color: #fff;
-    }
-
-    &-icons li a:hover {
-      color: #ff0000;
-    }
-  }
-}
-
-.dot {
-  margin-left: 20px !important;
-  padding-top: 15px !important;
-  i {
-    font-size: 8px;
-    padding-bottom: 10px !important;
-  }
-}
-
-.divider {
-  display: block;
-  border-bottom: 1px solid #000;
-  margin-top: 1px;
-}
-
-.divider-nav {
-  display: block;
-  border-bottom: 1px solid #a9a9a9;
-  margin-top: 200px;
-}
-
-.solid-divider {
-  display: block;
-  border-bottom: 2px solid #000000;
-  margin-top: 58px;
-  position: relative;
-  z-index: 1;
 }
 
 .pagination-button {
@@ -397,10 +150,6 @@ ul hr:last-child {
   &:after {
     @extend .horizontal-divider;
   }
-}
-
-section.example {
-  margin-top: 25px;
 }
 
 .weather {

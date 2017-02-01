@@ -90,11 +90,7 @@
                 <span><%= link_to 'Публікації', categories_path, class: 'all_categories' %></span>
               </h5>
               <div class="aside-section">
-                <ul>
-                  <% @categories_.each do |category| %>
-                      <li><%= link_to category.name, category %></li>
-                  <% end %>
-                </ul>
+                
               </div>
               <div class="facebook aside-section">
                 <div class="fb-page" data-href="https://www.facebook.com/mistoche" data-tabs="timeline,events,messages"
@@ -109,7 +105,7 @@
           </div>
         </div>
         <footer id="footer">
-          <div class="containe">
+          <div class="container">
             <div class="row">
               <span class="copyright">&copy; Місто на [ЧЕ]</span>
             </div>
