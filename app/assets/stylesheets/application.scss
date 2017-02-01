@@ -60,6 +60,10 @@ div.wrapper {
   padding-top: 50px;
 }
 
+.top-slider {
+  margin-bottom: 15px;
+}
+
 .novelties {
   .novelty {
     margin-bottom: 10px;
@@ -124,6 +128,26 @@ ul hr:last-child {
 
 .aside-section {
   margin-bottom: 20px;
+
+  .announcement {
+    &-image img {
+      max-width: 100px;
+      float: left;
+    }
+    &-title {
+      padding: 0;
+      margin-left: 110px;
+    }
+    &-info {
+      padding-top: 5px;
+      clear: both;
+    }
+    &:after {
+      @extend .horizontal-divider;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .announcement {

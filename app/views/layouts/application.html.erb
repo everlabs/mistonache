@@ -1,117 +1,142 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Misto-na-4e</title>
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Misto-na-4e</title>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <div id="fb-root"></div>
-    <div class="background">
-      <div class="wrapper">
-        <header id="header">
-          <div class="social-header">
-            <p><%= l Time.zone.now.to_date, format: :header %></p>
-            <p class="dot"><i class="fa fa-circle" aria-hidden="true"></i></p>
-            <p class="weather">
-              <% weather.each do |parameter| %>
-                <span class="icon"><%= parameter %></span>
+<body>
+<div id="fb-root"></div>
+<div class="background">
+  <div class="wrapper">
+    <header id="header">
+      <div class="social-header">
+        <p><%= l Time.zone.now.to_date, format: :header %></p>
+        <p class="dot"><i class="fa fa-circle" aria-hidden="true"></i></p>
+        <p class="weather">
+          <% weather.each do |parameter| %>
+              <span class="icon"><%= parameter %></span>
+          <% end %>
+          &deg;C
+        </p>
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="logo"><%= link_to '', root_path %></div>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+      <div class="divider-nav"></div>
+      <ul class="nav">
+        <li>
+          <%= link_to root_path do %>
+              <i class="fa fa-home" aria-hidden="true"></i>
+          <% end %>
+        </li>
+        <li class="nav-divider">//</li>
+        <li><%= link_to 'Новини', announcements_path %></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">Для гостей</a></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">Афіша</a></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">Наша команда</a></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">КіноШот</a></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">МАТ</a></li>
+        <li class="nav-divider">//</li>
+        <li><a href="#">Медіа</a></li>
+        <li class="nav-divider">//</li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Пошук...">
+        <button>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="solid-divider"></div>
+    </header>
+    <div id="content" class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <h5 class="section-header">
+            <span>Новини</span>
+          </h5>
+          <div class="novelties">
+            <ul>
+              <% @novelties_.take(7).each do |novelty| %>
+                  <li class="novelty">
+                    <h5 class="novelty-title">
+                      <a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a>
+                    </h5>
+                    <span class="novelty-source">(<%= novelty.source %>)</span>
+                  </li>
               <% end %>
-              &deg;C
-            </p>
-            <ul class="social-icons">
-              <li><a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-              <li><a href="#" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-              <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
             </ul>
           </div>
-          <div class="divider"></div>
-          <div class="logo"><%= link_to '', root_path %></div>
-          <iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
-          <div class="divider-nav"></div>
-          <ul class="nav">
-            <li>
-              <%= link_to root_path do%>
-                  <i class="fa fa-home" aria-hidden="true"></i>
+        </div>
+        <div class="col-lg-7">
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <h5 class="section-header">
+            <span><%= link_to 'Публікації', categories_path, class: 'all_categories' %></span>
+          </h5>
+          <div class="aside-section">
+            <ul>
+              <% @latest_announcements.each do |announcement| %>
+                  <li class="announcement">
+                    <div class="announcement-image">
+                      <%= image_tag(announcement.main_image.url(:big)) %>
+                    </div>
+                    <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
+                    <div class="announcement-info">
+                      <span class="announcement-author">
+                        <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i>
+                        <%= announcement.admin_user.name %>
+                      </span>
+                      <span class="announcement-category">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+                        <%= link_to announcement.category.name, announcement.category %>
+                      </span>
+                      <span class="announcement-date">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;
+                        <%= l announcement.created_at, format: :short %>
+                      </span>
+                    </div>
+                  </li>
               <% end %>
-            </li>
-            <li class="nav-divider">//</li>
-            <li><%= link_to 'Новини', announcements_path %></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">Для гостей</a></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">Афіша</a></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">Наша команда</a></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">КіноШот</a></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">МАТ</a></li>
-            <li class="nav-divider">//</li>
-            <li><a href="#">Медіа</a></li>
-            <li class="nav-divider">//</li>
-          </ul>
-          <div class="search">
-            <input type="text" placeholder="Пошук...">
-            <button>
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
+            </ul>
           </div>
-          <div class="solid-divider"></div>
-        </header>
-        <div id="content" class="container">
-          <div class="row">
-            <div class="col-lg-2">
-              <h5 class="section-header">
-                <span>Новини</span>
-              </h5>
-              <div class="novelties">
-                <ul>
-                  <% @novelties_.take(7).each do |novelty| %>
-                    <li class="novelty">
-                      <h5 class="novelty-title">
-                        <a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a>
-                      </h5>
-                      <span class="novelty-source">(<%= novelty.source %>)</span>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <%= yield %>
-            </div>
-            <div class="col-lg-3">
-              <h5 class="section-header">
-                <span><%= link_to 'Публікації', categories_path, class: 'all_categories' %></span>
-              </h5>
-              <div class="aside-section">
-                
-              </div>
-              <div class="facebook aside-section">
-                <div class="fb-page" data-href="https://www.facebook.com/mistoche" data-tabs="timeline,events,messages"
-                     data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
-                     data-show-facepile="true">
-                  <blockquote cite="https://www.facebook.com/mistoche" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/mistoche">Місто на &quot;Че&quot;</a>
-                  </blockquote>
-                </div>
-              </div>
+          <div class="facebook aside-section">
+            <div class="fb-page" data-href="https://www.facebook.com/mistoche" data-tabs="timeline,events,messages"
+                 data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                 data-show-facepile="true">
+              <blockquote cite="https://www.facebook.com/mistoche" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/mistoche">Місто на &quot;Че&quot;</a>
+              </blockquote>
             </div>
           </div>
         </div>
-        <footer id="footer">
-          <div class="container">
-            <div class="row">
-              <span class="copyright">&copy; Місто на [ЧЕ]</span>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
-  </body>
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <span class="copyright">&copy; Місто на [ЧЕ]</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
 </html>

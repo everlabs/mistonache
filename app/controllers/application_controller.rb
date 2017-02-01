@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :news_index
   before_action :categories_index
   before_action :set_locale
+  before_action :latest_announcements
   #before_action :set_weather
 
   def news_index
@@ -18,6 +19,13 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
+
+  private
+
+  def latest_announcements
+    @latest_announcements = Announcement.order(created_at: :desc).limit(4).all
+  end
+
 end
 
 def weather
