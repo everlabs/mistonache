@@ -38,6 +38,7 @@
 
 @import "header";
 @import "single-announcement";
+@import "galleries";
 
 div.background {
   min-height: 100%;
@@ -58,6 +59,39 @@ div.wrapper {
 #content {
   background: $white;
   padding-top: 50px;
+
+  .gallery {
+    width: 100%;
+    height: 170px;
+    margin-top: 5px;
+  }
+
+  .gallery .title {
+    font: 18px 'Narbut_Narrow_Contrast', sans-serif;
+    padding-top: 5px;
+    margin-left: 5px;
+  }
+
+  .carousel-slider {
+    width: 100%;
+    height: 100px;
+    background-color: grey;
+  }
+
+  .carousel-slider .album {
+    margin-left: 10px;
+    background-color: deeppink;
+    width: 155px !important;
+    height: 100px !important;
+  }
+
+  .slick-prev {
+    left: 0 !important;
+  }
+
+  .slick-next {
+    right: 0 !important;
+  }
 }
 
 .top-slider {
@@ -225,37 +259,3 @@ ul hr:last-child {
   font: 20px 'Bookman_Old_Style_Bold', sans-serif;
 }
 
-/*gallery*/
-
-.gallery {
-  width: 100%;
-  height: 170px;
-  margin-top: 5px;
-}
-
-.gallery .title {
-  font: 18px 'Narbut_Narrow_Contrast', sans-serif;
-  padding-top: 5px;
-  margin-left: 5px;
-}
-
-.carousel-slider {
-  width: 100%;
-  height: 100px;
-  background-color: grey;
-}
-
-.carousel-slider .album {
-  margin-left: 10px;
-  background-color: deeppink;
-  width: 155px !important;
-  height: 100px !important;
-}
-
-.slick-prev {
-  left: 0 !important;
-}
-
-.slick-next {
-  right: 0 !important;
-}
