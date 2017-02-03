@@ -89,14 +89,14 @@
         </div>
         <div class="col-lg-3">
           <h5 class="section-header">
-            <span><%= link_to 'Стрічка Новин', categories_path, class: 'all_categories' %></span>
+            <span><%= link_to 'Публікації', categories_path, class: 'all_categories' %></span>
           </h5>
           <div class="aside-section">
             <ul>
               <% @latest_announcements.each do |announcement| %>
                   <li class="announcement">
                     <div class="announcement-image">
-                      <%= image_tag(announcement.main_image.url(:medium)) %>
+                      <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>
                     </div>
                     <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
                     <div class="announcement-info">

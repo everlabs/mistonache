@@ -1,10 +1,24 @@
 <div class="single-announcement">
-  <div class="single-announcement-image">
-    <%= image_tag(@announcement.main_image.url(:biggest))%>
-    <h2><%= @announcement.title %></h2>
+  <div class="row">
+    <div class="col-lg-12 flexbox">
+      <div class="center-block">
+        <div class="single-announcement-image">
+          <%= image_tag(@announcement.main_image.url(:biggest)) %>
+          <h2><%= @announcement.title %></h2>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="announcement-body"><%= @announcement.body.html_safe %></div>
-  <span class="announcement-author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= @announcement.admin_user.name %></span>
-  <span class="announcement-category"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to @announcement.category.name, @announcement.category %></span>
-  <span class="announcement-date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l @announcement.created_at, format: :short %></span>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="single-announcement-body"><%= @announcement.body.html_safe %></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <span class="announcement-author right"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= @announcement.admin_user.name %></span>
+      <span class="announcement-category right"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to @announcement.category.name, @announcement.category %></span>
+      <span class="announcement-date right"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l @announcement.created_at, format: :short %></span>
+    </div>
+  </div>
 </div>
