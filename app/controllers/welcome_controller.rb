@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   private
 
   def gallery
-    @gallery = Gallery.find(1)
+    @gallery = Gallery.limit(1).all[0]
   end
 
 end
