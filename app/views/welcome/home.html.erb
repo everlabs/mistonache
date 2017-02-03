@@ -105,7 +105,8 @@
                      data-responsive_offset="on"
                      data-responsive="off"
                      onclick="location.href='<%= announcement_path(announcement) %>'"
-                     style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">ДІЗНАТИСЯ БІЛЬШЕ
+                     style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">ДІЗНАТИСЯ
+                  БІЛЬШЕ
                 </div>
               </li>
           <% end %>
@@ -124,7 +125,7 @@
   <% @announcements.each do |announcement| %>
       <div class="col-lg-6 announcement">
         <div class="announcement-image">
-          <%= image_tag(announcement.main_image.url(:large))%>
+          <%= image_tag(announcement.main_image.url(:large)) %>
         </div>
         <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
         <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
@@ -138,4 +139,17 @@
         </span>
       </div>
   <% end %>
+</section>
+
+<section class="galleries-slider">
+  <h2 class="section-header">
+    <span>Фотогалерея міста на "Че"</span>
+  </h2>
+  <div class="carousel-slider">
+    <% @gallery.photo.each do |gallery| %>
+        <a href="<%= gallery %>" rel="gallery<%= @gallery.id %>" class="fancybox slider-image">
+          <%= image_tag gallery.url(:medium) %>
+        </a>
+    <% end %>
+  </div>
 </section>
