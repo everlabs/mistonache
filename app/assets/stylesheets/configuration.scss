@@ -53,6 +53,14 @@ ul, ol {
   float: right;
 }
 
+.center-block {
+  margin: 0 auto;
+}
+
+.flexbox {
+  display: flex;
+}
+
 .link {
   color: $black;
   &:hover {
@@ -102,10 +110,11 @@ ul, ol {
   text-align: center;
 
   span {
-    border: 1px solid $gray;
+    border: 1px solid #cccccc;
     display: table;
     height: 45px;
-    line-height: 45px;
+    line-height: 25px;
+    padding: 10px 0;
     width: 100%;
     text-transform: uppercase;
 

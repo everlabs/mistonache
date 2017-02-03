@@ -42,15 +42,15 @@
                      data-start="1000"
                      data-basealign="slide"
                      data-responsive_offset="on"
-                     style="z-index: 5;background-color:rgba(0, 0, 0, 0.35);border-color:rgba(0, 0, 0, 1.00);">
+                     style="z-index: 5; background-color:rgba(0, 0, 0, 0.35); border-color:rgba(0, 0, 0, 1.00);">
                 </div>
                 <!-- LAYER NR. 2 -->
-                <div class="tp-caption Newspaper-Title   tp-resizeme rs-parallaxlevel-0"
+                <div class="tp-caption announcement-body tp-resizeme rs-parallaxlevel-0"
                      id="slide-129-layer-1-<%= index %>"
-                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
-                     data-y="['top','top','top','top']" data-voffset="['165','135','105','130']"
-                     data-fontsize="['50','50','50','30']"
-                     data-lineheight="['55','55','55','35']"
+                     data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
+                     data-y="['top','top','top','top']" data-voffset="['250','250','250','250']"
+                     data-fontsize="25"
+                     data-lineheight="25"
                      data-width="['600','600','600','420']"
                      data-height="none"
                      data-whitespace="normal"
@@ -63,16 +63,15 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on"
-                     style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;"><%= truncate(announcement.body, length: 50, escape: false) %>
+                     style="z-index: 6; white-space: normal;"><%= truncate(announcement.body, length: 100, escape: false) %>
                 </div>
                 <!-- LAYER NR. 3 -->
-                <div class="tp-caption Newspaper-Subtitle   tp-resizeme rs-parallaxlevel-0"
+                <div class="tp-caption announcement-title tp-resizeme rs-parallaxlevel-0"
                      id="slide-129-layer-2-<%= index %>"
-                     data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
-                     data-y="['top','top','top','top']" data-voffset="['140','110','80','100']"
-                     data-width="none"
-                     data-height="none"
-                     data-whitespace="nowrap"
+                     data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
+                     data-y="['top','top','top','top']" data-voffset="['100','100','100','100']"
+                     data-whitespace="normal"
+                     data-width="['600','600','600','550']"
                      data-transform_idle="o:1;"
                      data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
                      data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
@@ -82,7 +81,7 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on"
-                     style="z-index: 7; white-space: nowrap;"><%= announcement.title %>
+                     style="z-index: 7"><%= truncate(announcement.title, length: 25) %>
                 </div>
                 <!-- LAYER NR. 4 -->
                 <div class="tp-caption Newspaper-Button rev-btn  rs-parallaxlevel-0"
@@ -125,7 +124,7 @@
   <% @announcements.each do |announcement| %>
       <div class="col-lg-6 announcement">
         <div class="announcement-image">
-          <%= image_tag(announcement.main_image.url(:large)) %>
+          <%= link_to image_tag(announcement.main_image.url(:large)), announcement %>
         </div>
         <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
         <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
