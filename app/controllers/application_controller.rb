@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :categories_index
   before_action :set_locale
   before_action :latest_announcements
+  before_action :banners
   #before_action :set_weather
 
   def news_index
@@ -24,6 +25,15 @@ class ApplicationController < ActionController::Base
 
   def latest_announcements
     @latest_announcements = Announcement.order(created_at: :desc).limit(4).all
+  end
+
+  def banners
+    banners = Banner.where.not(position: nil)
+    @banners = {
+        top: banners.find {|banner| banner.position == Banner::POSITION[:top]},
+        bottom: banners.find {|banner| banner.position == Banner::POSITION[:bottom]},
+        right: banners.find {|banner| banner.position == Banner::POSITION[:right]}
+    }
   end
 
 end

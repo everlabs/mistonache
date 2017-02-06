@@ -115,6 +115,15 @@
     </div><!-- END REVOLUTION SLIDER -->
   </article>
 </section>
+<%= if @banners[:top].present?
+      image_url = image_tag @banners[:top].image.url, class: 'banner-top'
+      if not @banners[:top].url.empty?
+        link_to image_url, @banners[:top].url
+      else
+        image_url
+      end
+    end
+%>
 <section class="row announcements">
   <div class="col-lg-12">
     <h5 class="section-header">
@@ -139,6 +148,16 @@
       </div>
   <% end %>
 </section>
+
+<%= if @banners[:bottom].present?
+      image_url = image_tag @banners[:bottom].image.url, class: 'banner-bottom'
+      if not @banners[:bottom].url.empty?
+        link_to image_url, @banners[:bottom].url
+      else
+        image_url
+      end
+    end
+%>
 
 <% if @gallery.present? and not @gallery.photo.empty? %>
     <section class="galleries-slider">

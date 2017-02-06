@@ -117,6 +117,18 @@
               <% end %>
             </ul>
           </div>
+          <div class="aside-section">
+            <%= if @banners[:right].present?
+                  image_url = image_tag @banners[:right].image.url, class: 'banner-right'
+
+                  if not @banners[:right].url.empty?
+                    link_to image_url, @banners[:right].url
+                  else
+                    image_url
+                  end
+                end
+            %>
+          </div>
           <div class="facebook aside-section">
             <div class="fb-page" data-href="https://www.facebook.com/mistoche" data-tabs="timeline,events,messages"
                  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"

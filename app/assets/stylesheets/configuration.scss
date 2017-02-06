@@ -76,6 +76,11 @@ ul, ol {
   transition: all 0.3s ease;
 }
 
+.image-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 .secondary-text {
   color: $gray2;
   font-size: 13px;

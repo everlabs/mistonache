@@ -83,6 +83,20 @@ div.wrapper {
   }
 }
 
+.banner {
+  &-top {
+    @extend .image-responsive;
+  }
+
+  &-bottom {
+    @extend .image-responsive;
+  }
+
+  &-right {
+    @extend .image-responsive;
+  }
+}
+
 .top-slider {
   margin-bottom: 15px;
   .announcement-title {
@@ -209,8 +223,7 @@ ul hr:last-child {
   }
 
   &-image > img {
-    max-width: 100%;
-    height: auto;
+    @extend .image-responsive;
   }
 
   &:after {
