@@ -1,4 +1,4 @@
-ActiveAdmin.register Banner do
+ActiveAdmin.register Banner, :as => 'All Banners' do
 
   permit_params :image, :position, :url
 
