@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :announcements, only: [:show, :index]
   resources :categories, only: [:show, :index]
   resources :galleries, only: :show
+  resources :events, only: :index
 end
