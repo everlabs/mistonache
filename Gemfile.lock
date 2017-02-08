@@ -394,7 +394,6 @@ DEPENDENCIES
   byebug
   carrierwave!
   ckeditor
-  coffee-rails (~> 4.2)
   devise
   fog (= 1.38.0)
   font-awesome-sass
