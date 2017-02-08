@@ -20,8 +20,6 @@
 //= require fancybox/jquery.fancybox-buttons
 //= require fancybox/jquery.fancybox-media
 //= require fancybox/jquery.fancybox-thumbs
-//= require calendario/modernizr.custom.63321
-//= require calendario/jquery.calendario
 //= require slick.min
 //= require moment
 //= require extensions/revolution.extension.actions.min
