@@ -23,6 +23,7 @@
 //= require calendario/modernizr.custom.63321
 //= require calendario/jquery.calendario
 //= require slick.min
+//= require moment
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
 //= require extensions/revolution.extension.kenburn.min
