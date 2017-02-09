@@ -15,6 +15,9 @@
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require jquery.mCustomScrollbar.concat.min
+//= require jquery.readyselector
+//= require calendario/modernizr.custom.63321
+//= require calendario/jquery.calendario
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.fancybox.pack
 //= require fancybox/jquery.fancybox-buttons
