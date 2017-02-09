@@ -1,10 +1,17 @@
-<h1 class="category-name"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= @category.name %></h1>
+<div class="col-lg-7">
+  <h1 class="category-name"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= @category.name %></h1>
 
-<% @announcements.each do |article| %>
-  <div class="category-article">
-    <h3><%= link_to article.title, article%></h3>
-    <div class="body"><%= truncate(article.body.html_safe, length: 300, escape: false) %></div>
-    <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
-    <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.created_at, format: :short %></p>
-  </div>
-<% end %>
+  <% @announcements.each do |article| %>
+      <div class="category-article">
+        <h3><%= link_to article.title, article%></h3>
+        <div class="body"><%= truncate(article.body.html_safe, length: 300, escape: false) %></div>
+        <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
+        <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.created_at, format: :short %></p>
+      </div>
+  <% end %>
+</div>
+<div class="col-lg-3">
+  <%= render partial: 'shared/right_bar/publications' %>
+  <%= render partial: 'shared/right_bar/banner' %>
+  <%= render partial: 'shared/right_bar/facebook' %>
+</div>

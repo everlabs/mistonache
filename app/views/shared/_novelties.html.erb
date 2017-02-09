@@ -1,0 +1,15 @@
+<h5 class="section-header">
+  <span>Новини</span>
+</h5>
+<div class="novelties">
+  <ul>
+    <% @novelties_.take(7).each do |novelty| %>
+        <li class="novelty">
+          <h5 class="novelty-title">
+            <a href="<%= novelty.url %>" target="_blank"><%= novelty.title %></a>
+          </h5>
+          <span class="novelty-source">(<%= novelty.source %>)</span>
+        </li>
+    <% end %>
+  </ul>
+</div>

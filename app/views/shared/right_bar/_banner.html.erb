@@ -1,0 +1,12 @@
+<div class="aside-section">
+  <%= if @banners[:right].present?
+        image_url = image_tag @banners[:right].image.url, class: 'banner-right'
+
+        if not @banners[:right].url.empty?
+          link_to image_url, @banners[:right].url
+        else
+          image_url
+        end
+      end
+  %>
+</div>
