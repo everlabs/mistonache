@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
 
   def index
+    @events = Event.all
 
     respond_to do |format|
-      format.html
+      format.html { render 'events/index', locals: { events: Event.all } }
       if params_valid?(params)
         format.json { render json: Event.get_month(params[:year], params[:month]), status: :ok }
       else

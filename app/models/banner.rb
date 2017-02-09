@@ -8,6 +8,5 @@ class Banner < ApplicationRecord
   validates :image, presence: true
   validates :position, uniqueness: true
 
-
   mount_uploader :image, BannerUploader
 end
