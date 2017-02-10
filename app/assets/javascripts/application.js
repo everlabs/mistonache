@@ -25,6 +25,7 @@
 //= require fancybox/jquery.fancybox-thumbs
 //= require slick.min
 //= require moment
+//= require configuration
 //= require extensions/revolution.extension.actions.min
 //= require extensions/revolution.extension.carousel.min
 //= require extensions/revolution.extension.kenburn.min
