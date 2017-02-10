@@ -9,7 +9,8 @@
 
     }
     &-inscription {
-      @extend .secondary-text
+      display: block;
+      @extend .secondary-text;
     }
   }
 
@@ -108,11 +109,11 @@
       width: 100%;
     }
 
-    &-header nav span &-prev:before {
+    &-header nav span.custom-prev:before {
       content: '\25c2';
     }
 
-    &-header nav span &-next:before {
+    &-header nav span.custom-next:before {
       content: '\25b8';
     }
 
@@ -280,6 +281,16 @@
       .fc-calendar .fc-row > div > span.fc-date {
         font-size: 15px;
       }
+    }
+  }
+
+  .place {
+    &-filter {
+
+    }
+
+    &-name {
+      @extend .link;
     }
   }
 }

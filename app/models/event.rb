@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
 
+  belongs_to :place
+
   validates :image, presence: true
 
   def self.get_month(year, month)

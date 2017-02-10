@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.joins(:place).all
+    @places = Place.all
 
     respond_to do |format|
       format.html { render 'events/index', locals: { events: Event.all } }
@@ -12,6 +13,12 @@ class EventsController < ApplicationController
       end
     end
 
+  end
+
+  def place_id
+    respond_to do |format|
+      format.json {  render json: Event.where(place_id: params[:place_id]).all}
+    end
   end
 
   private

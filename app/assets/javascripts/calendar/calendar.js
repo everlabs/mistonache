@@ -17,6 +17,14 @@ $('.events.index').ready(function () {
         displayWeekAbbr: true
     });
 
+    $('.place-filter > .place-name').click(function (event) {
+        var placeId = $(this).data('place-id');
+
+        $.get('/events/place/' + placeId + '.json')
+            .done(function(queriedEvents) {
+                $('div.events').html(getEventsTemplate(queriedEvents));
+            });
+    });
 
     var $month = $('#custom-month').html(cal.getMonthName());
     var $year = $('#custom-year').html(cal.getYear());
@@ -63,7 +71,7 @@ $('.events.index').ready(function () {
     function renderEvents(date) {
         $('div.events').html(getEventsTemplate(events.filter(function (event) {
             var startDate = new Date(event.start_date);
-            startDate.getDay() === date.getDay() && console.log(startDate, date);
+
             return  startDate.getDate() == date.getDate() &&
                     startDate.getFullYear() == date.getFullYear() &&
                     startDate.getMonth() == date.getMonth();
