@@ -291,6 +291,9 @@
 
     &-name {
       @extend .link;
+      font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
+      font-weight: 600;
+      line-height: 30px;
     }
   }
 }

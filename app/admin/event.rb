@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
 
-  permit_params :title, :description, :start_date, :image
+  permit_params :title, :description, :start_date, :image, :place_id
 
   controller do
     def new
@@ -13,6 +13,7 @@ ActiveAdmin.register Event do
       f.input :image, as: :file
       f.input :title
       f.input :description
+      f.input :place
       f.input :start_date
     end
     f.actions
@@ -24,6 +25,7 @@ ActiveAdmin.register Event do
       image_tag event.image.url(:thumb)
     end
     column 'Заголовок', :title
+    column 'Місце', :place
     column 'Текст', :description do |event|
       truncate(event.description, length: 300, escape: false)
     end
@@ -38,6 +40,7 @@ ActiveAdmin.register Event do
         image_tag event.image.url(:thumb)
       end
       row 'Заголовок', :title
+      row 'Місце', :place
       row 'Текст', :description
       row 'Дата початку', :start_date
     end
