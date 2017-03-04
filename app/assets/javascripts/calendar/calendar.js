@@ -13,9 +13,8 @@ $('.events.index').ready(function () {
         onDayClick: function ($el, $contentEl, dateProperties) {
             $contentEl.length > 0 && renderEvents(new Date([dateProperties.year, dateProperties.month, dateProperties.day].join('-')));
         },
-        // caldata: codropsEvents,
         displayWeekAbbr: true,
-        weekabbrs : ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'нд'],
+        weekabbrs : ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
         months : [
             "cічень", "лютий", "березень", "квітень", "травень", "червень",
             "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"

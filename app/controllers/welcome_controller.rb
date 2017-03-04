@@ -7,6 +7,10 @@ class WelcomeController < ApplicationController
     @announcements = Announcement.order(visits: :desc).limit(4).all
   end
 
+  def pro_che
+    
+  end
+
   private
 
   def gallery

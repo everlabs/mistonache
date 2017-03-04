@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#home'
+  get 'pro_che' => 'welcome#pro_che'
 
   get '/events/place/:place_id', to: 'events#place_id'
 
