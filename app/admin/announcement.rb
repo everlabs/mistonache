@@ -38,14 +38,14 @@ ActiveAdmin.register Announcement do
    actions
  end
 
- show do
-   attributes_table do
-     row :id
-     row 'Заголовок', :title
-     row :main_image do
-     end
-     row :admin_user_id
-   end
- end
+ # show do
+ #   attributes_table do
+ #     row :id
+ #     row 'Заголовок', :title
+ #     row :main_image do
+ #     end
+ #     row :admin_user_id
+ #   end
+ # end
 
 end

@@ -1,10 +1,10 @@
 <div class="col-lg-7">
   <div class="row events">
-    <%= render partial: 'event', collection: @events %>
+    <%= render @events %>
   </div>
 </div>
 <div class="col-lg-3">
-  <%= render partial: 'event_controls' %>
-  <%= render partial: 'shared/right_bar/banner' %>
-  <%= render partial: 'shared/right_bar/facebook' %>
+  <%= render 'event_controls' %>
+  <%= render 'shared/right_bar/banner' %>
+  <%= render 'shared/right_bar/facebook' %>
 </div>

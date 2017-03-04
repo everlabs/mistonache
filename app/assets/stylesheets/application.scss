@@ -233,6 +233,12 @@ ul hr:last-child {
   &:after {
     @extend .horizontal-divider;
   }
+  .announcement-next {
+    text-align: right;
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 .weather {

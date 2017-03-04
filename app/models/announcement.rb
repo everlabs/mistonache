@@ -9,4 +9,8 @@ class Announcement < ApplicationRecord
   belongs_to :category
 
   mount_uploader :main_image, MainImageUploader
+
+  def to_param
+    id.to_s + '-' + Russian.translit(title).parameterize
+  end
 end

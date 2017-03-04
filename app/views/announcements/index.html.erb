@@ -9,7 +9,8 @@
           </div>
           <div class="col-lg-8">
             <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
-            <div class="announcement-body"><%= raw announcement.body.truncate(400) %></div>
+            <div class="announcement-body"><%= raw strip_tags(announcement.body).truncate(400) %></div>
+            <div class="announcement-next"><%= link_to 'Читати далі »', announcement %></div>
             <span class="announcement-author">
             <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %>
           </span>

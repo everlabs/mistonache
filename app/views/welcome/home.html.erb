@@ -137,7 +137,8 @@
             <%= link_to image_tag(announcement.main_image.url(:large)), announcement %>
           </div>
           <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
-          <div class="announcement-body"><%= truncate(announcement.body.html_safe, length: 300, escape: false) %></div>
+          <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 300, escape: false) %></div>
+          <div class="announcement-next"><%= link_to 'Читати далі »', announcement %></div>
           <span class="announcement-author">
             <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %>
           </span>
