@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
   get 'pro_che' => 'welcome#pro_che'
+  get 'kinoshot' => 'welcome#kinoshot'
 
   get '/events/place/:place_id', to: 'events#place_id'
 

@@ -8,7 +8,9 @@ class WelcomeController < ApplicationController
   end
 
   def pro_che
-    
+  end
+
+  def kinoshot
   end
 
   private

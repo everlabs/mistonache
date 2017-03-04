@@ -51,7 +51,7 @@
         <li class="nav-menu-divider">//</li>
         <li><a href="#">Наша команда</a></li>
         <li class="nav-menu-divider">//</li>
-        <li><a href="#">КіноШот</a></li>
+        <li><%= link_to 'КіноШот', kinoshot_path %></li>
         <li class="nav-menu-divider">//</li>
         <li>МАТ</li>
         <li class="nav-menu-divider">//</li>
@@ -68,9 +68,11 @@
     </header>
     <div id="content" class="main-container">
       <div class="row content-bg">
-        <div class="col-lg-2">
-          <%= render 'shared/novelties' %>
-        </div>
+        <% if controller.action_name != 'kinoshot' %>
+          <div class="col-lg-2">
+            <%= render 'shared/novelties' %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>

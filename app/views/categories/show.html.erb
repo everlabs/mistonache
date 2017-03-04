@@ -4,7 +4,7 @@
   <% @announcements.each do |article| %>
       <div class="category-article">
         <h3><%= link_to article.title, article%></h3>
-        <div class="body"><%= truncate(article.body.html_safe, length: 300, escape: false) %></div>
+        <div class="body"><%= raw strip_tags(article.body).truncate(300) %></div>
         <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
         <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.created_at, format: :short %></p>
       </div>
