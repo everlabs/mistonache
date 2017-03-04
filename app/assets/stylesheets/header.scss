@@ -29,14 +29,16 @@
     margin-right: -100px !important;
   }
 
-  .nav {
+  .nav-menu {
     float: left;
     margin-left: 60px;
     margin-top: 20px;
 
     li {
       float: left;
-      margin-right: 15px;
+      margin-right: 12px;
+      font: 20px 'Narbut_Narrow_Contrast', sans-serif;
+      color: #CCCCCC;
     }
 
     li:last-child {
@@ -44,7 +46,6 @@
     }
 
     li a {
-      font: 20px 'Narbut_Narrow_Contrast', sans-serif;
       color: #000;
     }
 

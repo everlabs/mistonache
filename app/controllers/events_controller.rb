@@ -15,6 +15,10 @@ class EventsController < ApplicationController
 
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def place_id
     respond_to do |format|
       format.json {  render json: Event.where(place_id: params[:place_id]).all}

@@ -9,6 +9,7 @@
 </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
+<div id="modal-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
 <div id="fb-root"></div>
 <div class="background">
   <div class="wrapper">
@@ -35,27 +36,27 @@
       <div class="logo"><%= link_to '', root_path %></div>
       <iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
       <div class="divider-nav"></div>
-      <ul class="nav">
+      <ul class="nav-menu">
         <li>
           <%= link_to root_path do %>
               <i class="fa fa-home" aria-hidden="true"></i>
           <% end %>
         </li>
-        <li class="nav-divider">//</li>
-        <li><%= link_to 'Новини', announcements_path %></li>
-        <li class="nav-divider">//</li>
+        <li class="nav-menu-divider">//</li>
+        <li><%= link_to 'Публікації', announcements_path %></li>
+        <li class="nav-menu-divider">//</li>
         <li><a href="#">Для гостей</a></li>
-        <li class="nav-divider">//</li>
+        <li class="nav-menu-divider">//</li>
         <li><%= link_to 'Афіша', events_path %></li>
-        <li class="nav-divider">//</li>
+        <li class="nav-menu-divider">//</li>
         <li><a href="#">Наша команда</a></li>
-        <li class="nav-divider">//</li>
+        <li class="nav-menu-divider">//</li>
         <li><a href="#">КіноШот</a></li>
-        <li class="nav-divider">//</li>
-        <li><a href="#">МАТ</a></li>
-        <li class="nav-divider">//</li>
-        <li><a href="#">Медіа</a></li>
-        <li class="nav-divider">//</li>
+        <li class="nav-menu-divider">//</li>
+        <li>МАТ</li>
+        <li class="nav-menu-divider">//</li>
+        <li>Медіа</li>
+        <li class="nav-menu-divider">//</li>
       </ul>
       <div class="search">
         <input type="text" placeholder="Пошук...">
@@ -65,10 +66,10 @@
       </div>
       <div class="solid-divider"></div>
     </header>
-    <div id="content" class="container">
-      <div class="row">
+    <div id="content" class="main-container">
+      <div class="row content-bg">
         <div class="col-lg-2">
-          <%= render partial: 'shared/novelties' %>
+          <%= render 'shared/novelties' %>
         </div>
         <%= yield %>
       </div>

@@ -1,0 +1,19 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Static version of css will use Glyphicons sprites by default
+  =require twitter-bootstrap-static/sprites
+*/
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.modal-content {
+  border-radius: 0;
+}

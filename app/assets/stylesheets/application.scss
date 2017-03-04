@@ -13,6 +13,8 @@
  * require_tree .
  *= require_self
  */
+
+@import "twitter-bootstrap-static/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'layers';
@@ -33,9 +35,6 @@
 @import "calendario/calendar";
 @import "calendario/custom_2";
 
-@import "bootstrap_variables";
-@import "bootstrap-grid";
-
 @import "fonts";
 @import "configuration";
 
@@ -44,6 +43,7 @@
 @import "announcements";
 @import "galleries";
 @import "events";
+@import "bootstrap_and_overrides";
 
 div.background {
   min-height: 100%;
@@ -64,6 +64,10 @@ div.wrapper {
 #content {
   background: $white;
   padding-top: 50px;
+  .content-bg {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   .galleries-slider {
     .carousel-slider {

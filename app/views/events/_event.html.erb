@@ -1,5 +1,5 @@
 <div class="col-lg-3 event">
-  <%= image_tag event.image.url(:medium), class: 'event-poster' %>
+  <%= link_to (image_tag event.image.url(:medium)), event, {:remote => true, class: 'event-poster', 'data-toggle' =>  'modal', 'data-target' => '#modal-window'} %>
   <h3 class="event-title"><%= event.title %></h3>
   <span class="event-inscription">
     <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l event.start_date, format: :short %>

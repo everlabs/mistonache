@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require jquery.mCustomScrollbar.concat.min

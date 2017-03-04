@@ -1,0 +1,6 @@
+$("#modal-window").html("<%= escape_javascript(render 'shared/modal_window') %>");
+$('.modal-title').text('<%= @event.title %>');
+$('.modal-body .image').html('<%= image_tag @event.image_url(:medium) %>');
+$('.modal-body .description').text('<%= escape_javascript @event.description %>');
+$('.modal-body .start_date').html('<i class="fa fa-clock-o" aria-hidden="true"></i> <%= l @event.start_date, format: :short %>');
+$('.modal-body .place').html('<i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.place.name %>');

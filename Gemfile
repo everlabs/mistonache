@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'twitter-bootstrap-rails'
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
