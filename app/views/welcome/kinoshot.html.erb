@@ -1,5 +1,17 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-md-1"></div>
+  <div class="col-md-8 kinoshot-announcements">
+    <%= '<h1>Останні новини фестивалю</h1>'.html_safe if @announcements.any? %>
+    <% @announcements.each do |announcement| %>
+      <h3><span><%= l announcement.published_at, format: :short %></span> <%= link_to announcement.title, announcement_path(announcement) %></h3>
+    <% end %>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
     <div class="kinoshot-logo"></div>
     <div class="kinoshot-container">
       <div class="fest-info"><strong>Літо 2017</strong></div>
@@ -49,4 +61,5 @@
       </div>
     </div>
   </div>
+  <div class="col-lg-1"></div>
 </div>

@@ -8,10 +8,13 @@
   background-size: cover;
 }
 
-.kinoshot-container {
-  width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.kinoshot-announcements {
+  span {
+    color: #CCCCCC;
+  }
+  a {
+    color: #2E2F30;
+  }
 }
 
 .fest-info {
