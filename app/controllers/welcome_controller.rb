@@ -4,13 +4,24 @@ class WelcomeController < ApplicationController
   before_action :banners
 
   def home
-    @announcements = Announcement.order(visits: :desc).limit(4).all
+    @announcements = Announcement.main_feed
   end
 
   def pro_che
   end
 
+  def pro_go
+    @announcements = Announcement.go_feed
+    @people = Person.all
+    @teams = @people.group_by(&:category).sort.reverse
+  end
+
+  def person
+    @person = Person.find(params[:id])
+  end
+
   def kinoshot
+    @announcements = Announcement.kinoshot_feed
   end
 
   private

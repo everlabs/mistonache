@@ -49,7 +49,7 @@
         <li class="nav-menu-divider">//</li>
         <li><%= link_to 'Афіша', events_path %></li>
         <li class="nav-menu-divider">//</li>
-        <li><a href="#">Наша команда</a></li>
+        <li><%= link_to 'Наша команда', pro_go_path %></li>
         <li class="nav-menu-divider">//</li>
         <li><%= link_to 'КіноШот', kinoshot_path %></li>
         <li class="nav-menu-divider">//</li>
@@ -68,7 +68,7 @@
     </header>
     <div id="content" class="main-container">
       <div class="row content-bg">
-        <% if controller.action_name != 'kinoshot' %>
+        <% unless ['kinoshot'].include? controller.action_name %>
           <div class="col-lg-2">
             <%= render 'shared/novelties' %>
           </div>
@@ -76,13 +76,7 @@
         <%= yield %>
       </div>
     </div>
-    <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <span class="copyright">&copy; Місто на [ЧЕ]</span>
-        </div>
-      </div>
-    </footer>
+    <%= render '/layouts/footer' %>
   </div>
 </div>
 </body>

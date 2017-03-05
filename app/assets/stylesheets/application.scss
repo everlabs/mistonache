@@ -184,10 +184,22 @@ ul hr:last-child {
 
 #footer {
   background-color: #000000;
-  color: $white;
-
-  .copyright {
-    margin: 20px auto;
+  color: #CCCCCC;
+  padding: 20px;
+  font-family: Helvetica, Arial;
+  font-size: 12px;
+  .logo {
+    display: block;
+    background: url("logo-white.png") no-repeat;
+    width: 250px;
+    height: 51px;
+    background-size: cover;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  a {
+    color: #cccccc;
+    text-decoration: underline;
   }
 }
 
@@ -293,5 +305,15 @@ ul hr:last-child {
 .announcement .title {
   color: #000000;
   font: 20px 'Bookman_Old_Style_Bold', sans-serif;
+}
+
+.team {
+  text-align: center;
+  .photo {
+    img {
+      margin-bottom: 10px;
+      max-width: 100%;
+    }
+  }
 }
 

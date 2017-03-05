@@ -3,7 +3,8 @@ ActiveAdmin.register Announcement do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
- permit_params :title, :body, :admin_user_id, :main_image, :category_id, :static
+ permit_params :title, :body, :admin_user_id, :main_image, :category_id, :static, :main_feed, :announcements_feed,
+               :go_feed, :kinoshot_feed, :published_at
 
   controller do
     def new
@@ -15,11 +16,16 @@ ActiveAdmin.register Announcement do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :static, as: :radio
+      f.input :main_feed, label: 'На главной странице'
+      f.input :announcements_feed, label: 'В новостях'
+      f.input :go_feed, label: 'В ГО (наша команда)'
+      f.input :kinoshot_feed, label: 'Киношот'
+      f.input :static, label: 'Показывать в слайдере'
       f.input :category
       f.input :body, as: :ckeditor
       f.input :main_image, as: :file
       f.input :admin_user_id, as: :hidden
+      f.input :published_at
     end
     f.actions
   end
@@ -34,7 +40,7 @@ ActiveAdmin.register Announcement do
      truncate(announcement.body, length: 300, escape: false)
    end
    column 'Автор', :admin_user_id
-   column 'Дата створення', :created_at
+   column 'Опубліковано', :published_at
    actions
  end
 

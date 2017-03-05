@@ -1,9 +1,9 @@
 <h5 class="section-header">
-  <span>Публікації</span>
+  <span><%= title %></span>
 </h5>
 <div class="aside-section">
   <ul>
-    <% @latest_announcements.each do |announcement| %>
+    <% @announcements.each do |announcement| %>
         <li class="announcement">
           <div class="announcement-image">
             <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>
@@ -16,7 +16,7 @@
                       </span>
             <span class="announcement-category">
                         <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
-              <%= link_to announcement.category.name, announcement.category %>
+              <%= link_to announcement.category.name, announcement.category if announcement.category %>
                       </span>
             <span class="announcement-date">
                         <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;

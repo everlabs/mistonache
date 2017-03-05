@@ -6,20 +6,17 @@
 
   .logo {
     width: 500px;
-    height: 100px;
+    height: 102px;
     float: left;
     margin-left: 60px;
     margin-top: 45px;
-    background: url("logo.png") no-repeat;
+    background: url("logo-black.png") no-repeat;
     background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
 
     a {
       display: block;
       width: 500px;
-      height: 100px;
+      height: 102px;
     }
   }
 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'
+  get 'pro-go' => 'welcome#pro_go'
 
   get '/events/place/:place_id', to: 'events#place_id'
 
@@ -16,4 +17,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :galleries, only: :show
   resources :events, only: [:index, :show]
+
+  get 'pro-go/announcements', to: 'announcements#go_announcements', as: 'go_announcements'
+  get 'pro-go/persons/:id', to: 'welcome#person', as: 'persons'
 end
