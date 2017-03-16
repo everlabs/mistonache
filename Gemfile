@@ -35,7 +35,7 @@ gem 'ckeditor'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
-gem 'fog', '1.38.0'
+# gem 'fog', '1.38.0'
 gem 'open-weather'
 gem 'will_paginate'
 
