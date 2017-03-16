@@ -69,4 +69,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'russian', '~> 0.6.0'
 
-ruby '2.3.0'
+# ruby '2.3.0'
