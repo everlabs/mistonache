@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :repo_url, 'git@github.com:RoRElessar/mistonache.git'
+set :repo_url, 'git@github.com:everlabs/mistonache.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :user, 'deployer'
