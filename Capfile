@@ -37,5 +37,6 @@ require 'capistrano/rails/db'
 require 'capistrano/rails/console'
 require 'capistrano/upload-config'
 require 'sshkit/sudo'
+require 'whenever/capistrano'
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
