@@ -18,6 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :output, 'log/whenever.log'
+
 every 30.minutes do
   rake 'news_parser:parse_news'
 end
