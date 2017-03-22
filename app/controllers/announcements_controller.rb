@@ -1,7 +1,8 @@
 class AnnouncementsController < ApplicationController
 
+  before_action :put_announcements, only: [:index, :show]
+
   def index
-    @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -18,4 +19,9 @@ class AnnouncementsController < ApplicationController
     announcement.update_attribute(:visits, announcement.visits + 1)
   end
 
+  private
+
+  def put_announcements
+    @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 3)
+  end
 end
