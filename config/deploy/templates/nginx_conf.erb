@@ -22,9 +22,8 @@ server {
 <% if fetch(:nginx_use_ssl) %>
   listen 443;
   ssl on;
-  ssl_certificate
-    ssl_certificate /etc/letsencrypt/live/mistoche.org.ua/fullchain1.pem;
-    ssl_certificate_key /etc/letsencrypt/live/mistoche.org.ua/privkey1.pem;
+    ssl_certificate /etc/letsencrypt/live/mistoche.org.uafullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mistoche.org.ua/privkey.pem;
 <% else %>
   listen 80;
 <% end %>
