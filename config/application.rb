@@ -12,6 +12,9 @@ module Mistonache
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.assets.paths << Rails.root.join("app", "assets")
+    config.assets.paths << Rails.root.join("public", "assets")
+
     config.time_zone = Time.now.zone
     config.i18n.default_locale = :uk
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)

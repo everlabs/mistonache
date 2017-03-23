@@ -5,8 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.assets.precompile += ['active_admin.css']
-  
-  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
