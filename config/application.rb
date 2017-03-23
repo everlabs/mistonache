@@ -14,9 +14,6 @@ module Mistonache
     # -- all .rb files in that directory are automatically loaded.
 
 
-    config.assets.enabled = true
-    config.assets.paths << Rails.root.join("public", "assets")
-
 
     config.time_zone = Time.now.zone
     config.i18n.default_locale = :uk
