@@ -20,13 +20,14 @@ server {
 
 server {
 <% if fetch(:nginx_use_ssl) %>
-  listen 443;
-  ssl on;
-    ssl_certificate /etc/letsencrypt/live/mistoche.org.ua/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/mistoche.org.ua/privkey.pem;
+    listen 443;
+    ssl on;
+    ssl_certificate /etc/letsencrypt/live/guitarheaven-geekhub-shop.tk/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/guitarheaven-geekhub-shop.tk/privkey.pem;
 <% else %>
-  listen 80;
+    listen 80;
 <% end %>
+
 
   client_max_body_size 4G;
   keepalive_timeout 10;
