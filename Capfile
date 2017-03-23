@@ -25,7 +25,8 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
-#
+load 'deploy/assets'
+
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/nginx'
