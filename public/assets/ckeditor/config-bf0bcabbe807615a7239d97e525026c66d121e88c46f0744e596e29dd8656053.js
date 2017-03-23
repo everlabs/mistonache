@@ -1,0 +1,1 @@
+CKEDITOR.editorConfig=function(e){e.filebrowserFlashUploadUrl="/ckeditor/attachment_files",e.filebrowserImageUploadUrl="/ckeditor/pictures",e.filebrowserUploadUrl="/ckeditor/attachment_files"};
