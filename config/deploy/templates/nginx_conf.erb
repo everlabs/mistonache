@@ -14,15 +14,13 @@ upstream puma_<%= fetch(:nginx_config_name) %> { <%
 <% if fetch(:nginx_use_ssl) %>
     server {
     listen 80;
-    listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/mistoche.org.ua/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/mistoche.org.ua/privkey.pem;
-    rewrite ^(.*) https://<%= fetch(:nginx_server_name) %>$1 permanent; }
+    rewrite ^(.*) https://$host$1 permanent;
+    }
 <% end %>
 
 server {
 <% if fetch(:nginx_use_ssl) %>
-    listen 443 ssl;
+    listen 443;
     ssl on;
     ssl_certificate /etc/letsencrypt/live/mistoche.org.ua/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/mistoche.org.ua/privkey.pem;
