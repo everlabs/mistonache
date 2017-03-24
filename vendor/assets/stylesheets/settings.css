@@ -13,11 +13,11 @@ website:   	http://www.themepunch.com
 
 @font-face {
     font-family: 'revicons';
-    src: url('../fonts/revicons/revicons.eot?5510888');
-    src: url('../fonts/revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
-    url('../fonts/revicons/revicons.woff?5510888') format('woff'),
-    url('../fonts/revicons/revicons.ttf?5510888') format('truetype'),
-    url('../fonts/revicons/revicons.svg?5510888#revicons') format('svg');
+    src: asset-url('../fonts/revicons/revicons.eot?5510888');
+    src: asset-url('../fonts/revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
+    asset-url('../fonts/revicons/revicons.woff?5510888') format('woff'),
+    asset-url('../fonts/revicons/revicons.ttf?5510888') format('truetype'),
+    asset-url('../fonts/revicons/revicons.svg?5510888#revicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -385,11 +385,11 @@ website:   	http://www.themepunch.com
 
 /* CAROUSEL FUNCTIONS */
 .tp-carousel-wrapper {
-    cursor: url(openhand.cur), move;
+    cursor: asset-url('openhand.cur'), move;
 }
 
 .tp-carousel-wrapper.dragged {
-    cursor: url(closedhand.cur), move;
+    cursor: asset-url('closedhand.cur'), move;
 }
 
 /* ADDED FOR SLIDELINK MANAGEMENT */
@@ -781,19 +781,19 @@ img.tp-slider-alternative-image {
 }
 
 .tp-dottedoverlay.twoxtwo {
-    background: url(../assets/gridtile.png)
+    background: asset-url('../assets/gridtile.png')
 }
 
 .tp-dottedoverlay.twoxtwowhite {
-    background: url(../assets/gridtile_white.png)
+    background: url('../assets/gridtile_white.png')
 }
 
 .tp-dottedoverlay.threexthree {
-    background: url(../assets/gridtile_3x3.png)
+    background: url('../assets/gridtile_3x3.png')
 }
 
 .tp-dottedoverlay.threexthreewhite {
-    background: url(../assets/gridtile_3x3_white.png)
+    background: url('../assets/gridtile_3x3_white.png')
 }
 
 /******************************
@@ -1391,11 +1391,11 @@ img.tp-slider-alternative-image {
 .tp-caption.slidelink a div {
     width: 3000px;
     height: 1500px;
-    background: url(../assets/coloredbg.png) repeat
+    background: asset-url('../assets/coloredbg.png') repeat
 }
 
 .tp-caption.slidelink a span {
-    background: url(../assets/coloredbg.png) repeat
+    background: asset-url('../assets/coloredbg.png') repeat
 }
 
 .tp-shape {
@@ -1484,7 +1484,7 @@ img.tp-slider-alternative-image {
     width: 40px;
     height: 40px;
     background-color: #fff;
-    background: url(../assets/loader.gif) no-repeat center center;
+    background: asset-url('../assets/loader.gif') no-repeat center center;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
     margin-top: -20px;
@@ -1512,7 +1512,7 @@ img.tp-slider-alternative-image {
 }
 
 .tp-loader.spinner5 {
-    background: url(../assets/loader.gif) no-repeat 10px 10px;
+    background: asset-url('../assets/loader.gif') no-repeat 10px 10px;
     background-color: #fff;
     margin: -22px -22px;
     width: 44px;
