@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  * require_tree .
+//= require settings
  *= require_self
  */
 
@@ -20,7 +21,6 @@
 @import 'layers';
 @import 'navigation';
 @import 'pe-icon-7-stroke';
-@import 'settings';
 @import "weather/weather-icons";
 @import "weather/weather-icons.min";
 @import "weather/weather-icons-wind";
