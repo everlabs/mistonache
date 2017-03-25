@@ -9,7 +9,9 @@
 </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
-<div id="modal-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+<div id="modal-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <%= render 'shared/modal_window'%>
+</div>
 <div id="fb-root"></div>
 <div class="background">
   <div class="wrapper">
