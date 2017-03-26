@@ -9,7 +9,6 @@ ActiveAdmin.register Announcement do
   controller do
     def new
       @announcement = Announcement.new
-      @announcement.admin_user_id = current_admin_user.id
     end
   end
 
@@ -24,7 +23,7 @@ ActiveAdmin.register Announcement do
       f.input :category
       f.input :body, as: :ckeditor
       f.input :main_image, as: :file
-      f.input :admin_user_id, as: :hidden
+      f.input :admin_user
       f.input :published_at
     end
     f.actions
