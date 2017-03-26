@@ -93,7 +93,7 @@ $('.events.index').ready(function () {
 
     function getEventTemplate(event) {
         return '<div class="col-lg-3 event">' +
-            ' <a class="event-poster" data-toggle="modal" data-target="#modal-window" data-remote="true" href="'+ event.url +'">' +
+            ' <a class="event-poster" data-toggle="modal" data-target="#modal-window" data-remote="true" href="events/'+ event.id +'">' +
             '<img src="' + event.image.medium.url + '" alt="Medium biggest 30">'+ '</a>'+
             '   <h3 class="event-title">' + event.title + '</h3>' +
             '   <span class="event-inscription">' +
