@@ -27,6 +27,7 @@ $('.events.index').ready(function () {
         $.get('/events/place/' + placeId + '.json')
             .done(function(queriedEvents) {
                 $('div.events').html(getEventsTemplate(queriedEvents));
+
             });
     });
 
@@ -92,7 +93,8 @@ $('.events.index').ready(function () {
 
     function getEventTemplate(event) {
         return '<div class="col-lg-3 event">' +
-            '   <img class="event-poster" src="' + event.image.medium.url + '" alt="Medium poster">' +
+            ' <a class="event-poster" data-toggle="modal" data-target="#modal-window" data-remote="true" href="'+ event.url +'">' +
+            '<img src="' + event.image.medium.url + '" alt="Medium biggest 30">'+ '</a>'+
             '   <h3 class="event-title">' + event.title + '</h3>' +
             '   <span class="event-inscription">' +
             '       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;' +
