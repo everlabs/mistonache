@@ -1,7 +1,7 @@
 <% provide(:title, 'Афіша') %>
 <div class="col-lg-7">
   <div class="row events">
-    <%= render @events %>
+    <%= render @events.by_date_of_event %>
   </div>
 </div>
 <div class="col-lg-3">

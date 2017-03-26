@@ -12,6 +12,8 @@ class Event < ApplicationRecord
     where('extract(year from start_date) = ? and extract(month from start_date) = ?', year, month)
   end
 
+  scope :by_date_of_event, -> { order("start_date ASC") }
+
   private
   
   def set_default_time
