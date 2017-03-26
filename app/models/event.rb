@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   belongs_to :place
 
   validates :image, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
   mount_uploader :image, EventPosterUploader
   after_initialize :set_default_time, if: :new_record?
 
