@@ -31,7 +31,7 @@
                               class: 'rev-slidebg') %>
                 <!-- LAYERS -->
                 <!-- LAYER NR. 1 -->
-                <div rezerv=""
+                <div
                 id="slide-129-layer-3-<%= index %>"
                       class="tp-caption tp-shape tp-shapewrapper  tp-resizeme rs-parallaxlevel-0"
                      data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -48,7 +48,7 @@
                      style="z-index: 5; background-color:rgba(0, 0, 0, 0.35); border-color:rgba(0, 0, 0, 1.00);">
                 </div>
                 <!-- LAYER NR. 2 -->
-                <div rezerv=""
+                <div
                 id="slide-129-layer-1-<%= index %>"
                       class="tp-caption announcement-body tp-resizeme rs-parallaxlevel-0"
                      data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
@@ -67,10 +67,12 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on"
-                     style="z-index: 6; white-space: normal;"><%= truncate(announcement.body, length: 100, escape: false) %>
+                     style="z-index: 6; white-space: normal;
+                         color: white;
+                         font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;"><%= truncate(announcement.body, length: 100, escape: false) %>
                 </div>
                 <!-- LAYER NR. 3 -->
-                <div rezerv=""
+                <div
                 id="slide-129-layer-2-<%= index %>"
                      class="tp-caption announcement-title tp-resizeme rs-parallaxlevel-0"
                      data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
@@ -86,7 +88,19 @@
                      data-splitin="none"
                      data-splitout="none"
                      data-responsive_offset="on"
-                     style="z-index: 7"><%= truncate(announcement.title, length: 25) %>
+                     style="display: block;
+                         color: rgb(143, 204, 204);
+                         font: 40px 'Narbut_Whirl', sans-serif !important;
+                         line-height: 40px !important;
+                         white-space: normal !important;
+                         width: 420px !important;
+                         padding: 0 0 10px;
+                         text-decoration: none;
+                         background-color: transparent;
+                         border: 0 none transparent;
+                         border-radius: 0 0 0 0;
+                         text-align: left;
+                         text-transform: uppercase;"><%= truncate(announcement.title, length: 25) %>
                 </div>
                 <!-- LAYER NR. 4 -->
                 <div id="slide-129-layer-5-<%= index %>"
