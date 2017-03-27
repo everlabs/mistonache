@@ -15,7 +15,7 @@
 </div>
 <div class="aside-section">
   <ul class="place-filter">
-    <% @places.each do |place| %>
+    <% @places.by_name.each do |place| %>
       <li class="place-name" data-place-id="<%= place.id %>">
         <h3><%= place.name %></h3>
       </li>
