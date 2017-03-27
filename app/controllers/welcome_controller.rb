@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
   def pro_go
     @announcements = Announcement.go_feed
     @people = Person.all
-    @teams = @people.group_by(&:category).sort.reverse
+    @teams = @people.group_by(&:person_category_id).sort
   end
 
   def person

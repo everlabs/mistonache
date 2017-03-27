@@ -111,10 +111,23 @@ div.wrapper {
 .top-slider {
   margin-bottom: 15px;
   .announcement-title {
-
+    display: block;
+    color: #a8d8ee;
+    font: 30px 'Narbut_Whirl', sans-serif !important;
+    line-height: 40px !important;
+    white-space: normal !important;
+    width: 420px !important;
+    padding: 0 0 10px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0 none transparent;
+    border-radius: 0 0 0 0;
+    text-align: left;
+    text-transform: uppercase;
   }
   .announcement-body {
-
+    color: $white;
+    font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
   }
 }
 
