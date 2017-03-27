@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title_helper
-    base_name = 'Misto-na-4e'
+    base_name = 'Mісто на "Че"'
     if content_for?(:title)
       content_for(:title) + ' | ' + base_name
     else
