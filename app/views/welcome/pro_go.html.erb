@@ -8,7 +8,7 @@
   <% @teams.each do |team| %>
     <div class="row team">
       <div class="col-md-12">
-        <h2 class="title"><%= team[0] %></h2>
+        <h2 class="title"><%= PersonCategory.find_by_num_of_place(team[0]).name %></h2>
         <% team[1].each_with_index do |person, index| %>
             <%= raw('<div class="row">') if index % 4 == 0 %>
             <div class="col-md-3">
