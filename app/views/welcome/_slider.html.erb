@@ -6,15 +6,13 @@
         <div class="item <%= 'active' if index == 0 %>">
           <%= image_tag(announcement.main_image.url(:slider), class:'slide-image' ) %>
           <div class="carousel-caption slide-text">
-            <h2 class="announcement-title" ><%= truncate(announcement.title, length: 40) %></h2>
-            <p class="announcement-body"><%= truncate(announcement.body, length: 80, escape: false) %></p>
+            <h2 class="announcement-title" ><%= announcement.title %></h2>
             <%= link_to 'Дізнатися більше', announcement_path(announcement), class:'slider-button' %>
-
           </div>
         </div>
     <% end %>
   </div>
- <% if @announcements.count > 1 %>
+ <% if @announcements.static.count > 1 %>
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
