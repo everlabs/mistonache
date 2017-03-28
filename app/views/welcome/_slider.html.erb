@@ -18,8 +18,8 @@
                   data-fsmasterspeed="1500"
                   data-fsslotamount="7"
                   data-saveperformance="off"
-                  data-title="<%= announcement.title %>"
-                  data-description="<%= truncate(strip_tags(announcement.body), length: 50, escape: false) %>">
+                  data-title=""
+                  data-description="">
                 <!-- MAIN IMAGE -->
                 <%= image_tag(announcement.main_image,
                               alt: '',
@@ -66,7 +66,7 @@
                 data-splitin="none"
                 data-splitout="none"
                 data-responsive_offset="on"
-                style="z-index: 6; white-space: normal;"><%= truncate(strip_tags(announcement.body), length: 100, escape: false) %>
+                style="z-index: 6; white-space: normal;">
                 </div>
                 <!-- LAYER NR. 3 -->
                 <div
@@ -85,7 +85,7 @@
                 data-splitin="none"
                 data-splitout="none"
                 data-responsive_offset="on"
-                style="z-index: 7"><%= truncate(announcement.title, length: 25) %>
+                style="z-index: 7"><%= announcement.title %>
                 </div>
                 <!-- LAYER NR. 4 -->
                 <div

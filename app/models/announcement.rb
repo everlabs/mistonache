@@ -1,8 +1,6 @@
 class Announcement < ApplicationRecord
-  validates :title, presence: true
-  validates :body, presence: true
   validates :main_image, presence: true
-  validates :title, presence: true, length: { in: 10..60 }
+  validates :title, presence: true, length: { in: 10..150 }
   validates :body, presence: true, length: { minimum: 150 }
   validates :published_at, presence: true
   validates :category_id, presence: true

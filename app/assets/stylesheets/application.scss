@@ -114,8 +114,8 @@ div.wrapper {
   .announcement-title {
        display: block;
         color: #a8d8ee;
-        font: 30px 'Narbut_Whirl', sans-serif !important;
-        line-height: 40px !important;
+        font: 18px 'Bookman_Old_Style_Bold', sans-serif !important;
+        left: 13px;
         white-space: normal !important;
         width: 420px !important;
         padding: 0 0 10px;
@@ -123,8 +123,8 @@ div.wrapper {
         background-color: transparent;
         border: 0 none transparent;
         border-radius: 0 0 0 0;
-        text-align: left;
         text-transform: uppercase;
+        word-wrap: break-word;
   }
   .announcement-body {
     color: $white;
