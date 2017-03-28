@@ -125,11 +125,10 @@ div.wrapper {
         border-radius: 0 0 0 0;
         text-align: left;
         text-transform: uppercase;
-
-    .announcement-body {
-      color: $white;
-      font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
-    }
+  }
+  .announcement-body {
+    color: $white;
+    font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
   }
 }
 
