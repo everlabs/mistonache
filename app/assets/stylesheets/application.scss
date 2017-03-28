@@ -209,7 +209,8 @@ ul hr:last-child {
 .aside-section {
   margin-bottom: 20px;
 
-  .announcement-sm {
+  .announcement {
+    height: 145px;
     &-image img {
       max-width: 100px;
       float: left;
