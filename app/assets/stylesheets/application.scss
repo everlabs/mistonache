@@ -15,6 +15,7 @@
  */
 
 @import "twitter-bootstrap-static/bootstrap";
+@import 'twitter-bootstrap-static/sprites';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'layers';
@@ -108,27 +109,53 @@ div.wrapper {
   }
 }
 
-.top-slider {
+.boot-slider {
   margin-bottom: 15px;
-  .announcement-title {
-    display: block;
-    color: #a8d8ee;
-    font: 30px 'Narbut_Whirl', sans-serif !important;
-    line-height: 40px !important;
-    white-space: normal !important;
-    width: 420px !important;
-    padding: 0 0 10px;
-    text-decoration: none;
-    background-color: transparent;
-    border: 0 none transparent;
-    border-radius: 0 0 0 0;
+  background: black;
+  .slide-image{
+    opacity: 0.6;
+  }
+  .slide-text{
+    top: 50px !important;
+    left: 100px !important;
     text-align: left;
-    text-transform: uppercase;
+        .announcement-title {
+          display: block;
+          color: #a8d8ee;
+          font: 20px 'Narbut_Whirl', sans-serif !important;
+          line-height: 40px !important;
+          white-space: normal !important;
+          width: 420px !important;
+
+          text-decoration: none;
+          background-color: transparent;
+          border: 0 none transparent;
+          border-radius: 0 0 0 0;
+
+          text-transform: uppercase;
+        }
+    .announcement-body {
+      color: $white;
+      font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
+    }
+    .slider-button{
+      display: block;
+      width: 200px;
+      text-align: center;
+     border: 1px white solid;
+      padding: 10px;
+      color: white;
+      font: 15px 'Bookman_Old_Style_Regular', sans-serif;
+      text-transform: uppercase;
+      margin-top: 20px;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
   }
-  .announcement-body {
-    color: $white;
-    font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
-  }
+
+
 }
 
 .novelties {
