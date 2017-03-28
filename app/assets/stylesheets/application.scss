@@ -210,7 +210,7 @@ ul hr:last-child {
   margin-bottom: 20px;
 
   .announcement {
-
+    height: 520px;
     &-image img {
       max-width: 100px;
       float: left;
@@ -233,6 +233,7 @@ ul hr:last-child {
 
 .announcement {
   margin-bottom: 5px;
+  height: 512px;
   &-author, &-date, &-category {
     @extend .secondary-text;
   }
