@@ -51,9 +51,7 @@ class MainImageUploader < CarrierWave::Uploader::Base
   version :biggest do
     process :resize_to_fill => [800, 500]
   end
-  version :slider do
-    process :resize_to_fill => [730, 300]
-  end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
