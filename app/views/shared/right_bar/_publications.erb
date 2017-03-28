@@ -4,7 +4,7 @@
 <div class="aside-section">
   <ul>
     <% @announcements.each do |announcement| %>
-        <li class="announcement">
+        <li class="announcement-sm">
           <div class="announcement-image">
             <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>
           </div>
