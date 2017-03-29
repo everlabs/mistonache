@@ -5,13 +5,14 @@
     </h5>
   </div>
   <% @announcements.each do |announcement| %>
-      <div class="col-lg-6 announcement top-announcement">
+      <div class="col-lg-6 announcement ">
         <div class="announcement-image">
           <%= link_to image_tag(announcement.main_image.url(:large)), announcement %>
-        </div>
+        </div >
+        <div class='top-announcement'>
         <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
         <% if announcement.title.length > 40 %>
-            <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 80, escape: false) %></div>
+            <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 100, escape: false) %></div>
          <% else %>
             <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 150, escape: false) %></div>
          <% end %>
@@ -26,6 +27,7 @@
         <span class="announcement-date">
             <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.published_at, format: :short %>
           </span>
+        </div>
       </div>
   <% end %>
 </section>
