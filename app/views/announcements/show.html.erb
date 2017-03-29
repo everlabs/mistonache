@@ -28,7 +28,7 @@
 <div class="col-lg-3">
   <% if @announcement.go_feed  %>
       <% @announcements = @go_announcements %>
-      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації ГО' } %>
+      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини ГО' } %>
   <% else %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
   <% end %>
