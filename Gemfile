@@ -31,7 +31,7 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'whenever', :require => false
-gem 'ckeditor'
+gem 'ckeditor', '4.2.0'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
