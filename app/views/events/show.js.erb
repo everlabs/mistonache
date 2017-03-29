@@ -1,5 +1,5 @@
 $('.modal-title').html('<%= @event.title %>');
 $('.modal-body .image').html('<%= image_tag @event.image_url(:big) %>');
-$('.modal-body .description').html('<pre class="event-descr">'+'<%= escape_javascript @event.description %>'+ '</pre>');
+$('.modal-body .description').html('<%= escape_javascript @event.description.html_safe %>');
 $('.modal-body .start_date').html('<i class="fa fa-clock-o" aria-hidden="true"></i> <%= l @event.start_date, format: :short %>');
 $('.modal-body .place').html('<i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.place.name %>');
