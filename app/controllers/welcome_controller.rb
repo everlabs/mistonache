@@ -8,6 +8,12 @@ class WelcomeController < ApplicationController
 
   end
 
+  def history
+  end
+
+  def emblems
+  end
+
   def pro_che
   end
 

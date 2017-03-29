@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#home'
-
+  get 'pro-che/history' => 'welcome#history'
+  get 'pro-che/emblems' => 'welcome#emblems'
   get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'
   get 'pro-go' => 'welcome#pro_go'
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
 
   get 'pro-go/announcements', to: 'announcements#go_announcements', as: 'go_announcements'
   get 'pro-go/persons/:id', to: 'welcome#person', as: 'persons'
+
 end
