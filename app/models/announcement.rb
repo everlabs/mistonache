@@ -13,13 +13,14 @@ class Announcement < ApplicationRecord
 
   mount_uploader :main_image, MainImageUploader
 
-  default_scope { order(:published_at) }
+  default_scope { order(published_at: :desc) }
 
   scope :static, -> { where(static: true) }
   scope :main_feed, -> { where(main_feed: true) }
   scope :announcements_feed, -> { where(announcements_feed: true) }
   scope :go_feed, -> { where(go_feed: true) }
   scope :kinoshot_feed, -> { where(kinoshot_feed: true) }
+
 
   def to_param
     id.to_s + '-' + Russian.translit(title).parameterize

@@ -24,7 +24,7 @@
                                                                            announcement.category if announcement.category %>
           </span>
         <span class="announcement-date">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.created_at, format: :short %>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.published_at, format: :short %>
           </span>
       </div>
   <% end %>
