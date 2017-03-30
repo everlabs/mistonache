@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
       f.input :title
       f.input :description, as: :ckeditor
       f.input :place
-      f.input :start_date
+      f.input :start_date, as: :datetime_picker
     end
     f.actions
   end
