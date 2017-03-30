@@ -15,11 +15,11 @@ ActiveAdmin.register Announcement do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :main_feed, label: 'На главной странице'
-      f.input :announcements_feed, label: 'В новостях'
+      f.input :main_feed, label: 'На головній сторінці'
+      f.input :announcements_feed, label: 'В новинах'
       f.input :go_feed, label: 'В ГО (наша команда)'
-      f.input :kinoshot_feed, label: 'Киношот'
-      f.input :static, label: 'Показывать в слайдере'
+      f.input :kinoshot_feed, label: 'Кіношот'
+      f.input :static, label: 'Показувати в слайдері'
       f.input :category
       f.input :body, as: :ckeditor
       f.input :main_image, as: :file
@@ -36,21 +36,11 @@ ActiveAdmin.register Announcement do
    end
    column 'Заголовок', :title
    column 'Текст', :body do |announcement|
-     truncate(announcement.body, length: 300, escape: false)
+     strip_tags(announcement.body).truncate(300)
    end
    column 'Автор', :admin_user_id
    column 'Опубліковано', :published_at
    actions
  end
-
- # show do
- #   attributes_table do
- #     row :id
- #     row 'Заголовок', :title
- #     row :main_image do
- #     end
- #     row :admin_user_id
- #   end
- # end
 
 end
