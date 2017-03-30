@@ -24,7 +24,7 @@ class WelcomeController < ApplicationController
   def pro_go
     @announcements = Announcement.go_feed
     @people = Person.all
-    @teams = @people.group_by(&:person_category_id).sort
+    @teams = @people.go_person.group_by(&:go_category_id).sort
   end
 
   def person
@@ -33,6 +33,8 @@ class WelcomeController < ApplicationController
 
   def kinoshot
     @announcements = Announcement.kinoshot_feed
+    @people = Person.all
+    @teams = @people.kinoshot_person.group_by(&:kinoshot_category_id).sort
   end
 
   private
