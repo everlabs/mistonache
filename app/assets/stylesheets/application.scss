@@ -332,3 +332,19 @@ ul hr:last-child {
 .go-title{
   text-align: center;
 }
+
+.modal-image{
+  img{
+    margin-bottom: 20px !important;
+    margin-right: 15px !important;
+    margin-left: 20px;
+  }
+  float: left;
+}
+.modal-text{
+ margin-left: 20px;
+  margin-right: 20px;
+}
+.event-info{
+  float: right;
+}

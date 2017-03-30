@@ -18,6 +18,7 @@ class WelcomeController < ApplicationController
   end
 
   def pro_che
+    @gallery = Gallery.limit(1).all[0]
   end
 
   def pro_go
