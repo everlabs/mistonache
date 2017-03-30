@@ -113,7 +113,8 @@ div.wrapper {
   margin-bottom: 15px;
   .announcement-title {
        display: block;
-        color: #a8d8ee;
+        color: $white;
+        text-shadow: $black 0 0 2px;
         font: 18px 'Bookman_Old_Style_Bold', sans-serif !important;
         left: 13px;
         white-space: normal !important;
