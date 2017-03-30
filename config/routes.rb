@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
   get 'pro-che/history' => 'welcome#history'
+  get 'pro-che/video' => 'welcome#video'
   get 'pro-che/emblems' => 'welcome#emblems'
   get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'

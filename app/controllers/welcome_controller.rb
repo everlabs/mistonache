@@ -13,6 +13,9 @@ class WelcomeController < ApplicationController
 
   def emblems
   end
+  def video
+
+  end
 
   def pro_che
   end

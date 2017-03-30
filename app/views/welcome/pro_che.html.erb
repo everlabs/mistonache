@@ -2,13 +2,19 @@
 <div class="col-lg-10">
   <div class="row">
     <div class="col-md-4">
-      <img src="http://placehold.it/320x180">
+      <%=link_to image_tag('video.jpg'), pro_che_video_path, { remote: true,
+                                                                    'data-toggle' =>  'modal',
+                                                                    'data-target' => '#modal-window'}  %>
     </div>
     <div class="col-md-4">
-      <%=link_to image_tag('istoriya.jpg'), pro_che_history_path, remote: true  %>
+      <%=link_to image_tag('istoriya.jpg'), pro_che_history_path, { remote: true,
+                                                                    'data-toggle' =>  'modal',
+                                                                    'data-target' => '#modal-window'}  %>
     </div>
     <div class="col-md-4">
-      <%= link_to image_tag('gerb.jpg'), pro_che_emblems_path, remote: true  %>
+      <%= link_to image_tag('gerb.jpg'), pro_che_emblems_path, { remote: true,
+                                                                 'data-toggle' =>  'modal',
+                                                                 'data-target' => '#modal-window'}   %>
     </div>
   </div>
   <hr>
