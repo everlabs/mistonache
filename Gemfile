@@ -38,6 +38,7 @@ gem 'font-awesome-sass'
 # gem 'fog', '1.38.0'
 gem 'open-weather'
 gem 'will_paginate'
+gem 'just-datetime-picker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

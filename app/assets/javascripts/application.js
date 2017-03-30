@@ -38,6 +38,7 @@
 //= require extensions/revolution.extension.video.min
 // require turbolinks
 //= require ckeditor/init
+//= require just_datetime_picker/nested_form_workaround
 //= require_tree .
 
 $(document).ready( function () {

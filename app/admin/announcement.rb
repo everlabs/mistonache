@@ -24,7 +24,7 @@ ActiveAdmin.register Announcement do
       f.input :body, as: :ckeditor
       f.input :main_image, as: :file
       f.input :admin_user
-      f.input :published_at
+      f.input :published_at, as: :datetime_picker
     end
     f.actions
   end
