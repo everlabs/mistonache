@@ -1,8 +1,13 @@
 class AnnouncementsController < ApplicationController
 
-  before_action :put_announcements, only: [:index, :show]
+  before_action :put_announcements, only: [:show]
 
   def index
+    if params[:search]
+      @announcements = Announcement.where('title LIKE ?', "%#{params[:search]}%").announcements_feed.paginate(page: params[:page], per_page: 3)
+    else
+      @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 3)
+    end
   end
 
   def show

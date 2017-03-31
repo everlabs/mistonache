@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-bottom: 20px;
   margin-right: auto;
-  background: image_url("kinoshot_logo_grayscale.png"), no-repeat;
+  background: image_url("kinoshot.jpg"), no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -30,24 +30,27 @@
 
 .kinoshot-title {
   text-align: center;
-  font: 40px 'OpenSans-CondLight', sans-serif;
+  font: 40px 'Bookman_Old_Style_Bold', sans-serif;
 }
 
 .kinofest-text p {
-  font: 20px 'OpenSans-CondLight', sans-serif;
+  font: 20px 'Bookman_Old_Style_Regular', sans-serif;
+  text-align: justify;
 }
 
 .pro-fest-title {
-  font: 30px 'OpenSans-CondLight', sans-serif;
+  font: 30px 'Bookman_Old_Style_Bold', sans-serif;
   color: #dc5f63;
   text-align: center;
 }
 
 .pro-fest-text {
-  font: 20px 'OpenSans-CondLight', sans-serif;
+  font: 20px 'Bookman_Old_Style_Regular', sans-serif;
+  text-align: justify;
 }
 
 .nominations {
-  font: 30px 'OpenSans-CondLight', sans-serif;
+  font: 30px 'Bookman_Old_Style_Regular', sans-serif;
   color: #dc5f63;
+  text-align: justify;
 }

@@ -1,12 +1,9 @@
 <% provide(:title, 'Кіношот') %>
-<hr>
-<div class="row">
-  <div class="col-lg-2">
-    <%= render 'shared/novelties' %>
-  </div>
-
   <div class="col-lg-7">
-    <div class="kinoshot-logo"></div>
+    <div class="go-title">
+      <h1 class="go-title">Черкаський фестиваль короткометражного кіно "КіноШот"</h1>
+    </div>
+
     <% if @announcements.any? %>
         <%= render 'slider' %>
     <% end %>
@@ -18,9 +15,7 @@
       <div class="col-md-1"></div>
     </div>
     <div class="kinoshot-container">
-      <div class="fest-info"><strong>Літо 2017</strong></div>
-      <hr class="text-divider">
-      <p class="kinoshot-title">КіноШот</p>
+      <div class="kinoshot-logo"></div>
       <div class="kinofest-text">
         <p>— це мистецький захід для творчого спілкування, розширення й зміцнення творчих та дружніх зв'язків, обміну
           досвідом між молодими українськими режисерами і заслуженими кінематографістами України
@@ -33,7 +28,21 @@
         </p>
       </div>
       <hr class="text-divider">
-      <div class="col-lg-6"></div>
+      <div class="col-lg-6 kinishot-links">
+        <p class="pro-fest-title">КОРИСНІ ЛІНКИ</p>
+
+        <% if @banners[:kinoshot].present? %>
+            <%  @banners[:kinoshot].each do |banner| %>
+             <% image_url = image_tag banner.image.url %>
+            <%  if not banner.url.empty? %>
+            <%=    link_to image_url, banner.url %>
+            <%  else %>
+              <%=  image_url %>
+              <% end %>
+            <% end %>
+        <% end %>
+        %>
+      </div>
       <div class="col-lg-6">
         <div class="pro-fest">
           <p class="pro-fest-title">ПРО ФЕСТ</p>
@@ -87,11 +96,8 @@
     </div>
   </div>
 
-  <div class="col-lg-3">
-    <%= render 'shared/right_bar/publications', title: 'Новини Кіношоту' %>
-    <%= render 'shared/right_bar/banner' %>
-    <%= render 'shared/right_bar/facebook' %>
-  </div>
+<div class="col-lg-3">
+  <%= render 'shared/right_bar/publications', title: 'Новини Кіношоту' %>
+  <%= render 'shared/right_bar/banner' %>
+  <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
 </div>
-
-

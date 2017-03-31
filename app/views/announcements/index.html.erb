@@ -1,5 +1,8 @@
 <% provide(:title, 'Публікації') %>
 <div class="col-lg-7">
+  <% if @announcements.blank? %>
+      <h1>Пошук не дав результатів</h1>
+  <% else %>
   <div class="announcements">
     <% @announcements.each do |announcement| %>
         <div class="row announcement">
@@ -27,9 +30,10 @@
     <% end %>
     <%= will_paginate @announcements %>
   </div>
+      <% end %>
 </div>
 <div class="col-lg-3">
   <%= render 'shared/right_bar/publications', title: 'Публікації' %>
   <%= render 'shared/right_bar/banner' %>
-  <%= render 'shared/right_bar/facebook' %>
+  <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>
