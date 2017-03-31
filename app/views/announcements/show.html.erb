@@ -29,8 +29,11 @@
   <% if @announcement.go_feed  %>
       <% @announcements = @go_announcements %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини ГО' } %>
-  <% else %>
-      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
+  <% elsif  @announcement.kinoshot_feed %>
+      <% @announcements = @kinoshot_announcements %>
+      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини Кіношоту' } %>
+      <% else %>
+      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публыкыції' } %>
   <% end %>
   <%= render partial: 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>

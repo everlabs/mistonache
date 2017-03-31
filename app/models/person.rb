@@ -7,7 +7,6 @@ class Person < ApplicationRecord
 
   mount_uploader :photo, PersonUploader
 
-  scope :kinoshot_person, -> { where("kinoshot_category_id IS NOT NULL") }
-  scope :go_person, -> { where("go_category_id IS NOT NULL") }
+
 
 end
