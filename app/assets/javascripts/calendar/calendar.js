@@ -98,7 +98,7 @@ $('.events.index').ready(function () {
             '   <h3 class="event-title">' + event.title + '</h3>' +
             '   <span class="event-inscription">' +
             '       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;' +
-                moment(event.start_date).format('D MMM., H:mm') +
+                moment(event.start_date).subtract('hours', 3).format('D MMM., H:mm') +
             '   </span>' +
             '</div>';
     }

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
 
   get 'pro-go/announcements', to: 'announcements#go_announcements', as: 'go_announcements'
+  get 'kinoshot/announcements', to: 'announcements#kinoshot_announcements', as: 'kinoshot_announcements'
   get 'pro-go/persons/:id', to: 'welcome#person', as: 'persons'
 
 end

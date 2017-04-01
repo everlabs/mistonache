@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.where('start_date > ?', Time.now.beginning_of_day)
+    @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day)
     @places = Place.all
 
     respond_to do |format|

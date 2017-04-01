@@ -29,12 +29,16 @@
   <% if @announcement.go_feed  %>
       <% @announcements = @go_announcements %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини ГО' } %>
+      <%= render partial: 'shared/right_bar/banner' %>
+      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/agimistonache' %>
   <% elsif  @announcement.kinoshot_feed %>
       <% @announcements = @kinoshot_announcements %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини Кіношоту' } %>
+      <%= render partial: 'shared/right_bar/banner' %>
+      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
       <% else %>
-      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публыкыції' } %>
+      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
+      <%= render partial: 'shared/right_bar/banner' %>
+      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
   <% end %>
-  <%= render partial: 'shared/right_bar/banner' %>
-  <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>

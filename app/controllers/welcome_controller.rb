@@ -5,7 +5,6 @@ class WelcomeController < ApplicationController
 
   def home
     @announcements = Announcement.main_feed
-
   end
 
   def history
