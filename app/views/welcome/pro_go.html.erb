@@ -32,6 +32,7 @@
 
 </div>
 <div class="col-lg-3">
+  <% @announcements = Announcement.go_feed.order(:published_at).limit(4) %>
   <%= render 'shared/right_bar/publications', title: 'НОВИНИ ГО' %>
   <%= link_to 'Всі новини ГО', go_announcements_path %>
   <%= render 'shared/right_bar/banner' %>

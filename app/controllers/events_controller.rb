@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @places = Place.all
 
     respond_to do |format|
-      format.html { render 'events/index', locals: { events: Event.all } }
+      format.html { render 'events/index', locals: { events: Event.all.by_date_of_event } }
       if params_valid?(params)
         format.json { render json: Event.get_month(params[:year], params[:month]), status: :ok }
       else
