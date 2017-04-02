@@ -5,6 +5,9 @@ class WelcomeController < ApplicationController
 
   def home
     @announcements = Announcement.main_feed
+
+    @top_announcements = [ get_popular_announcement('Спалах минулого'), get_popular_announcement('Мальовнича Черкащина'),
+                      get_popular_announcement('Події'), get_popular_announcement('Ремарка') ]
   end
 
   def history
@@ -51,4 +54,10 @@ class WelcomeController < ApplicationController
         kinoshot: banners.by_kinoshot
     }
   end
+
+  def get_popular_announcement(category_name)
+    category_id = Category.find_by_name(category_name).id
+    Announcement.where(category_id: category_id).sort_by{|e| e[:visits]}.first
+  end
+
 end

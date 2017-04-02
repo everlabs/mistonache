@@ -4,7 +4,7 @@
       <span><%= title %></span>
     </h5>
   </div>
-  <% @announcements.each do |announcement| %>
+  <% @top_announcements.each do |announcement| %>
       <div class="col-lg-6 announcement ">
         <div class="announcement-image">
           <%= link_to image_tag(announcement.main_image.url(:large)), announcement %>
