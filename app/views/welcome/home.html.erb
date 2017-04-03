@@ -1,9 +1,9 @@
 <div class="col-lg-7">
   <%= render 'slider' if @announcements.static.any? %>
   <%= if @banners[:top].present?
-        image_url = image_tag @banners[:top].image.url, class: 'banner-top',  target: '_blank'
+        image_url = image_tag @banners[:top].image.url, class: 'banner-top'
         if not @banners[:top].url.empty?
-          link_to image_url, @banners[:top].url
+          link_to image_url, @banners[:top].url, target: :_blank
         else
           image_url
         end
@@ -12,9 +12,9 @@
   <%= render 'top_announcements', title: 'Популярні публікації' %>
 
   <%= if @banners[:bottom].present?
-        image_url = image_tag @banners[:bottom].image.url, class: 'banner-bottom', target: '_blank'
+        image_url = image_tag @banners[:bottom].image.url, class: 'banner-bottom'
         if not @banners[:bottom].url.empty?
-          link_to image_url, @banners[:bottom].url
+          link_to image_url, @banners[:bottom].url, target: :_blank
         else
           image_url
         end

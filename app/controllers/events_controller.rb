@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { render 'events/index', locals: { events: Event.all.by_date_of_event } }
       if params_valid?(params)
-        format.json { render json: Event.get_month(params[:year], params[:month]), status: :ok }
+        format.json { render json: Event.by_date_of_event.get_month(params[:year], params[:month]), status: :ok }
       else
         format.json { render json: {data: 'Invalid parameters'}, status: :bad_request }
       end

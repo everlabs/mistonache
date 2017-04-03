@@ -30,17 +30,20 @@
       <% @announcements = @go_announcements %>
       <% @announcements = Announcement.go_feed.order(:published_at).limit(4) %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини ГО' } %>
+      <%= link_to 'Всі новини Го', go_announcements_path %>
       <%= render partial: 'shared/right_bar/banner' %>
       <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/agimistonache' %>
   <% elsif  @announcement.kinoshot_feed %>
       <% @announcements = @kinoshot_announcements %>
       <% @announcements = Announcement.kinoshot_feed.order(:published_at).limit(4) %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини Кіношоту' } %>
+      <%= link_to 'Всі новини Кіношоту', kinoshot_announcements_path %>
       <%= render partial: 'shared/right_bar/banner' %>
       <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
       <% else %>
       <% @announcements = Announcement.order(:published_at).limit(4) %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
+      <%= link_to 'Всі новини', announcements_path %>
       <%= render partial: 'shared/right_bar/banner' %>
       <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
   <% end %>

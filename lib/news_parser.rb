@@ -255,7 +255,7 @@ class ProvceParser
   end
 
   def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'category/novini/').css('.news a').each_with_object([]) do |link, array|
+    @novelties_urls ||= load_page(BASE_URL + 'category/novini/').css('.news-list a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end
