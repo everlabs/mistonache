@@ -248,14 +248,14 @@ class ProvceParser
       return
     end
     novelty = Novelty.new
-    novelty.title = page.at_css('h2').text
+    novelty.title = page.at_css('.post-title h1').text
     novelty.url = url
     novelty.source = 'provce.ck.ua'
     novelty.save
   end
 
   def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'category/novini/').css('.news-list a').each_with_object([]) do |link, array|
+    @novelties_urls ||= load_page(BASE_URL + 'category/novini/').css('.news-list .clearfix.item a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end

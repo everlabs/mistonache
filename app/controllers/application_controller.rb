@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   #before_action :set_weather
 
   def news_index
-    @novelties_ = Novelty.order(created_at: :desc).all.take(15)
+    @novelties_ = Novelty.order(created_at: :desc).all.take(25).shuffle
   end
 
   def categories_index
