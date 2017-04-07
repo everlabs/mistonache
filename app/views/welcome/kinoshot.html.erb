@@ -71,7 +71,9 @@
           </p>
         </div>
       </div>
+    <div class="col-md-12"><hr class="text-divider"></div>
       <% @teams.each do |team| %>
+
           <div class="row team">
             <div class="col-md-12">
               <h2 class="title"><%= KinoshotCategory.find_by_num_of_place(team[0]).name %></h2>
