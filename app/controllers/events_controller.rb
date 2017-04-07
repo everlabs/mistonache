@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day)
+    @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).paginate(page: params[:page], per_page: 20)
     @places = Place.all
 
     respond_to do |format|

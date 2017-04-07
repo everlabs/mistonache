@@ -2,8 +2,9 @@
 
 <div class="col-lg-7">
   <div class="row events">
-    <%= render @events.by_date_of_event %>
+    <%= render @events %>
   </div>
+  <%= will_paginate @events %>
 </div>
 <div class="col-lg-3">
   <%= render 'event_controls' %>

@@ -37,7 +37,7 @@
   <% end %>
 </div>
 <div class="col-lg-3">
-  <% @announcements = Announcement.order(:published_at).limit(4) %>
+  <% @announcements = Announcement.announcements_feed.order(:published_at).limit(4) %>
   <%= render 'shared/right_bar/publications', title: 'Публікації' %>
   <%= link_to 'Всі новини', announcements_path %>
   <%= render 'shared/right_bar/banner'%>

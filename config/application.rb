@@ -15,7 +15,7 @@ module Mistonache
 
 
 
-    config.time_zone = Time.now.zone
+    config.time_zone = 'Kyiv'
     config.i18n.default_locale = :uk
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets
