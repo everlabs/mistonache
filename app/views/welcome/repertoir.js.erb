@@ -1,0 +1,3 @@
+$('.modal-title').html('<%= @repertoir.title %>');
+$('.modal-body .image').html('<%= image_tag @repertoir.second_image_url(:big) %>');
+$('.modal-body .description').html('<%= escape_javascript @repertoir.description.html_safe %>');

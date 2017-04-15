@@ -18,6 +18,9 @@ class WelcomeController < ApplicationController
 
   def video
   end
+  def repertoir
+    @repertoir = Repertoire.find(params[:id])
+  end
 
   def pro_che
     @gallery = Gallery.limit(1).all[0]
@@ -43,6 +46,7 @@ class WelcomeController < ApplicationController
     @announcements = Announcement.mat_feed
     @people = Person.all.where.not(mat_category_id: nil)
     @teams = @people.group_by(&:mat_category_id).sort
+    @repertoiries = Repertoire.all
   end
 
   private

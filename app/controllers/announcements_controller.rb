@@ -28,6 +28,11 @@ class AnnouncementsController < ApplicationController
     @announcements = Announcement.kinoshot_feed.paginate(page: params[:page], per_page: 5)
   end
 
+  def mat_announcements
+    @announcements = Announcement.mat_feed.paginate(page: params[:page], per_page: 5)
+  end
+
+
 
   def visits
     announcement = Announcement.find(params[:id])

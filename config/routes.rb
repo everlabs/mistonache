@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pro-che/history' => 'welcome#history'
   get 'pro-che/video' => 'welcome#video'
   get 'pro-che/emblems' => 'welcome#emblems'
+  get 'mat/repertoir/:id' => 'welcome#repertoir', as:'repertoir'
   get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'
   get 'pro-go' => 'welcome#pro_go'
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
 
   get 'pro-go/announcements', to: 'announcements#go_announcements', as: 'go_announcements'
   get 'kinoshot/announcements', to: 'announcements#kinoshot_announcements', as: 'kinoshot_announcements'
+  get 'mat/announcements', to: 'announcements#mat_announcements', as: 'mat_announcements'
   get 'pro-go/persons/:id', to: 'welcome#person', as: 'persons'
 
 end
