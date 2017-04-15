@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'
   get 'pro-go' => 'welcome#pro_go'
-
+  get 'mat' => 'welcome#mat'
   get '/events/place/:place_id', to: 'events#place_id'
 
   resources :announcements, only: [:show, :index]

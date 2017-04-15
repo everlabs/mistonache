@@ -4,7 +4,7 @@ ActiveAdmin.register Announcement do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
  permit_params :title, :body, :admin_user_id, :main_image, :category_id, :static, :main_feed, :announcements_feed,
-               :go_feed, :kinoshot_feed, :published_at
+               :go_feed, :kinoshot_feed, :published_at, :mat_feed
 
   controller do
     def new
@@ -19,6 +19,7 @@ ActiveAdmin.register Announcement do
       f.input :announcements_feed, label: 'В новинах'
       f.input :go_feed, label: 'В ГО (наша команда)'
       f.input :kinoshot_feed, label: 'Кіношот'
+      f.input :mat_feed, label: 'МАТ'
       f.input :static, label: 'Показувати в слайдері'
       f.input :category
       f.input :body, as: :ckeditor

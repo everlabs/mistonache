@@ -15,8 +15,8 @@ class WelcomeController < ApplicationController
 
   def emblems
   end
-  def video
 
+  def video
   end
 
   def pro_che
@@ -37,6 +37,12 @@ class WelcomeController < ApplicationController
     @announcements = Announcement.kinoshot_feed
     @people = Person.all.where.not(kinoshot_category_id: nil)
     @teams = @people.group_by(&:kinoshot_category_id).sort
+  end
+
+  def mat
+    @announcements = Announcement.mat_feed
+    @people = Person.all.where.not(mat_category_id: nil)
+    @teams = @people.group_by(&:mat_category_id).sort
   end
 
   private

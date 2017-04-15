@@ -1,0 +1,96 @@
+<% provide(:title, 'MAT') %>
+<div class="col-lg-7">
+  <div class="go-title">
+    <h1 class="go-title">Майстерня Актуальної Творчості</h1>
+  </div>
+
+  <% if @announcements.any? %>
+      <%= render 'slider' %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8 kinoshot-announcements">
+
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="kinoshot-container">
+    <div class="kinoshot-logo"></div>
+    <div class="kinofest-text">
+      <p>— це мистецький захід для творчого спілкування, розширення й зміцнення творчих та дружніх зв'язків, обміну
+        досвідом між молодими українськими режисерами і заслуженими кінематографістами України
+      </p>
+      <p>
+        Черкаський фестиваль короткометражного кіно "КіноШот" — це подія, унікальна для Черкас.
+      </p>
+      <p>
+        Фестиваль відбуватиметься під відкритим небом на березі Дніпра, у мальовничій Долині Троянд.
+      </p>
+    </div>
+    <hr class="text-divider">
+    <div class="col-lg-6 kinishot-links">
+      <p class="pro-fest-title">КОРИСНІ ЛІНКИ</p>
+
+
+    </div>
+    <div class="col-lg-6">
+      <div class="pro-fest">
+        <p class="pro-fest-title">ПРО ФЕСТ</p>
+        <p class="pro-fest-text">
+          На вас чекає насичена програма, розрахована на три дні. У рамках фесту буде проходити конкурс українських
+          короткометражок. Учасники можуть позмагатися в номінаціях:
+        </p>
+        <p class="nominations">"Кращий фільм";</p>
+        <p class="nominations">"Краща режисура";</p>
+        <p class="nominations">"Кращий сценарій".</p>
+      </div>
+      <br><br>
+      <div class="pozakonkursna-programa">
+        <p class="pro-fest-title">Позаконкурсна програма</p>
+        <p class="pro-fest-text">
+          Не менш цікава позаконкурсна програма містить кращі українські короткі метри, що брали участь та перемагали
+          у міжнародних кінофестивалях, а також спеціальні покази на соціальну тематику, які розкривають проблеми
+          сучасного суспільства.
+        </p>
+      </div>
+      <br><br>
+      <div class="for-kinomans">
+        <p class="pro-fest-title">Для завзятих кіноманів</p>
+        <p class="pro-fest-text">
+          Для завзятих кіноманів передбачено цікаві кінолекторії, автограф-сесії, творчі зустрічі з відомими діячами
+          культури та мистецтва.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-12"><hr class="text-divider"></div>
+    <% @teams.each do |team| %>
+
+        <div class="row team">
+          <div class="col-md-12">
+            <h2 class="title"><%= MatCategory.find_by_num_of_place(team[0]).name %></h2>
+            <% team[1].each_with_index do |person, index| %>
+                <%= raw('<div class="row">') if index % 4 == 0 %>
+                <div class="col-md-3">
+                  <div class="photo">
+                    <%= link_to image_tag(person.photo_url(:small)), persons_path(person),
+                                {remote: true, class: 'event-poster', 'data-toggle' =>  'modal', 'data-target' => '#modal-window'} %>
+                  </div>
+                  <div class="name">
+                    <h5><%= person.name %></h5>
+                  </div>
+                </div>
+                <%= raw('</div>') if index % 4 == 3 || index == team[1].count-1 %>
+            <% end %>
+          </div>
+        </div>
+        <hr>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-lg-3">
+  <% @announcements = Announcement.mat_feed.order(:published_at).limit(4) %>
+  <%= render 'shared/right_bar/publications', title: 'Новини Кіношоту' %>
+  <%= render 'shared/right_bar/banner' %>
+  <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
+</div>

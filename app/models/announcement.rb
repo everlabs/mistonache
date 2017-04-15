@@ -20,7 +20,7 @@ class Announcement < ApplicationRecord
   scope :announcements_feed, -> { where(announcements_feed: true) }
   scope :go_feed, -> { where(go_feed: true) }
   scope :kinoshot_feed, -> { where(kinoshot_feed: true) }
-
+  scope :mat_feed, -> { where(mat_feed: true) }
 
   def to_param
     id.to_s + '-' + Russian.translit(title).parameterize
