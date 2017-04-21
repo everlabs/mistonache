@@ -1,5 +1,5 @@
 <% provide(:title, @announcement.title) %>
-<div class="col-lg-7">
+<div class="col-md-7">
   <div class="single-announcement">
     <div class="row">
       <div class="col-lg-12 flexbox">
@@ -25,7 +25,7 @@
     </div>
   </div>
 </div>
-<div class="col-lg-3">
+<div class="col-md-3">
   <% if @announcement.go_feed  %>
       <% @announcements = @go_announcements %>
       <% @announcements = Announcement.go_feed.order(:published_at).limit(4) %>

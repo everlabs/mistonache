@@ -1,17 +1,17 @@
 <% provide(:title, 'Публікації') %>
-<div class="col-lg-7">
+<div class="col-md-7">
   <% if @announcements.blank? %>
       <h1>Пошук не дав результатів</h1>
   <% else %>
   <div class="announcements">
     <% @announcements.each do |announcement| %>
         <div class="row announcement">
-          <div class="col-lg-4">
+          <div class="col-md-4">
             <div class="announcement-image">
               <%= link_to image_tag(announcement.main_image.url(:big)), announcement %>
             </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-md-8">
             <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
             <div class="announcement-body"><%= raw strip_tags(announcement.body).truncate(400) %></div>
             <div class="announcement-next"><%= link_to 'Читати далі »', announcement %></div>
@@ -32,7 +32,7 @@
   </div>
       <% end %>
 </div>
-<div class="col-lg-3">
+<div class="col-md-3">
   <% @announcements = Announcement.announcements_feed.order(:published_at).limit(4) %>
   <%= render 'shared/right_bar/publications', title: 'Публікації' %>
   <h5 class="section-header">

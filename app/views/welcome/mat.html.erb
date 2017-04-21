@@ -1,5 +1,5 @@
 <% provide(:title, 'MAT') %>
-<div class="col-lg-7">
+<div class="col-md-7">
   <div class="go-title">
     <h1 class="go-title">Майстерня Актуальної Творчості</h1>
   </div>
@@ -80,7 +80,7 @@
   </div>
 </div>
 
-<div class="col-lg-3">
+<div class="col-md-3">
   <% @announcements = Announcement.mat_feed.order(:published_at).limit(4) %>
   <%= render 'shared/right_bar/publications', title: 'Новини Мату' %>
   <%= link_to 'Всі новини МАТу', mat_announcements_path %>

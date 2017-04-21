@@ -28,7 +28,7 @@
 
   .nav-menu {
     float: left;
-    margin-left: 60px;
+    margin-left: 10px;
     margin-top: 20px;
 
     li {
@@ -58,12 +58,13 @@
   }
 
   .search {
-    float: right;
-    margin-top: 14px;
-    margin-right: 50px;
-
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
     #search {
-      width: 280px;
+      width: 150px;
       height: 30px;
       padding-left: 5px;
       border-radius: 0px;
@@ -72,10 +73,10 @@
     }
 
     .search-button{
+      float: right;
       padding: 0px;
       height: 30px;
       width: 30px;
-      position: relative;
       right: 5px;
       bottom:1px;
       background-color: #fff;
@@ -152,11 +153,31 @@
     margin-top: 200px;
   }
 
-  .solid-divider {
-    display: block;
-    border-bottom: 2px solid #000000;
-    margin-top: 58px;
-    position: relative;
-    z-index: 1;
+}
+
+@media screen and (max-width: 998px){
+
+  .logo{
+    float:none !important;
+    margin-top: 0px !important;
+    text-align: center !important;
+    margin-left: 0px !important;
+  }
+  .in{
+    padding: 0px;
+  }
+  .nav-menu {
+    margin-left: 0px !important;
+    width: 100%;
+    li {
+      padding: 10px 0px;
+      text-align: center;
+      float:none !important;
+      width: 100%;
+      border-bottom: 1px #999999 solid;
+    }
+    .nav-menu-divider{
+      display: none;
+    }
   }
 }

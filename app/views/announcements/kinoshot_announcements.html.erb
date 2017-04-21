@@ -1,4 +1,4 @@
-<div class="col-lg-7">
+<div class="col-md-7">
   <div class="announcements">
     <% @announcements.each do |announcement| %>
         <div class="row announcement">
@@ -27,7 +27,7 @@
     <%= will_paginate @announcements %>
   </div>
 </div>
-<div class="col-lg-3">
+<div class="col-md-3">
   <%= render 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
 </div>

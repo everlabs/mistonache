@@ -1,4 +1,4 @@
-<div class="col-lg-7">
+<div class="col-md-7">
   <h1 class="category-name"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= @category.name %></h1>
 
   <% @announcements.each do |article| %>
@@ -10,7 +10,7 @@
       </div>
   <% end %>
 </div>
-<div class="col-lg-3">
+<div class="col-md-3">
  <% @announcements = @side_announcements %>
   <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
   <%= render partial: 'shared/right_bar/banner' %>
