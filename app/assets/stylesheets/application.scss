@@ -377,11 +377,11 @@ ul hr:last-child {
     float: left;
   }
 }
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 1400px){
 .container{
-  width: 1300px;
+  width: 1400px;
 }}
-@media screen and (min-width: 998px) and (max-width: 1300px) {
+@media screen and (min-width: 998px) and (max-width: 1400px) {
   .container{
     padding: 0;
     width: 100%;
@@ -442,4 +442,9 @@ ul hr:last-child {
     .divider-nav{
     margin-top: 20px;
   }}
+}
+@media screen and (max-width: 1200px) {
+  .pro_che_baners{
+    text-align: center;
+  }
 }

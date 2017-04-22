@@ -92,9 +92,9 @@ $('.events.index').ready(function () {
     }
 
     function getEventTemplate(event) {
-        return '<div class="col-lg-3 event">' +
+        return '<div class="col-xs-6 col-md-3  event">' +
             ' <a class="event-poster" data-toggle="modal" data-target="#modal-window" data-remote="true" href="events/'+ event.id +'">' +
-            '<img src="' + event.image.medium.url + '" alt="Medium biggest 30">'+ '</a>'+
+            '<img src="' + event.image.medium.url + '"  class="img-responsive" alt="Medium biggest 30">'+ '</a>'+
             '   <h3 class="event-title">' + event.title + '</h3>' +
             '   <span class="event-inscription">' +
             '       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;' +

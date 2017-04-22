@@ -33,7 +33,7 @@
 
         <% if @banners[:kinoshot].present? %>
             <%  @banners[:kinoshot].each do |banner| %>
-             <% image_url = image_tag banner.image.url %>
+             <% image_url = image_tag banner.image.url, class:'img-responsive' %>
             <%  if not banner.url.empty? %>
             <%=    link_to image_url, banner.url %>
             <%  else %>
@@ -79,7 +79,7 @@
               <h2 class="title"><%= KinoshotCategory.find_by_num_of_place(team[0]).name %></h2>
               <% team[1].each_with_index do |person, index| %>
                   <%= raw('<div class="row">') if index % 4 == 0 %>
-                  <div class="col-md-3">
+                  <div class="col-xs-4  col-md-3">
                     <div class="photo">
                       <%= link_to image_tag(person.photo_url(:small)), persons_path(person),
                                   {remote: true, class: 'event-poster', 'data-toggle' =>  'modal', 'data-target' => '#modal-window'} %>

@@ -1,17 +1,17 @@
 <% provide(:title, 'Про Черкаси') %>
 <div class="col-md-10">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row pro_che_baners">
+    <div class="col-lg-4">
       <%=link_to image_tag('video.jpg'), pro_che_video_path, { remote: true,
                                                                     'data-toggle' =>  'modal',
                                                                     'data-target' => '#modal-window'}  %>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-4">
       <%=link_to image_tag('istoriya.jpg'), pro_che_history_path, { remote: true,
                                                                     'data-toggle' =>  'modal',
                                                                     'data-target' => '#modal-window'}  %>
     </div>
-    <div class="col-md-4">
+    <div class="col-lg-4">
       <%= link_to image_tag('gerb.jpg'), pro_che_emblems_path, { remote: true,
                                                                  'data-toggle' =>  'modal',
                                                                  'data-target' => '#modal-window'}   %>

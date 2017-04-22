@@ -20,7 +20,7 @@
 
       <% if @repertoiries.present? %>
           <%  @repertoiries.each do |banner| %>
-          <%= link_to image_tag(banner.first_image.url(:medium)), repertoir_path(banner) ,{ remote: true,
+          <%= link_to image_tag(banner.first_image.url(:medium), class:'img-responsive'), repertoir_path(banner) ,{ remote: true,
                                                                                  'data-toggle' =>  'modal',
                                                                                  'data-target' => '#modal-window'} %> <br>
           <% end %>
@@ -62,7 +62,7 @@
             <h2 class="title"><%= MatCategory.find_by_num_of_place(team[0]).name %></h2>
             <% team[1].each_with_index do |person, index| %>
                 <%= raw('<div class="row">') if index % 4 == 0 %>
-                <div class="col-md-3">
+                <div class="col-xs-4  col-md-3">
                   <div class="photo">
                     <%= link_to image_tag(person.photo_url(:small)), persons_path(person),
                                 {remote: true, class: 'event-poster', 'data-toggle' =>  'modal', 'data-target' => '#modal-window'} %>
