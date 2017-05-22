@@ -31,7 +31,10 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'whenever', :require => false
-gem 'ckeditor', '4.2.0'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'mini_magick'
+gem 'non-stupid-digest-assets'
+
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
@@ -69,6 +72,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'tzinfo'
+
 
 gem 'russian', '~> 0.6.0'
 

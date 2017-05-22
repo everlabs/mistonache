@@ -10,6 +10,7 @@
   <% if controller.controller_name == "events" %>
     <meta property="og:image" content="<%= image_url('events_img.jpeg') %>"/>
   <% end %>
+  <%= render 'layouts/analytics' if Rails.env.production? %>
 </head>
 
 <body class="<%= controller_name %> <%= action_name %>">

@@ -17,6 +17,7 @@ class AnnouncementsController < ApplicationController
     @announcement.update_attribute(:visits, @announcement.visits + 1)
     @go_announcements = Announcement.go_feed.paginate(page: params[:page], per_page: 5)
     @kinoshot_announcements = Announcement.kinoshot_feed.paginate(page: params[:page], per_page: 5)
+    @mat_announcements = Announcement.mat_feed.paginate(page: params[:page], per_page: 5)
 
   end
 

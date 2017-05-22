@@ -4,13 +4,13 @@
         <div class="row announcement">
           <div class="col-lg-4">
             <div class="announcement-image">
-              <%= link_to image_tag(announcement.main_image.url(:big)), announcements_path(announcement) %>
+              <%= link_to image_tag(announcement.main_image.url(:big)), announcement_path(announcement) %>
             </div>
           </div>
           <div class="col-lg-8">
-            <h2 class="announcement-title"><%= link_to announcement.title, announcements_path(announcement) %></h2>
+            <h2 class="announcement-title"><%= link_to announcement.title, announcement_path(announcement) %></h2>
             <div class="announcement-body"><%= raw strip_tags(announcement.body).truncate(400) %></div>
-            <div class="announcement-next"><%= link_to 'Читати далі »', announcements_path(announcement) %></div>
+            <div class="announcement-next"><%= link_to 'Читати далі »', announcement_path(announcement) %></div>
             <span class="announcement-author">
             <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %>
           </span>

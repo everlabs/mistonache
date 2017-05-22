@@ -1,4 +1,5 @@
 //= require active_admin/base
+//= require ckeditor/init
 
 function removeInput() {
   $('.remove-field').click(function (ee) {

@@ -40,6 +40,13 @@
       <%= link_to 'Всі новини Кіношоту', kinoshot_announcements_path %>
       <%= render partial: 'shared/right_bar/banner' %>
       <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/kinoshotfest' %>
+  <% elsif  @announcement.mat_feed %>
+      <% @announcements = @mat_announcements %>
+      <% @announcements = Announcement.mat_feed.order(:published_at).limit(4) %>
+      <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини Мату' } %>
+      <%= link_to 'Всі новини МАТу', announcements_path %>
+      <%= render partial: 'shared/right_bar/banner' %>
+      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/theatremat'  %>
       <% else %>
       <% @announcements = Announcement.announcements_feed.order(:published_at).limit(4) %>
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
