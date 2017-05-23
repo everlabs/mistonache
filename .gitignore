@@ -21,3 +21,5 @@ db/schema.rb
 public/uploads
 /config/database.production.yml
 /config/secrets.production.yml
+public/assets
+app/assets/config
