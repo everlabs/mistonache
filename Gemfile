@@ -32,7 +32,6 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'whenever', :require => false
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'mini_magick'
 gem 'non-stupid-digest-assets'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
