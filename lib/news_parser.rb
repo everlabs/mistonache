@@ -67,7 +67,7 @@ class InfomistParser
       return
     end
     novelty = Novelty.new
-    novelty.title = page.at_css('#main h1:nth-child(3)').text
+    novelty.title = page.at_css('#main h1').text
     novelty.url = url
     novelty.source = 'infomist.ck.ua'
     novelty.save
