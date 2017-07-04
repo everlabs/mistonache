@@ -61,6 +61,7 @@ class WelcomeController < ApplicationController
         top: banners.find {|banner| banner.position == Banner::POSITION[:top]},
         bottom: banners.find {|banner| banner.position == Banner::POSITION[:bottom]},
         right: banners.find {|banner| banner.position == Banner::POSITION[:right]},
+        right_second: banners.find {|banner| banner.position == Banner::POSITION[:right_second]},
         kinoshot: banners.by_kinoshot
     }
   end

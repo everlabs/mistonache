@@ -1,10 +1,13 @@
-ActiveAdmin.register Banner, :as => 'All Banners' do
+ActiveAdmin.register Banner, as: 'All Banners' do
 
   permit_params :image, :position, :url
 
   form do |f|
     f.inputs do
       f.input :image, as: :file
+      div do
+        '<ul class="notation"><li>1 - Верхній баннер</li><li>2 - Нижній баннер</li><li>3 - Правий верхній баннер</li><li>4 - Баннер КіноШоту</li><li>5 - Правий нижній баннер</li></ul>'.html_safe
+      end
       f.input :position
       f.input :url
     end

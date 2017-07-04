@@ -5,29 +5,31 @@
     </h5>
   </div>
   <% @top_announcements.each do |announcement| %>
+    <% if announcement.present? %>
       <div class="col-md-6 announcement ">
         <div class="announcement-image">
           <%= link_to image_tag(announcement.main_image.url(:large)), announcement %>
         </div >
         <div class='top-announcement'>
-        <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
-        <% if announcement.title.length > 40 %>
+          <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
+          <% if announcement.title.length > 40 %>
             <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 100, escape: false) %></div>
-         <% else %>
+          <% else %>
             <div class="announcement-body"><%= truncate(strip_tags(announcement.body), length: 150, escape: false) %></div>
-         <% end %>
-        <div class="announcement-next"><%= link_to 'Читати далі »', announcement %></div>
-        <span class="announcement-author">
+          <% end %>
+          <div class="announcement-next"><%= link_to 'Читати далі »', announcement %></div>
+          <span class="announcement-author">
             <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= announcement.admin_user.name %>
           </span>
-        <span class="announcement-category">
+          <span class="announcement-category">
             <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= link_to announcement.category.name,
                                                                            announcement.category if announcement.category %>
           </span>
-        <span class="announcement-date">
+          <span class="announcement-date">
             <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l announcement.published_at, format: :short %>
           </span>
         </div>
       </div>
+    <% end %>
   <% end %>
 </section>

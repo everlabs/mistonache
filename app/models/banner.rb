@@ -3,7 +3,8 @@ class Banner < ApplicationRecord
       top: 1,
       bottom: 2,
       right: 3,
-      kinoshot: 4
+      kinoshot: 4,
+      right_second: 5
   }
 
   validates :image, presence: true
