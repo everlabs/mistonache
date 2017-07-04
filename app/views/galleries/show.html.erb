@@ -4,10 +4,10 @@
       <h1 class="section-header"><span><%= @gallery.title %></span></h1>
     </div>
     <div class="row fancybox-outer">
-      <% @gallery.photo.each do |gallery| %>
+      <% @gallery.photo.each_with_index do |photo, index| %>
           <div class="col-lg-4">
-            <a href="<%= gallery %>" rel="gallery<%= @gallery.id %>" class="fancybox gallery-image">
-              <%= image_tag gallery.url(:medium) %>
+            <a href="<%= photo %>" rel="gallery1" class="fancybox gallery-image">
+              <%= image_tag photo.url(:medium) %>
             </a>
           </div>
       <% end %>
@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="col-md-3">
-  <%= render partial: 'shared/right_bar/publications',  title: 'Публікації' %>
-  <%= render partial: 'shared/right_bar/banner' %>
+  <%#= render partial: 'shared/right_bar/publications', title: 'Публікації' %>
+  <%= render 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>

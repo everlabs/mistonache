@@ -21,16 +21,17 @@
       end
   %>
 
-  <% if @gallery.present? and not @gallery.photo.empty? %>
+  <% if @galleries.present? #and not @gallery.photo.empty? %>
       <section class="galleries-slider">
         <h2 class="section-header">
           <span>Фотогалерея міста на "Че"</span>
         </h2>
         <div class="carousel-slider">
-          <% @gallery.photo.each do |gallery| %>
-              <a href="<%= gallery %>" rel="gallery<%= @gallery.id %>" class="fancybox slider-image">
-                <%= image_tag gallery.url(:medium) %>
-              </a>
+          <% @galleries.each do |gallery| %>
+            <%= link_to(gallery, class: 'fancybox slider-image') do %>
+              <%= content_tag(:span, gallery.title) %>
+              <%= image_tag(gallery.main_photo.url(:slider_photo)) %>
+            <% end %>
           <% end %>
         </div>
       </section>

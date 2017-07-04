@@ -1,8 +1,19 @@
 ActiveAdmin.register Gallery do
 
-  permit_params :title, :admin_user_id, photo: []
+  permit_params :title, :admin_user_id, :main_photo, photo: []
 
-  form partial: 'form'
+  form :html => { multipart: true } do |f|
+    f.inputs do
+      f.input :title, label: 'Назва'
+      f.input :main_photo, as: :file, label: 'Обкладинка галереї'
+      div do
+        '<p class="notation">Щоб додати декілька фотографій одразу - натисніть "Оберіть файли" та виділіть потрібні фотографії, зажавши клавішу "Shift", або "Ctrl"</p>'.html_safe
+      end
+      f.input :photo, as: :file, input_html: { multiple: true }, label: 'Фотографії галереї'
+      f.input :admin_user_id, as: :hidden
+    end
+    f.actions
+  end
 
   controller do
     def create
@@ -15,37 +26,19 @@ ActiveAdmin.register Gallery do
       end
     end
 
-    def update
-      photo_params = params[:gallery][:photo]
-      title_params = params[:gallery][:title]
-      admin_user_id_params = params[:gallery][:admin_user_id]
-      @gallery = Gallery.find(params[:id])
-      @gallery.title = title_params if title_params.present?
-      @gallery.admin_user_id = admin_user_id_params if admin_user_id_params.present?
-      if photo_params.present?
-        @gallery.photo += photo_params
-      elsif photo_params.nil?
-        @gallery.photo
-      else
-
-      end
-      if @gallery.save
-        redirect_to admin_gallery_path(@gallery), notice: 'Альбом успішно оновлений.'
-      else
-        render 'edit', norice: 'На жаль, не вдалося оновоити альбом, спробуйте ще раз.'
-      end
-    end
-
   end
 
   index do
     column :id
     column 'Назва', :title
+    column 'Обкладинка галереї' do |gallery|
+      image_tag gallery.main_photo.url(:thumb)
+    end
     column 'Фото' do |gallery|
-      ul do
+      ul :class => 'photo-list' do
         gallery.photo.each do |photo|
           li do
-            image_tag(photo.url(:medium)) if photo.present?
+            image_tag(photo.url(:thumb)) if photo.present?
           end
         end
       end
@@ -58,12 +51,15 @@ ActiveAdmin.register Gallery do
   show do
     attributes_table do
       row :id
+      row :main_photo do |gallery|
+        image_tag gallery.main_photo.url(:thumb)
+      end
       row('Назва') { |r| r.title }
       row :photo do
-        ul do
+        ul :class => 'photo-list' do
           gallery.photo.each do |photo|
             li do
-              image_tag(photo.url(:medium)) if photo.present?
+              image_tag(photo.url(:thumb)) if photo.present?
             end
           end
         end

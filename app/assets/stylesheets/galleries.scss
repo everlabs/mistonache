@@ -6,3 +6,20 @@
     margin: 0 auto 30px;
   }
 }
+
+.slider-image span {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 200px;
+  display: block;
+  font: bold 16px 'Narbut_Abetka', sans-serif;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000;
+  text-decoration: none;
+}

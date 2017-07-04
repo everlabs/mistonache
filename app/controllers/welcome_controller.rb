@@ -5,9 +5,15 @@ class WelcomeController < ApplicationController
 
   def home
     @announcements = Announcement.main_feed
+    @top_announcements = []
 
-    @top_announcements = [ get_popular_announcement('Події'), get_popular_announcement('Мальовнича Черкащина'),
-                      get_popular_announcement('Спалах минулого'), get_popular_announcement('Ремарка') ]
+    Category.all.each do |category|
+      @top_announcements << get_popular_announcement(category.name)
+    end
+    
+    @top_announcements
+    # @top_announcements = [ get_popular_announcement('Події'), get_popular_announcement('Мальовнича Черкащина'),
+    #                   get_popular_announcement('Спалах минулого'), get_popular_announcement('Ремарка') ]
   end
 
   def history
@@ -18,6 +24,7 @@ class WelcomeController < ApplicationController
 
   def video
   end
+
   def repertoir
     @repertoir = Repertoire.find(params[:id])
   end
@@ -52,7 +59,7 @@ class WelcomeController < ApplicationController
   private
 
   def gallery
-    @gallery = Gallery.limit(1).all[0]
+    @galleries = Gallery.all.order(created_at: :asc)
   end
 
   def banners

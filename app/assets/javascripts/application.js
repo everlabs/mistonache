@@ -291,6 +291,7 @@ $(document).ready( function () {
   /*fancybox*/
 
   $('.fancybox').fancybox({
-        
+    prevEffect  : 'none',
+    nextEffect  : 'none'
   });
 });
