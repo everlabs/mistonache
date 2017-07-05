@@ -1,13 +1,27 @@
 <div class="col-md-7">
   <div class="gallery">
     <div class="col-lg-12">
-      <h1 class="section-header"><span><%= @gallery.title %></span></h1>
+      <div class="go-title">
+        <h1 class="go-title"><%= @gallery.title %></h1>
+      </div>
+      <div class="gallery-description"><%= @gallery.description %></div>
+      <div class="right">
+        <span class="announcement-author">
+        <i class="fa fa-user" aria-hidden="true"></i>
+          <%= @gallery.admin_user.name %>
+        </span>
+        <span class="announcement-date">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= l @gallery.created_at, format: :short %>
+        </span>
+      </div>
+      <div class="gallery-bottom-separator"></div>
     </div>
     <div class="row fancybox-outer">
-      <% @gallery.photo.each_with_index do |photo, index| %>
-          <div class="col-lg-4">
+      <% @gallery.photo.each do |photo| %>
+          <div class="col-lg-6">
             <a href="<%= photo %>" rel="gallery1" class="fancybox gallery-image">
-              <%= image_tag photo.url(:medium) %>
+              <%= image_tag photo.url(:big) %>
             </a>
           </div>
       <% end %>
@@ -15,7 +29,7 @@
   </div>
 </div>
 <div class="col-md-3">
-  <%#= render partial: 'shared/right_bar/publications', title: 'Публікації' %>
+  <%= render 'shared/right_bar/publications', title: 'Публікації' %>
   <%= render 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>

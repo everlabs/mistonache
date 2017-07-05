@@ -1,10 +1,11 @@
 ActiveAdmin.register Gallery do
 
-  permit_params :title, :admin_user_id, :main_photo, photo: []
+  permit_params :title, :description, :admin_user_id, :main_photo, photo: []
 
   form :html => { multipart: true } do |f|
     f.inputs do
       f.input :title, label: 'Назва'
+      f.input :description, label: 'Опис'
       f.input :main_photo, as: :file, label: 'Обкладинка галереї'
       div do
         '<p class="notation">Щоб додати декілька фотографій одразу - натисніть "Оберіть файли" та виділіть потрібні фотографії, зажавши клавішу "Shift", або "Ctrl"</p>'.html_safe
@@ -31,6 +32,9 @@ ActiveAdmin.register Gallery do
   index do
     column :id
     column 'Назва', :title
+    column 'Опис', :description do |gallery|
+      gallery.description.truncate(100) if gallery.description
+    end
     column 'Обкладинка галереї' do |gallery|
       image_tag gallery.main_photo.url(:thumb)
     end
@@ -51,6 +55,10 @@ ActiveAdmin.register Gallery do
   show do
     attributes_table do
       row :id
+      row :title
+      row :description do |gallery|
+        gallery.description.truncate(100) if gallery.description
+      end
       row :main_photo do |gallery|
         image_tag gallery.main_photo.url(:thumb)
       end

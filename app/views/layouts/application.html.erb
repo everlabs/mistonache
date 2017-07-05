@@ -54,8 +54,8 @@
 
             <div class="search">
               <%= form_tag announcements_path, method: 'get' do %>
-                  <%= text_field_tag :search, params[:search] %>
-                  <%= button_tag(type: "submit", class: "btn btn-default search-button") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: 'Пошук' %>
+                  <%= button_tag(type: 'submit', class: 'btn btn-default search-button') do %>
                       <i class="glyphicon glyphicon-search"></i>
                   <% end %>
               <% end %>
@@ -72,6 +72,8 @@
               <li><%= link_to 'Публікації', announcements_path %></li>
               <li class="nav-menu-divider">//</li>
               <li><%= link_to 'Про «Че»', pro_che_path %></li>
+              <li class="nav-menu-divider">//</li>
+              <li><%= link_to 'Галерея', galleries_path %></li>
               <li class="nav-menu-divider">//</li>
               <li><%= link_to 'Афіша', events_path %></li>
               <li class="nav-menu-divider">//</li>
@@ -94,6 +96,23 @@
             <%= render 'shared/novelties' %>
           </div>
         <%= yield %>
+        <% if action_name == 'home' && controller_name == 'welcome' %>
+          <div class="col-md-12">
+            <% if @galleries.present? %>
+              <section class="galleries-slider">
+
+                <div class="carousel-slider">
+                  <% @galleries.each do |gallery| %>
+                    <%= link_to(gallery, class: 'fancybox slider-image') do %>
+                      <%= content_tag(:span, gallery.title) %>
+                      <%= image_tag(gallery.main_photo.url(:slider_photo)) %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </section>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
     <%= render '/layouts/footer' %>

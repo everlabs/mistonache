@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :announcements, only: [:show, :index]
   resources :categories, only: [:show, :index]
-  resources :galleries, only: :show
+  resources :galleries, only: [:index, :show]
   resources :events, only: [:index, :show]
 
   get 'pro-go/announcements', to: 'announcements#go_announcements', as: 'go_announcements'

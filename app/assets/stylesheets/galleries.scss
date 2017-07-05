@@ -1,13 +1,14 @@
 .gallery {
   &-image {
     display: block;
-    width: 220px;
-    height: 220px;
+    width: 355px;
+    //height: 220px;
     margin: 0 auto 30px;
   }
 }
 
-.slider-image span {
+.slider-image span,
+.main-photo-index span {
   width: 200px;
   height: 20px;
   text-align: center;
@@ -20,6 +21,20 @@
   display: block;
   font: bold 16px 'Narbut_Abetka', sans-serif;
   color: #ffffff;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px #000000;
   text-decoration: none;
+}
+
+.gallery-bottom-separator {
+  height: 40px;
+}
+
+.gallery-description {
+  margin-bottom: 20px;
+  font: bold 14px 'Bookman_Old_Style_Regular', sans-serif;
+  color: #000000;
+}
+
+.gallery-pagination {
+  text-align: center;
 }
