@@ -1,4 +1,4 @@
 
 $('.modal-title').text('<%= @person.name %>');
-$('.modal-body .image').html('<%= image_tag @person.photo_url(:medium) %>');
+$('.modal-body .image').html('<%= image_tag @person.photo.url(:medium) %>');
 $('.modal-body .description').html('<%= escape_javascript @person.description.html_safe %>');
