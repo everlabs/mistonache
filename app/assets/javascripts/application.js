@@ -253,7 +253,7 @@ $(document).ready( function () {
   /*slick carousel*/
 
   $('.carousel-slider').slick({
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 5,
@@ -265,7 +265,7 @@ $(document).ready( function () {
           slidesToShow: 5,
           slidesToScroll: 5,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {
