@@ -24,18 +24,6 @@
     </div>
   </div>
 
-  <% if @galleries.present? %>
-    <section class="galleries-slider">
-
-      <div class="carousel-slider">
-        <% @galleries.each do |gallery| %>
-          <%= link_to(gallery, class: 'fancybox slider-image') do %>
-            <%= content_tag(:span, gallery.title) %>
-            <%= image_tag(gallery.main_photo.url(:slider_photo)) %>
-          <% end %>
-        <% end %>
-      </div>
-    </section>
-  <% end %>
+  <%= render 'shared/gallery_slider' %>
 
 </div>

@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= title_helper %></title>
-  <%= favicon_link_tag 'logo-small.jpeg' %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <% if controller.controller_name == "events" %>
-    <meta property="og:image" content="<%= image_url('events_img.jpeg') %>"/>
-  <% end %>
-  <%= render 'layouts/analytics' if Rails.env.production? %>
-</head>
+  <head>
+    <title><%= title_helper %></title>
+    <%= favicon_link_tag 'logo-small.jpeg' %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if controller.controller_name == "events" %>
+      <meta property="og:image" content="<%= image_url('events_img.jpeg') %>"/>
+    <% end %>
+    <%= render 'layouts/analytics' if Rails.env.production? %>
+  </head>
 
-<body class="<%= controller_name %> <%= action_name %>">
-<div id="modal-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <%= render 'shared/modal_window'%>
-</div>
-<div id="fb-root"></div>
-<div class="background">
-  <div class="container">
-    <header id="header">
-      <div class="social-header">
-        <p><%= l Time.zone.now.to_date, format: :header %></p>
-        <p class="dot"><i class="fa fa-circle" aria-hidden="true"></i></p>
-        <p class="weather">
-          <% weather.each do |parameter| %>
-              <span class="icon"><%= parameter %></span>
-          <% end %>
-          &deg;C
-        </p>
-        <ul class="social-icons">
-          <li>
-            <a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          </li>
-          <li><a href="https://plus.google.com/b/113849538330599792631/+MistocheBlogspot" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCKVdSwqyDxgMd7a6FeXFiGg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-      <div class="divider"></div>
-      <div class="logo img-responsive"><%= link_to '', root_path %></div>
-      <!--<iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>-->
-      <div class="divider-nav"></div>
-      <nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <div class="search">
-              <%= form_tag announcements_path, method: 'get' do %>
-                  <%= text_field_tag :search, params[:search], placeholder: 'Пошук' %>
-                  <%= button_tag(type: 'submit', class: 'btn btn-default search-button') do %>
-                      <i class="glyphicon glyphicon-search"></i>
-                  <% end %>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div id="modal-window" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <%= render 'shared/modal_window'%>
+    </div>
+    <div id="fb-root"></div>
+    <div class="background">
+      <div class="container">
+        <header id="header">
+          <div class="social-header">
+            <p><%= l Time.zone.now.to_date, format: :header %></p>
+            <p class="dot"><i class="fa fa-circle" aria-hidden="true"></i></p>
+            <p class="weather">
+              <% weather.each do |parameter| %>
+                  <span class="icon"><%= parameter %></span>
               <% end %>
-            </div>
-          </div>
-          <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-            <ul class="nav-menu">
+              &deg;C
+            </p>
+            <ul class="social-icons">
               <li>
-                <%= link_to root_path do %>
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                <% end %>
+                <a href="https://www.facebook.com/mistoche" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
               </li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Публікації', announcements_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Про «Че»', pro_che_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Галерея', galleries_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Афіша', events_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Наша команда', pro_go_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'КіноШот', kinoshot_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li><%= link_to 'Мат', mat_path %></li>
-              <li class="nav-menu-divider">//</li>
-              <li>Медіа</li>
-              <li class="nav-menu-divider">//</li>
+              <li><a href="https://plus.google.com/b/113849538330599792631/+MistocheBlogspot" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCKVdSwqyDxgMd7a6FeXFiGg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-
-      </nav>
-    </header>
-    <div id="content" class="container-fluid">
-      <div class="row">
-          <div class="col-md-2">
-            <%= render 'shared/novelties' %>
           </div>
-        <%= yield %>
-        <% if action_name == 'home' && controller_name == 'welcome' %>
-          <div class="col-md-12">
-            <% if @galleries.present? %>
-              <section class="galleries-slider">
+          <div class="divider"></div>
+          <div class="logo img-responsive"><%= link_to '', root_path %></div>
+          <!--<iframe width="320" height="180" src="https://www.youtube.com/embed/5t-zraYIjOQ?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>-->
+          <div class="divider-nav"></div>
+          <nav class="navbar navbar-default">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
 
-                <div class="carousel-slider">
-                  <% @galleries.each do |gallery| %>
-                    <%= link_to(gallery, class: 'fancybox slider-image') do %>
-                      <%= content_tag(:span, gallery.title) %>
-                      <%= image_tag(gallery.main_photo.url(:slider_photo)) %>
-                    <% end %>
+                <div class="search">
+                  <%= form_tag announcements_path, method: 'get' do %>
+                      <%= text_field_tag :search, params[:search], placeholder: 'Пошук' %>
+                      <%= button_tag(type: 'submit', class: 'btn btn-default search-button') do %>
+                          <i class="glyphicon glyphicon-search"></i>
+                      <% end %>
                   <% end %>
                 </div>
-              </section>
+              </div>
+              <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+                <ul class="nav-menu">
+                  <li>
+                    <%= link_to root_path do %>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                    <% end %>
+                  </li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Публікації', announcements_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Про «Че»', pro_che_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Галерея', galleries_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Афіша', events_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Наша команда', pro_go_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'КіноШот', kinoshot_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li><%= link_to 'Мат', mat_path %></li>
+                  <li class="nav-menu-divider">//</li>
+                  <li>Медіа</li>
+                  <li class="nav-menu-divider">//</li>
+                </ul>
+              </div><!--/.nav-collapse -->
+
+          </nav>
+        </header>
+        <div id="content" class="container-fluid">
+          <div class="row">
+              <div class="col-md-2">
+                <%= render 'shared/novelties' %>
+              </div>
+            <%= yield %>
+            <% if action_name == 'home' && controller_name == 'welcome' %>
+              <div class="col-md-12">
+                <%= render 'shared/gallery_slider' %>
+              </div>
             <% end %>
           </div>
-        <% end %>
+        </div>
+        <%= render '/layouts/footer' %>
       </div>
     </div>
-    <%= render '/layouts/footer' %>
-  </div>
-</div>
-</body>
+  </body>
 </html>
