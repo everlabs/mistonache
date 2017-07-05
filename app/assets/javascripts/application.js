@@ -291,7 +291,7 @@ $(document).ready( function () {
   /*fancybox*/
 
   $('.fancybox').fancybox({
-    prevEffect  : 'none',
-    nextEffect  : 'none'
+    prevEffect  : 'animate',
+    nextEffect  : 'animate'
   });
 });
