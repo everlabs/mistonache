@@ -21,8 +21,6 @@ set :puma_conf, "#{shared_path}/config/puma.rb"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :nginx_use_ssl, true
 
-
-
 namespace :deploy do
   before 'check:linked_files', 'config:push'
   before 'check:linked_files', 'puma:config'
@@ -30,4 +28,3 @@ namespace :deploy do
   before 'deploy:migrate', 'deploy:db:create'
   after 'puma:smart_restart', 'nginx:restart'
 end
-

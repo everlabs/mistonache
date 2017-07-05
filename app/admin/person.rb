@@ -4,9 +4,9 @@ ActiveAdmin.register Person do
 
   form do |f|
     f.inputs do
-      f.input :go_category_id, as: :select, collection: GoCategory.all.collect {|category| [category.name, category.id]}
-      f.input :kinoshot_category_id, as: :select, collection: KinoshotCategory.all.collect {|category| [category.name, category.id]}
-      f.input :mat_category_id, as: :select, collection: MatCategory.all.collect {|category| [category.name, category.id]}
+      f.input :go_category_id, as: :select, collection: GoCategory.all.collect { |category| [category.name, category.id] }
+      f.input :kinoshot_category_id, as: :select, collection: KinoshotCategory.all.collect { |category| [category.name, category.id] }
+      f.input :mat_category_id, as: :select, collection: MatCategory.all.collect { |category| [category.name, category.id] }
       f.input :name
       f.input :description, as: :ckeditor
       f.input :photo, as: :file
