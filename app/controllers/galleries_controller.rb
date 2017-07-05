@@ -1,7 +1,7 @@
 class GalleriesController < ApplicationController
 
   def index
-    @galleries = Gallery.paginate(page: params[:page], per_page: 15)
+    @galleries = Gallery.paginate(page: params[:page], per_page: 15).order(created_at: :desc)
   end
 
   def show
