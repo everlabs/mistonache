@@ -36,7 +36,7 @@ ActiveAdmin.register Gallery do
       gallery.description.truncate(100) if gallery.description
     end
     column 'Обкладинка галереї' do |gallery|
-      image_tag gallery.main_photo.url(:thumb)
+      image_tag gallery.main_photo.url(:thumb) if gallery.main_photo
     end
     column 'Фото' do |gallery|
       ul class: 'photo-list' do
@@ -60,11 +60,11 @@ ActiveAdmin.register Gallery do
         gallery.description.truncate(100) if gallery.description
       end
       row :main_photo do |gallery|
-        image_tag gallery.main_photo.url(:thumb)
+        image_tag gallery.main_photo.url(:thumb) if gallery.main_photo
       end
       row('Назва') { |r| r.title }
       row :photo do
-        ul :class => 'photo-list' do
+        ul class: 'photo-list' do
           gallery.photo.each do |photo|
             li do
               image_tag(photo.url(:thumb)) if photo.present?
