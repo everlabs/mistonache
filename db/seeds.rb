@@ -7,7 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password',
                   name: 'Адміністратор')
-Category.create!(name: 'Події')
-Category.create!(name: 'Мальовнича Черкащина')
-Category.create!(name: 'Спалах минулого')
-Category.create!(name: 'Ремарка')
+Category.create!([{ name: 'Події' }, { name: 'Мальовнича Черкащина' }, { name: 'Спалах минулого' }, { name: 'Ремарка' }])
