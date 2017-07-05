@@ -8,7 +8,7 @@ set :user, 'deployer'
 set :application, 'mistonache'
 set :rails_env, 'production'
 server 'mistoche.org.ua', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
-set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/puma.rb')
@@ -18,7 +18,7 @@ set :config_example_suffix, '.example'
 set :config_files, %w{config/database.yml config/secrets.yml}
 set :puma_conf, "#{shared_path}/config/puma.rb"
 
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 set :nginx_use_ssl, true
 
 namespace :deploy do
