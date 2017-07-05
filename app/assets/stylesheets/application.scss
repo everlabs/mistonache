@@ -66,6 +66,15 @@ div.wrapper {
   margin: auto;
 }
 
+.solid-divider {
+  display: block;
+  border-bottom: 2px solid #000000;
+  //margin-top: 58px;
+  position: relative;
+  top: -18px;
+  z-index: 1;
+}
+
 #content {
   background: $white;
   padding-top: 50px;
