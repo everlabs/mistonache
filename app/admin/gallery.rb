@@ -39,7 +39,7 @@ ActiveAdmin.register Gallery do
       image_tag gallery.main_photo.url(:thumb)
     end
     column 'Фото' do |gallery|
-      ul :class => 'photo-list' do
+      ul class: 'photo-list' do
         gallery.photo.each do |photo|
           li do
             image_tag(photo.url(:thumb)) if photo.present?
