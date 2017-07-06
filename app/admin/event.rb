@@ -46,7 +46,7 @@ ActiveAdmin.register Event do
       row 'Опис', :description do |event|
         event.description.truncate(100).html_safe
       end
-      row('Категорія') { |r| r.event_category.name }
+      row('Категорія') { |r| r.event_category.name if r.event_category }
       row('Дата початку') { |r| l r.start_date, format: :default }
     end
   end
