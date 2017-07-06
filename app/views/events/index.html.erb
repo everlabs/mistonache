@@ -1,19 +1,18 @@
 <% provide(:title, 'Афіша') %>
 
-<div class="categories">
-  <ul>
-    <li class="left">
-      <%= link_to 'Усі події', fetch_event_categories_path(name: 'all_events'), remote: true %>
-    </li>
-    <% @event_categories.limit(8).each do |category| %>
-      <li class="left">
-        <%= link_to category.name, fetch_event_categories_path(name: category.name), remote: true %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
 <div class="col-md-7">
+  <div class="categories">
+    <ul>
+      <li class="left">
+        <%= link_to 'Усі події', fetch_event_categories_path(name: 'all_events'), remote: true %>
+      </li>
+      <% @event_categories.limit(8).each do |category| %>
+        <li class="left">
+          <%= link_to category.name, fetch_event_categories_path(name: category.name), remote: true %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
   <div class="row events">
     <%= render @events %>
   </div>
