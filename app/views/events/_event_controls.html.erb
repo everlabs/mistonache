@@ -17,13 +17,13 @@
   </div>
 </div>
 <div class="aside-section">
-  <ul class="place-filter">
+  <ul>
     <h5 class="section-header" data-toggle="collapse" data-target="#places-collapse" style="cursor: pointer">
       <span>Місце події</span>
     </h5>
-    <div id="places-collapse" class="collapse collapse-item">
+    <div id="places-collapse" class="collapse collapse-item" >
       <% @places.by_name.each do |place| %>
-        <li class="place-name" data-place-id="<%= place.id %>">
+        <li class="place-name place-filter-selection" data-place-id="<%= place.id %>">
           <h3><%= place.name %></h3>
         </li>
       <% end %>

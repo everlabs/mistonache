@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
   def place_id
     respond_to do |format|
-      format.json {  render json: Event.by_date_of_event.where(place_id: params[:place_id]).all}
+      format.json { render json: Event.by_date_of_event.where(place_id: params[:place_id]).all }
     end
   end
 

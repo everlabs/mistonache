@@ -294,4 +294,33 @@ $(document).ready( function () {
     prevEffect  : 'animate',
     nextEffect  : 'animate'
   });
+
+
+
+  function getEventsTemplate(events) {
+    return events.reduce(function (eventsTemplate, event) {
+      return eventsTemplate + getEventTemplate(event)
+    }, '');
+  }
+
+  function getEventTemplate(event) {
+    return '<div class="col-xs-6 col-md-3  event">' +
+      ' <a class="event-poster" data-toggle="modal" data-target="#modal-window" data-remote="true" href="events/'+ event.id +'">' +
+      '<img src="' + event.image.medium.url + '"  class="img-responsive" alt="Medium biggest 30">'+ '</a>'+
+      '   <h3 class="event-title">' + event.title + '</h3>' +
+      '   <span class="event-inscription">' +
+      '       <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;' +
+      moment(event.start_date).format('D MMM., H:mm') +
+      '   </span>' +
+      '</div>';
+  }
+
+  $('.place-filter-selection').click(function (event) {
+    var placeId = $(this).data('place-id');
+    $.get('/events/place/' + placeId + '.json')
+      .done(function(queriedEvents) {
+        $('div.events').html(getEventsTemplate(queriedEvents));
+      });
+  });
+
 });
