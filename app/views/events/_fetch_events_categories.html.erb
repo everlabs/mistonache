@@ -1,4 +1,4 @@
-<% @events.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).paginate(page: params[:page], per_page: 20).each do |event| %>
+<% @events.sort_by{|event| event.start_date}.each do |event| %>
   <div class="col-xs-6 col-md-3 event">
     <%= link_to (image_tag event.image.url(:medium), class:'img-responsive'), event, {remote: true, class: 'event-poster',
                                                                                       'data-toggle' =>  'modal',
