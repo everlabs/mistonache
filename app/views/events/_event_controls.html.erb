@@ -18,13 +18,15 @@
 </div>
 <div class="aside-section">
   <ul class="place-filter">
-    <h5 class="section-header">
+    <h5 class="section-header" data-toggle="collapse" data-target="#places-collapse" style="cursor: pointer">
       <span>Місце події</span>
     </h5>
-    <% @places.by_name.each do |place| %>
-      <li class="place-name" data-place-id="<%= place.id %>">
-        <h3><%= place.name %></h3>
-      </li>
-    <% end %>
+    <div id="places-collapse" class="collapse collapse-item">
+      <% @places.by_name.each do |place| %>
+        <li class="place-name" data-place-id="<%= place.id %>">
+          <h3><%= place.name %></h3>
+        </li>
+      <% end %>
+    </div>
   </ul>
 </div>

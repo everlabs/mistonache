@@ -10,7 +10,7 @@ class EventsController < ApplicationController
       if params_valid?(params)
         format.json { render json: Event.by_date_of_event.get_month(params[:year], params[:month]), status: :ok }
       else
-        format.json { render json: {data: 'Invalid parameters'}, status: :bad_request }
+        format.json { render json: { data: 'Invalid parameters' }, status: :bad_request }
       end
     end
 
