@@ -256,8 +256,8 @@ $(document).ready( function () {
     dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     responsive: [
       {
         breakpoint: 1024,

@@ -1,10 +1,11 @@
 class Gallery < ApplicationRecord
   validates :title, presence: true,
-            length: { in: 10..25 }
+            length: { in: 10..100 }
   validates :description, presence: true,
             length: { in: 25..350 }
   validates :main_photo, presence: true
   validates :photo, presence: true
+  validates :gallery_date, presence: true
 
   belongs_to :admin_user
 

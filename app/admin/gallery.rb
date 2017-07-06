@@ -1,8 +1,8 @@
 ActiveAdmin.register Gallery do
 
-  permit_params :title, :description, :admin_user_id, :main_photo, photo: []
+  permit_params :title, :description, :admin_user_id, :main_photo, :gallery_date, photo: []
 
-  form :html => { multipart: true } do |f|
+  form html: { multipart: true } do |f|
     f.inputs do
       f.input :title, label: 'Назва'
       f.input :description, label: 'Опис'
@@ -12,6 +12,7 @@ ActiveAdmin.register Gallery do
       end
       f.input :photo, as: :file, input_html: { multiple: true }, label: 'Фотографії галереї'
       f.input :admin_user_id, as: :select, collection: AdminUser.all.collect { |admin_user| [admin_user.name, admin_user.id] }
+      f.input :gallery_date
     end
     f.actions
   end
@@ -19,7 +20,6 @@ ActiveAdmin.register Gallery do
   controller do
     def create
       @gallery = Gallery.new(permitted_params[:gallery])
-      @gallery.admin_user_id = current_admin_user.id
       if @gallery.save
         redirect_to admin_gallery_path(@gallery), notice: 'Альбом успішно створений.'
       else
@@ -48,7 +48,7 @@ ActiveAdmin.register Gallery do
       end
     end
     column 'Автор', :admin_user_id
-    column 'Дата створення', :created_at
+    column 'Дата створення', :gallery_date
     actions
   end
 
@@ -73,6 +73,7 @@ ActiveAdmin.register Gallery do
         end
       end
       row('Автор') { |r| link_to r.admin_user.name, admin_admin_user_path(r.admin_user_id) }
+      row :gallery_date
     end
   end
 

@@ -4,9 +4,10 @@
       <% @galleries.each do |gallery| %>
         <%= link_to(gallery, class: 'fancybox slider-image') do %>
           <%= content_tag(:span, gallery.title) if gallery.title %>
-          <%= image_tag(gallery.main_photo.url(:slider_photo)) if gallery.main_photo %>
+          <%= image_tag(gallery.main_photo.url(:slider_photo_rectangle)) if gallery.main_photo %>
         <% end %>
       <% end %>
     </div>
   </section>
+  <div class="gallery-bottom-separator"></div>
 <% end %>
