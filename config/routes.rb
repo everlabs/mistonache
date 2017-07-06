@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get 'kinoshot/announcements', to: 'announcements#kinoshot_announcements', as: 'kinoshot_announcements'
   get 'mat/announcements', to: 'announcements#mat_announcements', as: 'mat_announcements'
   get 'pro-go/persons/:id', to: 'welcome#person', as: 'persons'
+  get 'fetch_event_categories', to: 'events#fetch_events_categories', as: 'fetch_event_categories'
 
 end

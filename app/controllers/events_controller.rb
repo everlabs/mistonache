@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).paginate(page: params[:page], per_page: 20)
     @places = Place.all
+    @event_categories = EventCategory.all
 
     respond_to do |format|
       format.html { render 'events/index', locals: { events: Event.all.by_date_of_event } }
@@ -22,6 +23,24 @@ class EventsController < ApplicationController
   def place_id
     respond_to do |format|
       format.json {  render json: Event.by_date_of_event.where(place_id: params[:place_id]).all}
+    end
+  end
+
+  def fetch_events_categories
+    @events = []
+    if params[:name] == 'all_events'
+      @events = Event.all
+    else
+      event_category = EventCategory.find_by_name(params[:name])
+      Event.where(event_category_id: event_category.id).each do |event|
+        @events << event
+      end
+    end
+
+    @events
+
+    respond_to do |format|
+      format.js
     end
   end
 

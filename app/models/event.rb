@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
   belongs_to :place
+  belongs_to :event_category
 
   validates :image, presence: true
   validates :title, presence: true

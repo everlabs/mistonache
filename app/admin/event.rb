@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
 
-  permit_params :title, :description, :start_date, :image, :place_id
+  permit_params :title, :description, :start_date, :image, :place_id, :event_category_id
 
   controller do
     def new
@@ -13,6 +13,7 @@ ActiveAdmin.register Event do
       f.input :image, as: :file
       f.input :title
       f.input :description, as: :ckeditor
+      f.input :event_category
       f.input :place
       f.input :start_date, as: :datetime_select
     end
@@ -26,8 +27,9 @@ ActiveAdmin.register Event do
     end
     column 'Заголовок', :title
     column 'Місце', :place
+    column 'Категорія', :event_category
     column 'Текст', :description do |event|
-      truncate(event.description, length: 300, escape: false)
+      event.description.truncate(100).html_safe
     end
     column 'Дата початку', :start_date
     actions
@@ -39,10 +41,13 @@ ActiveAdmin.register Event do
       row 'Зображення', :image do |event|
         image_tag event.image.url(:thumb)
       end
-      row 'Заголовок', :title
-      row 'Місце', :place
-      row 'Текст', :description
-      row 'Дата початку', :start_date
+      row('Заголовок') { |r| r.title }
+      row('Місце') { |r| r.place.name }
+      row 'Опис', :description do |event|
+        event.description.truncate(100).html_safe
+      end
+      row('Категорія') { |r| r.event_category.name }
+      row('Дата початку') { |r| l r.start_date, format: :default }
     end
   end
 
