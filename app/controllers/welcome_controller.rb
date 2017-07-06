@@ -5,15 +5,8 @@ class WelcomeController < ApplicationController
 
   def home
     @announcements = Announcement.main_feed
-    @top_announcements = []
-
-    Category.all.each do |category|
-      @top_announcements << get_popular_announcement(category.name)
-    end
-    
-    @top_announcements
-    # @top_announcements = [ get_popular_announcement('Події'), get_popular_announcement('Мальовнича Черкащина'),
-    #                   get_popular_announcement('Спалах минулого'), get_popular_announcement('Ремарка') ]
+    @top_announcements = [ get_popular_announcement('Події'), get_popular_announcement('Мальовнича Черкащина'),
+                      get_popular_announcement('Спалах минулого'), get_popular_announcement('Ремарка') ]
   end
 
   def history

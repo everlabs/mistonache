@@ -11,7 +11,7 @@ ActiveAdmin.register Gallery do
         '<p class="notation">Щоб додати декілька фотографій одразу - натисніть "Оберіть файли" та виділіть потрібні фотографії, зажавши клавішу "Shift", або "Ctrl"</p>'.html_safe
       end
       f.input :photo, as: :file, input_html: { multiple: true }, label: 'Фотографії галереї'
-      f.input :admin_user_id, as: :hidden
+      f.input :admin_user_id, as: :select, collection: AdminUser.all.collect { |admin_user| [admin_user.name, admin_user.id] }
     end
     f.actions
   end
