@@ -73,7 +73,7 @@ ActiveAdmin.register Gallery do
         end
       end
       row('Автор') { |r| link_to r.admin_user.name, admin_admin_user_path(r.admin_user_id) }
-      row :gallery_date
+      row('Дата створення') { |r| l r.gallery_date, format: :long }
     end
   end
 

@@ -6,14 +6,27 @@
   }
 }
 
-.slider-image span,
-.main-photo-index span {
+.slider-image span {
   position: relative;
   margin-left: auto;
   margin-right: auto;
   left: 10px;
   right: 0;
   top: 180px;
+  display: block;
+  font: bold 16px 'Bookman_Old_Style_Regular', sans-serif;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000;
+  text-decoration: none;
+}
+
+.main-photo-index span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 10px;
+  right: 0;
+  top: 225px;
   display: block;
   font: bold 16px 'Bookman_Old_Style_Regular', sans-serif;
   color: #ffffff;
