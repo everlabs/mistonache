@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if content_for(:head) %>
+      <%= yield(:head) %>
+    <% end %>
     <title><%= title_helper %></title>
     <%= favicon_link_tag 'logo-small.jpeg' %>
     <%= csrf_meta_tags %>
