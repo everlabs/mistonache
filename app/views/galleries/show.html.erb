@@ -1,6 +1,7 @@
 <% content_for :title, @gallery.title %>
 
 <% content_for(:head) do %>
+  <meta property="og:image" content="<%= image_url(@gallery.main_photo) %>" />
   <meta property="og:title" content="<%= @gallery.title %>" />
   <meta property="og:description" content="<%= @gallery.description %>" />
 <% end %>
