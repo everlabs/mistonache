@@ -22,8 +22,8 @@
       <span>Місце події</span>
     </h5>
     <div class="filter-container">
-      <div class="filter-title" data-toggle="collapse" data-target="#places-collapse">Обрати місце:</div>
-      <div class="selected-place">Усі місця</div>
+      <div class="filter-title">Обрати місце:</div>
+      <div class="selected-place"  data-toggle="collapse" data-target="#places-collapse">Усі місця</div>
       <div id="places-collapse" class="collapse collapse-item">
         <li>
           <%= link_to 'Усі місця', fetch_events_places_path(place_id: 'all'), remote: true, class: 'place-filter' %>

@@ -344,14 +344,10 @@
 .filter-title {
   width: 100%;
   height: auto;
-  cursor: pointer;
   color: #000000;
   background-color: rgb(246, 246, 246);
   padding: 10px 0 10px 10px;
   font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
-  &:hover {
-    color: #ff0000;
-  }
 }
 
 .place-filter {
@@ -371,6 +367,10 @@
   text-decoration: none;
   display: inline-block;
   padding: 10px 0 10px 10px;
+  cursor: pointer;
+  &:hover {
+    color: #000000;
+  }
 }
 
 #places-collapse {
