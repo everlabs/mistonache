@@ -27,17 +27,13 @@ class EventsController < ApplicationController
   end
 
   def fetch_events_categories
-    @events = []
     if params[:name] == 'all_events'
       @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).paginate(page: params[:page], per_page: 20)
     else
       event_category = EventCategory.find_by_name(params[:name])
-      Event.where(event_category_id: event_category.id).each do |event|
-        @events << event
-      end
+      @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day)
+                  .where(event_category_id: event_category.id).paginate(page: params[:page], per_page: 20)
     end
-
-    @events
 
     respond_to do |format|
       format.js
