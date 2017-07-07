@@ -1,5 +1,6 @@
 <% content_for(:head) do %>
   <meta property="og:image" content="<%= image_url('gallery_image.jpg') %>" />
+  <meta property="og:url" content="<%= request.original_url %>" />
   <meta property="og:title" content="Галерея | Місто на &quot;Че&quot;" />
 <% end %>
 
