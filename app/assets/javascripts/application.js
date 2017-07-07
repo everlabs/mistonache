@@ -299,6 +299,9 @@ $(document).ready( function () {
     var text = $(this).text();
     $('.selected-place').text(text);
     $('#places-collapse').collapse('hide');
+    $('html body').animate({
+      scrollTop: $('.categories').offset().top
+    });
   });
 
 });
