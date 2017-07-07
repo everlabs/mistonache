@@ -3,11 +3,6 @@
                                                                                     'data-toggle' =>  'modal',
                                                                                     'data-target' => '#modal-window'} %>
   <h3 class="event-title"><%= event.title %></h3>
-  <% if event.event_category.present? %>
-      <span class="event-inscription">
-        <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;<%= event.event_category.name %>
-      </span>
-  <% end %>
   <span class="event-inscription">
     <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l event.start_date, format: :short %>
   </span>

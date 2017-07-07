@@ -331,3 +331,48 @@
     }
   }
 }
+
+.filter-container {
+  border: 1px solid #cccccc;
+  width: 100%;
+  i {
+    font-size: 17.55px;
+    margin-left: 5px;
+  }
+}
+
+.filter-title {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  color: #000000;
+  background-color: rgb(246, 246, 246);
+  padding: 10px 0 10px 10px;
+  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  &:hover {
+    color: #ff0000;
+  }
+}
+
+.place-filter {
+  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0 10px 10px;
+  &:hover {
+    color: #ff0000;
+  }
+}
+
+.selected-place {
+  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0 10px 10px;
+}
+
+#places-collapse {
+  background-color: rgb(246, 246, 246);
+}
