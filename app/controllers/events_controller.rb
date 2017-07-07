@@ -20,17 +20,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def place_id
-    respond_to do |format|
-      if params[:place_id] == 'all'
-        format.json { render json: Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).all }
-      else
-        format.json { render json: Event.by_date_of_event.where(place_id: params[:place_id])
-                                     .where('start_date > ?', Time.now.beginning_of_day).all }
-      end
-    end
-  end
-
   def fetch_events_places
     if params[:place_id] == 'all'
       @events = Event.by_date_of_event.where('start_date > ?', Time.now.beginning_of_day).all
