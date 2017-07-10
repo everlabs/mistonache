@@ -1,5 +1,5 @@
 <% if @events.any? %>
-  $('.row.events').empty().append('<%= j render 'fetch_events_places' %>');
+  $('.row.events').empty().append('<%= j render 'fetch_events' %>');
 <% else %>
   $('.event').empty();
 <% end %>

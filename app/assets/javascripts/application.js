@@ -300,7 +300,7 @@ $(document).ready( function () {
     $('.selected-place').text(text);
     $('#places-collapse').collapse('hide');
     $('html body').animate({
-      scrollTop: $('.categories').offset().top
+      scrollTop: $('body').offset().top
     });
   });
 
