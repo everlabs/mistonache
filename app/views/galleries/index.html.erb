@@ -10,7 +10,7 @@
       <h1 class="go-title">Фотогалерея міста на "Че"</h1>
     </div>
     <% @galleries.each do |gallery| %>
-      <div class="col-md-4">
+      <div class="col-md-4 gallery-main-image-container">
         <%= link_to(gallery, class: 'main-photo-index') do %>
           <%= content_tag(:span, gallery.title) %>
           <%= image_tag gallery.main_photo.url(:main_photo_index) %>

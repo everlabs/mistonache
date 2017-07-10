@@ -7,12 +7,13 @@
 }
 
 .slider-image span {
-  position: relative;
+  width: 300px;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 10px;
   right: 0;
-  top: 180px;
+  top: 165px;
   display: block;
   font: bold 16px 'Bookman_Old_Style_Regular', sans-serif;
   color: #ffffff;
@@ -21,12 +22,13 @@
 }
 
 .main-photo-index span {
-  position: relative;
+  width: 345px;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
-  left: 10px;
+  left: 20px;
   right: 0;
-  top: 225px;
+  top: 205px;
   display: block;
   font: bold 16px 'Bookman_Old_Style_Regular', sans-serif;
   color: #ffffff;
@@ -46,4 +48,12 @@
 
 .gallery-pagination {
   text-align: center;
+}
+
+.carousel-slider a {
+  position: relative;
+}
+
+.gallery-main-image-container {
+  margin-bottom: 20px;
 }
