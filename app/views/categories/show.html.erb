@@ -2,17 +2,18 @@
   <h1 class="category-name"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<%= @category.name %></h1>
 
   <% @announcements.each do |article| %>
-      <div class="category-article">
-        <h3><%= link_to article.title, article%></h3>
-        <div class="body"><%= raw strip_tags(article.body).truncate(300) %></div>
-        <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
-        <p class="created_at"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.published_at, format: :short %></p>
-      </div>
+    <div class="category-article">
+      <h3><%= link_to article.title, article %></h3>
+      <div class="body"><%= raw strip_tags(article.body).truncate(300) %></div>
+      <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
+      <p class="created_at">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.published_at, format: :short %></p>
+    </div>
   <% end %>
 </div>
 <div class="col-md-3">
  <% @announcements = @side_announcements %>
-  <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
+  <%= render 'shared/right_bar/publications', title: 'Публікації' %>
   <%= render 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>
