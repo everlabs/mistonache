@@ -13,6 +13,6 @@
 <div class="col-md-3">
  <% @announcements = @side_announcements %>
   <%= render partial: 'shared/right_bar/publications', locals: { title: 'Публікації' } %>
-  <%= render partial: 'shared/right_bar/banner' %>
+  <%= render 'shared/right_bar/banner' %>
   <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche'  %>
 </div>
