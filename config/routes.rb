@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   get 'pro-che/video' => 'welcome#video'
   get 'pro-che/emblems' => 'welcome#emblems'
   get 'mat/repertoir/:id' => 'welcome#repertoir', as:'repertoir'
-  get 'kinoshot' => 'welcome#kinoshot'
   get 'pro-che' => 'welcome#pro_che'
   get 'pro-go' => 'welcome#pro_go'
-  get 'mat' => 'welcome#mat'
+  get 'molod_ua' => 'welcome#molod_ua'
+  # get 'kinoshot' => 'welcome#kinoshot'
+  # get 'mat' => 'welcome#mat'
 
   resources :announcements, only: [:show, :index]
   resources :categories, only: [:show, :index]

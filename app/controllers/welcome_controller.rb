@@ -36,17 +36,20 @@ class WelcomeController < ApplicationController
     @person = Person.find(params[:id])
   end
 
-  def kinoshot
-    @announcements = Announcement.kinoshot_feed
-    @people = Person.all.where.not(kinoshot_category_id: nil)
-    @teams = @people.group_by(&:kinoshot_category_id).sort
-  end
+  # def kinoshot
+  #   @announcements = Announcement.kinoshot_feed
+  #   @people = Person.all.where.not(kinoshot_category_id: nil)
+  #   @teams = @people.group_by(&:kinoshot_category_id).sort
+  # end
 
-  def mat
-    @announcements = Announcement.mat_feed
-    @people = Person.all.where.not(mat_category_id: nil)
-    @teams = @people.group_by(&:mat_category_id).sort
-    @repertoiries = Repertoire.all
+  # def mat
+  #   @announcements = Announcement.mat_feed
+  #   @people = Person.all.where.not(mat_category_id: nil)
+  #   @teams = @people.group_by(&:mat_category_id).sort
+  #   @repertoiries = Repertoire.all
+  # end
+
+  def molod_ua
   end
 
   private
