@@ -6,7 +6,7 @@
       <h3><%= link_to article.title, article %></h3>
       <div class="body"><%= raw strip_tags(article.body).truncate(300) %></div>
       <p class="author"><i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><%= article.admin_user.name %></p>
-      <p class="announcement-next"><%= link_to 'Читати далі »', announcement_path %></p>
+      <p class="announcement-next"><%= link_to 'Читати далі »', announcement_path(article) %></p>
       <p class="created_at">
         <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= l article.published_at, format: :short %></p>
     </div>
