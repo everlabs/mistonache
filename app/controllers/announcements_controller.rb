@@ -4,7 +4,7 @@ class AnnouncementsController < ApplicationController
 
   def index
     if params[:search]
-      @announcements = Announcement.where('title ILIKE ?', "%#{params[:search]}%").order("published_at").last.announcements_feed.paginate(page: params[:page], per_page: 4)
+      @announcements = Announcement.where('title ILIKE ?', "%#{params[:search]}%").announcements_feed.paginate(page: params[:page], per_page: 5)
     else
       @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 5)
     end
