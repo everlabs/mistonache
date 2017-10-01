@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/activeadmin/inherited_resources.git
-  revision: 4434f0ae72f790cf371728838c927c338100555d
-  specs:
-    inherited_resources (1.6.0)
-      actionpack (>= 3.2, < 5.1)
-      has_scope (~> 0.6)
-      railties (>= 3.2, < 5.1)
-      responders
-
-GIT
   remote: git://github.com/capistrano/capistrano.git
   revision: 77481802b9a1171856ea6737ac9cfd20ba97694d
   specs:
@@ -151,10 +141,15 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    has_scope (0.7.0)
-      actionpack (>= 4.1, < 5.1)
-      activesupport (>= 4.1, < 5.1)
+    has_scope (0.7.1)
+      actionpack (>= 4.1, < 5.2)
+      activesupport (>= 4.1, < 5.2)
     i18n (0.8.1)
+    inherited_resources (1.7.2)
+      actionpack (>= 3.2, < 5.2.x)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.2.x)
+      responders
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -321,7 +316,6 @@ DEPENDENCIES
   ckeditor!
   devise
   font-awesome-sass
-  inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
   just-datetime-picker
@@ -350,4 +344,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.14.6
+   1.15.4

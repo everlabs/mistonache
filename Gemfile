@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'activeadmin', '~> 1.0.0.pre4'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+# gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'whenever', :require => false
 gem 'ckeditor', github: 'galetahub/ckeditor'
