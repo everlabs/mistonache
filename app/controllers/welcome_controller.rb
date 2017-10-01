@@ -67,7 +67,7 @@ class WelcomeController < ApplicationController
   end
 
   def get_popular_announcement(category_name)
-    category_id = Category.find_by_name(category_name).id
+    category_id = Category.find_by_name(category_name)&.id
     Announcement.where(category_id: category_id).sort_by{|e| e[:visits]}.reverse.first
   end
 
