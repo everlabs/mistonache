@@ -2,12 +2,12 @@
 lock '3.8.0'
 
 set :repo_url, 'git@github.com:everlabs/mistonache.git'
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :user, 'deployer'
 set :application, 'mistonache'
 set :rails_env, 'production'
-server 'mistoche.org.ua', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server '207.154.232.61', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
