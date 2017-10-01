@@ -7,7 +7,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :user, 'deployer'
 set :application, 'mistonache'
 set :rails_env, 'production'
-server '207.154.232.61', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server 'mistonache.ck.ua', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
