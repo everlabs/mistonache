@@ -19,7 +19,7 @@ set :config_files, %w{config/database.yml config/secrets.yml}
 set :puma_conf, "#{shared_path}/config/puma.rb"
 
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
-set :nginx_use_ssl, false
+set :nginx_use_ssl, true
 
 namespace :deploy do
   before 'check:linked_files', 'config:push'

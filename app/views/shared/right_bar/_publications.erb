@@ -3,27 +3,29 @@
 </h5>
 <div class="aside-section">
   <ul>
-    <% @announcements.each do |announcement| %>
-        <li class="announcement">
-          <div class="announcement-image">
-            <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>
-          </div>
-          <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
-          <div class="announcement-info">
-                      <span class="announcement-author">
-                        <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i>
-                        <%= announcement.admin_user.name %>
-                      </span>
-            <span class="announcement-category">
-                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
-              <%= link_to announcement.category.name, announcement.category if announcement.category %>
-                      </span>
-            <span class="announcement-date">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;
-              <%= l announcement.published_at, format: :short %>
-                      </span>
-          </div>
-        </li>
+    <% if @announcements.any? %>
+      <% @announcements.each do |announcement| %>
+          <li class="announcement">
+            <div class="announcement-image">
+              <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>
+            </div>
+            <h2 class="announcement-title"><%= link_to announcement.title, announcement %></h2>
+            <div class="announcement-info">
+                        <span class="announcement-author">
+                          <i class="fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i>
+                          <%= announcement.admin_user.name %>
+                        </span>
+              <span class="announcement-category">
+                          <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;
+                <%= link_to announcement.category.name, announcement.category if announcement.category %>
+                        </span>
+              <span class="announcement-date">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;
+                <%= l announcement.published_at, format: :short %>
+                        </span>
+            </div>
+          </li>
+      <% end %>
     <% end %>
   </ul>
 </div>
