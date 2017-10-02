@@ -35,7 +35,7 @@ keepalive_timeout 10;
 error_page 500 502 504 /500.html;
 error_page 503 @503;
 
-server_name <%= fetch(:nginx_server_name) %>;
+server_name <%= fetch(:nginx_server_name) %> mistonache.ck.ua www.mistonache.ck.ua;
 root <%= current_path %>/public;
 try_files $uri/index.html $uri @puma_<%= fetch(:nginx_config_name) %>;
 
