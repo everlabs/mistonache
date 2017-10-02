@@ -4,7 +4,7 @@
       <span><%= title %></span>
     </h5>
   </div>
-  <%= if @top_announcements.any? %>
+  <% if @top_announcements.any? %>
     <% @top_announcements.each do |announcement| %>
       <% if announcement.present? %>
         <div class="col-md-6 announcement ">
