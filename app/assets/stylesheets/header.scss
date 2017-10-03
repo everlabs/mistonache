@@ -103,14 +103,15 @@
   .social-header {
     width: 100%;
     height: 55px;
-    background-color: #000;
+    background-color: #EF7B00;
 
     p {
       float: left;
       color: #fff;
       margin-left: 60px;
       padding-top: 18px;
-      font: 18px 'Bookman_Old_Style_Bold', sans-serif;
+      font: 18px 'Bravo_Regular', sans-serif;
+      font-weight: bold;
       text-transform: uppercase;
     }
 
@@ -198,7 +199,7 @@
     p {
       margin-left: 10px !important;
       padding-top: 18px !important;
-      font: 12px 'Bookman_Old_Style_Bold', sans-serif !important;
+      font: 12px 'Bravo_Regular', sans-serif !important;
     }
 
   }}
