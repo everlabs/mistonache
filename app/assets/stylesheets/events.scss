@@ -316,7 +316,8 @@
         border-right: none;
       }
       a {
-        font: bold 14px 'Bookman_Old_Style_Regular', sans-serif;
+        font: bold 24px 'Bravo_Regular', sans-serif;
+        letter-spacing: 1px;
         color: #000000;
         text-decoration: none;
         display: inline-block;
@@ -347,11 +348,13 @@
   color: #000000;
   background-color: rgb(246, 246, 246);
   padding: 10px;
-  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  font: bold 27px 'Bravo_Regular', sans-serif;
+  letter-spacing: 1px;
 }
 
 .place-filter {
-  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  font: bold 27px 'Bravo_Regular', sans-serif;
+  letter-spacing: 1px;
   color: #000000;
   text-decoration: none;
   display: inline-block;
@@ -362,7 +365,8 @@
 }
 
 .selected-place {
-  font: bold 17.55px 'Bookman_Old_Style_Regular', sans-serif;
+  font: bold 27px 'Bravo_Regular', sans-serif;
+  letter-spacing: 1px;
   color: #ff0000;
   text-decoration: none;
   display: inline-block;

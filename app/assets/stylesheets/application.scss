@@ -122,7 +122,7 @@ div.wrapper {
        display: block;
         color: $white;
         text-shadow: $black 0 0 2px;
-        font: 18px 'Bravo_Regular', sans-serif !important;
+        font: 18px 'Kotyhoroshko', sans-serif !important;
         left: 13px;
         white-space: normal !important;
         width: 420px !important;
@@ -146,7 +146,8 @@ div.wrapper {
     margin-bottom: 10px;
     &-title a {
       @extend .link;
-      font: 15px/5px 'Bookman_Old_Style_Regular', sans-serif;
+      font: 15px/5px 'Bravo_Regular', sans-serif;
+      letter-spacing: 1px;
       font-weight: 600;
     }
     &-source {
@@ -226,6 +227,8 @@ ul hr:last-child {
     &-title {
       padding: 0;
       margin-left: 110px;
+      font-family: Bravo_Regular;
+      letter-spacing: 1px
     }
     &-info {
       padding-top: 5px;
@@ -252,6 +255,8 @@ ul hr:last-child {
 
   &-title {
     margin-bottom: 10px;
+    font-family: Bravo_Regular;
+    letter-spacing: 1px;
     a {
       @extend .link;
     }
@@ -322,6 +327,7 @@ ul hr:last-child {
 .announcement .title {
   color: #000000;
   font: 20px 'Bravo_Regular', sans-serif;
+  letter-spacing: 1px;
 }
 
 .team {
@@ -448,6 +454,11 @@ ul hr:last-child {
     .divider-nav{
     margin-top: 20px;
   }}
+}
+.title {
+  font-family: Bravo_Regular;
+  font-size: 30px;
+  letter-spacing: 1px;
 }
 @media screen and (max-width: 1200px) {
   .pro_che_baners{
