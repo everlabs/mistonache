@@ -1,8 +1,8 @@
 class Gallery < ApplicationRecord
   validates :title, presence: true,
-            length: { in: 10..100 }
+            length: { in: 10..150 }
   validates :description, presence: true,
-            length: { in: 25..350 }
+            length: { in: 25..1000 }
   validates :main_photo, presence: true
   validates :photo, presence: true
   validates :gallery_date, presence: true
