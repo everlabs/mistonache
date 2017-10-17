@@ -1,7 +1,8 @@
 class GalleriesController < ApplicationController
+  before_action increase_popularity, only: :show
 
   def index
-    @galleries = Gallery.paginate(page: params[:page], per_page: 15).order(created_at: :desc)
+    @galleries = Gallery.paginate(page: params[:page], per_page: 15).order(updated_at: :desc)
   end
 
   def show
@@ -9,4 +10,11 @@ class GalleriesController < ApplicationController
     @announcements = Announcement.main_feed
   end
 
+
+  private
+
+
+  def increase_popularity
+    Gallery.find(params[:id]).inc_popularity
+  end
 end

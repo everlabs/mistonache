@@ -52,7 +52,7 @@ class WelcomeController < ApplicationController
   private
 
   def gallery
-    @galleries = Gallery.all.order(created_at: :desc)
+    @galleries = Gallery.all.order(popularity: :desc)
   end
 
   def banners

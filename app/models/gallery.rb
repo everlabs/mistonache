@@ -16,4 +16,8 @@ class Gallery < ApplicationRecord
     "#{id}-#{Russian.translit(title).parameterize}"
   end
 
+  def inc_popularity
+    self.increment!(:popularity)
+  end
+
 end

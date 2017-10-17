@@ -36,4 +36,5 @@ class Announcement < ApplicationRecord
     self.published_at = Time.now
   end
 
+
 end
