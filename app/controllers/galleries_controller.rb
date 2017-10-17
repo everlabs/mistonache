@@ -2,7 +2,7 @@ class GalleriesController < ApplicationController
   before_action :increase_popularity, only: :show
 
   def index
-    @galleries = Gallery.paginate(page: params[:page], per_page: 15).order(updated_at: :desc)
+    @galleries = Gallery.paginate(page: params[:page], per_page: 15).order(gallery_date: :desc)
   end
 
   def show
