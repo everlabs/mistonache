@@ -28,7 +28,8 @@
           </div>
         </div>
     <% end %>
-    <%= will_paginate @announcements %>   <br>
+
+    <%= will_paginate @announcements, inner_window: 11 %>
 
   </div>
       <% end %>
