@@ -1,13 +1,15 @@
 class Announcement < ApplicationRecord
-  validates :main_image, presence: true
-  validates :title, presence: true, length: { in: 10..150 }
-  validates :body, presence: true, length: { minimum: 150 }
-  validates :published_at, presence: true
-  validates :category_id, presence: true
-  validates :admin_user_id, presence: true
+  # validates :main_image, presence: true
+  # validates :title, presence: true, length: { in: 10..150 }
+  # validates :body, presence: true, length: { minimum: 150 }
+  # validates :published_at, presence: true
+  # validates :category_id, presence: true
+  # validates :admin_user_id, presence: true
 
   belongs_to :admin_user
   belongs_to :category
+
+  has_many :announcement_views, dependent: :destroy
 
   after_initialize :set_default_published, if: :new_record?
 
