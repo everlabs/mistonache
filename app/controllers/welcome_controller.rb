@@ -75,10 +75,6 @@ class WelcomeController < ApplicationController
         reject{ |an| an.announcement_views.where(created_at: (Time.new - 30.days) .. Time.now).empty? }.
         map{ |an| most_viewed_by_month[an] = an.announcement_views }
 
-    if most_viewed_by_month.max_by{|k,v| v}
-      puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + most_viewed_by_month.max_by{|k,v| v}[0].to_s
-    end
-
     most_viewed_by_month.max_by{|k,v| v} ? most_viewed_by_month.max_by{|k,v| v}[0] : Announcement.where(category_id: category_id).sort_by{|e| e[:visits]}.reverse.first
   end
 end
