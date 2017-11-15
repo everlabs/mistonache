@@ -39,7 +39,13 @@
 // require turbolinks
 //= require ckeditor/init
 //= require just_datetime_picker/nested_form_workaround
-//= require_tree .
+//= reqire active_admin
+//= reqire bootstrap
+//= reqire cable
+//= reqire configuration
+//= reqire events
+
+// require_tree .
 
 $(document).ready( function () {
 

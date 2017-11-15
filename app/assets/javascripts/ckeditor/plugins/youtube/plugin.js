@@ -5,6 +5,7 @@
 * @version 2.1.6
 */
 (function () {
+
 	CKEDITOR.plugins.add('youtube', {
 		lang: ['ru'],
 		init: function (editor) {
