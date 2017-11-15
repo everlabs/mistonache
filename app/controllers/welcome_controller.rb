@@ -68,7 +68,13 @@ class WelcomeController < ApplicationController
 
   def get_popular_announcement(category_name)
     category_id = Category.find_by_name(category_name)&.id
-    Announcement.where(category_id: category_id).sort_by{|e| e[:visits]}.reverse.first
-  end
+    Announcement.where(category_id: category_id)
 
+    most_viewed_by_month = {}
+    Announcement.where(category_id: category_id).
+        reject{ |an| an.announcement_views.where(created_at: (Time.new - 30.days) .. Time.now).empty? }.
+        map{ |an| most_viewed_by_month[an] = an.announcement_views.where(created_at: (Time.new - 30.days) .. Time.now) }
+
+    most_viewed_by_month.max_by{|k,v| v}[0] || Announcement.where(category_id: category_id).sort_by{|e| e[:visits]}.reverse.first
+  end
 end

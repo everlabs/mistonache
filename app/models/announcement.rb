@@ -9,6 +9,8 @@ class Announcement < ApplicationRecord
   belongs_to :admin_user
   belongs_to :category
 
+  has_many :announcement_views, dependent: :destroy
+
   after_initialize :set_default_published, if: :new_record?
 
   mount_uploader :main_image, MainImageUploader
