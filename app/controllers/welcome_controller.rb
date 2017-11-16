@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
 
   def home
     @announcements = Announcement.main_feed
-    @top_announcements = [ get_popular_announcement('Події'), get_popular_announcement('Мальовнича Черкащина'),
-                      get_popular_announcement('Спалах минулого'), get_popular_announcement('Ремарка') ]
+    @top_announcements = [ get_popular_announcement('Події і Ремарки'), get_popular_announcement('Цікаві місця Черкас'),
+                      get_popular_announcement('Спалах минулого'), get_popular_announcement('Мальовнича Черкащина') ]
   end
 
   def history

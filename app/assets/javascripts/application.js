@@ -19,6 +19,8 @@
 //= require jquery.readyselector
 //= require calendario/modernizr.custom.63321
 //= require calendario/jquery.calendario
+//= require calendar/calendar
+//= require calendar/data
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.fancybox.pack
 //= require fancybox/jquery.fancybox-buttons
