@@ -8,8 +8,8 @@ class AnnouncementsController < ApplicationController
     else
       @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 5)
     end
-    @category_announcements = [ Category.find_by_name('Події'), Category.find_by_name('Мальовнича Черкащина'),
-                                Category.find_by_name('Спалах минулого'), Category.find_by_name('Ремарка') ]
+    @category_announcements = [ Category.find_by_name(' Цікаві місця Черкас'), Category.find_by_name('Мальовнича Черкащина'),
+                                Category.find_by_name('Спалах минулого'), Category.find_by_name('Події і Ремарки') ]
   end
 
   def show
