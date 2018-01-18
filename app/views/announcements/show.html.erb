@@ -32,7 +32,7 @@
       <%= render partial: 'shared/right_bar/publications', locals: { title: 'Новини ГО' } %>
       <%= link_to 'Всі новини Го', go_announcements_path %>
       <%= render partial: 'shared/right_bar/banner' %>
-      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistoche' %>
+      <%= render 'shared/right_bar/facebook', link: 'https://www.facebook.com/mistonache' %>
   <% elsif  @announcement.kinoshot_feed %>
       <% @announcements = @kinoshot_announcements %>
       <% @announcements = Announcement.kinoshot_feed.order(:published_at).limit(4) %>
