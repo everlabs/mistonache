@@ -1,24 +1,7 @@
-# README
+h1 Misto na Che Yaroslav edittion
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Manual manipulation of puma**
+1. manual start puma - sudo service puma_misto start br 
+2. manual restart puma - sudo service puma_misto restart
+3. manual check status puma - sudo service puma_misto status
+4. manual stop puma - sudo service puma_misto stop
