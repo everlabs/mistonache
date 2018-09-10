@@ -44,6 +44,7 @@ class VikkaParser
 
 end
 
+=begin
 class ProcherkParser
   BASE_URL = 'http://procherk.info'
 
@@ -89,6 +90,7 @@ class ProcherkParser
   end
 
 end
+=end
 
 class InfomistParser
   BASE_URL = 'http://infomist.ck.ua/'
