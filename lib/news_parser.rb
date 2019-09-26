@@ -115,14 +115,14 @@ class InfomistParser
       return
     end
     novelty = Novelty.new
-    novelty.title = page.at_css('#main h1').text
+    novelty.title = page.at_css('.post-title').text
     novelty.url = url
     novelty.source = 'infomist.ck.ua'
     novelty.save
   end
 
   def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + '30-2/').css('h2 a').each_with_object([]) do |link, array|
+    @novelties_urls ||= load_page(BASE_URL + 'novini/').css('.title-cat-post a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end
@@ -183,7 +183,7 @@ class VycherpnoParser
 end
 
 class ProvceParser
-  BASE_URL = 'http://provce.ck.ua/'
+  BASE_URL = 'https://provce.ck.ua/'
 
   def initialize
     @time = Time.new
