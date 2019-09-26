@@ -56,5 +56,5 @@ test:
 production:
   <<: *default
   database: mistonache_production
-  username: mistonache
+  username: deployer
   password: <%= ENV['MISTONACHE_DATABASE_PASSWORD'] %>
