@@ -71,7 +71,7 @@ class WelcomeController < ApplicationController
     Announcement.where(category_id: category_id)
 
     most_viewed_by_month = {}
-    Announcement.where(category_id: category_id).
+    Announcement.includes(:admin_user, :category).where(category_id: category_id).
         reject{ |an| an.announcement_views.where(created_at: (Time.new - 30.days) .. Time.now).empty? }.
         map{ |an| most_viewed_by_month[an] = an.announcement_views.count }
 

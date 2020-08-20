@@ -4,7 +4,7 @@
 <div class="aside-section">
   <ul>
     <% if @announcements.any? %>
-      <% @announcements.each do |announcement| %>
+      <% @announcements.includes(:admin_user, :category).each do |announcement| %>
           <li class="announcement">
             <div class="announcement-image">
               <%= link_to image_tag(announcement.main_image.url(:medium)), announcement %>

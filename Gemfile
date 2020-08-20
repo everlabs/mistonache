@@ -65,6 +65,7 @@ group :development do
   gem 'capistrano-upload-config'
 
   gem 'sshkit-sudo'
+  gem 'bullet', '~> 5.7', '>= 5.7.5'
 end
 
 
