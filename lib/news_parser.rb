@@ -92,51 +92,6 @@ class ProcherkParser
 end
 =end
 
-class InfomistParser
-  BASE_URL = 'http://infomist.ck.ua/'
-
-  def initialize
-    @time = Time.new
-  end
-
-  def save_novelties
-    parse_novelties_urls.each do |url|
-      save_novelty(url)
-    end
-    'done'
-  end
-
-  private
-
-  def save_novelty(url)
-    begin
-      page = load_page(url)
-    rescue
-      return
-    end
-    novelty = Novelty.new
-    novelty.title = page.at_css('.post-title').text
-    novelty.url = url
-    novelty.source = 'infomist.ck.ua'
-    novelty.save
-  end
-
-  def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'novini/').css('.title-cat-post a').each_with_object([]) do |link, array|
-      array << link['href']
-    end
-  end
-
-  def load_page(url)
-    until Time.new - @time > 3
-      sleep 1
-    end
-    page = Nokogiri::HTML(open(url))
-    @time = Time.new
-    page
-  end
-end
-
 class VycherpnoParser
   BASE_URL = 'http://vycherpno.ck.ua/'
 
@@ -176,7 +131,7 @@ class VycherpnoParser
     until Time.new - @time > 3
       sleep 1
     end
-    page = Nokogiri::HTML(open(url))
+    page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     @time = Time.new
     page
   end
@@ -228,7 +183,7 @@ class ProvceParser
 end
 
 class NovaDobaParser
-  BASE_URL = 'http://novadoba.com.ua/'
+  BASE_URL = 'https://novadoba.com.ua/'
 
   def initialize
     @time = Time.new
@@ -250,14 +205,14 @@ class NovaDobaParser
       return
     end
     novelty = Novelty.new
-    novelty.title = page.at_css('h1 a').text
+    novelty.title = page.at_css('.item-widgets a').text
     novelty.url = url
     novelty.source = 'novadoba.com.ua'
     novelty.save
   end
 
   def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'novyny/').css('.newsfoto .indexText-Bold2 a').each_with_object([]) do |link, array|
+    @novelties_urls ||= load_page(BASE_URL).css('.item-widgets a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end
@@ -266,13 +221,11 @@ class NovaDobaParser
     until Time.new - @time > 3
       sleep 1
     end
-    page = Nokogiri::HTML(open(url))
+    page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     @time = Time.new
     page
   end
 end
-
-
 class ZmiParser
   BASE_URL = 'http://zmi.ck.ua/'
 
