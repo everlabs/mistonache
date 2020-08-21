@@ -44,9 +44,8 @@ class VikkaParser
 
 end
 
-=begin
 class ProcherkParser
-  BASE_URL = 'http://procherk.info'
+  BASE_URL = 'https://procherk.info'
 
   def initialize
     @time = Time.new
@@ -84,13 +83,12 @@ class ProcherkParser
     until Time.new - @time > 3
       sleep 1
     end
-    page = Nokogiri::HTML(open(url))
+    page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     @time = Time.new
     page
   end
 
 end
-=end
 
 class VycherpnoParser
   BASE_URL = 'http://vycherpno.ck.ua/'
@@ -132,51 +130,6 @@ class VycherpnoParser
       sleep 1
     end
     page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
-    @time = Time.new
-    page
-  end
-end
-
-class ProvceParser
-  BASE_URL = 'https://provce.ck.ua/'
-
-  def initialize
-    @time = Time.new
-  end
-
-  def save_novelties
-    parse_novelties_urls.each do |url|
-      save_novelty(url)
-    end
-    'done'
-  end
-
-  private
-
-  def save_novelty(url)
-    begin
-      page = load_page(url)
-    rescue
-      return
-    end
-    novelty = Novelty.new
-    novelty.title = page.at_css('.post-title h1').text
-    novelty.url = url
-    novelty.source = 'provce.ck.ua'
-    novelty.save
-  end
-
-  def parse_novelties_urls
-    @novelties_urls ||= load_page(BASE_URL + 'category/novini/').css('.news-list .clearfix.item a').each_with_object([]) do |link, array|
-      array << link['href']
-    end
-  end
-
-  def load_page(url)
-    until Time.new - @time > 3
-      sleep 1
-    end
-    page = Nokogiri::HTML(open(url))
     @time = Time.new
     page
   end
@@ -226,6 +179,7 @@ class NovaDobaParser
     page
   end
 end
+
 class ZmiParser
   BASE_URL = 'http://zmi.ck.ua/'
 
@@ -257,6 +211,97 @@ class ZmiParser
 
   def parse_novelties_urls
     @novelties_urls ||= load_page(BASE_URL + 'news/').css('.inner a').each_with_object([]) do |link, array|
+      array << link['href']
+    end
+  end
+
+  def load_page(url)
+    until Time.new - @time > 3
+      sleep 1
+    end
+    page = Nokogiri::HTML(open(url))
+    @time = Time.new
+    page
+  end
+end
+
+
+class EighteenThreeZero
+  BASE_URL = 'https://18000.com.ua/'
+
+  def initialize
+    @time = Time.new
+  end
+
+  def save_novelties
+    parse_novelties_urls.each do |url|
+      save_novelty(url)
+    end
+    'done'
+  end
+
+  private
+
+  def save_novelty(url)
+    begin
+      page = load_page(url)
+    rescue
+      return
+    end
+    novelty = Novelty.new
+    novelty.title = page.at_css('.single-header h1').text
+    novelty.url = url
+    novelty.source = '18000.com.ua'
+    novelty.save
+  end
+
+  def parse_novelties_urls
+    @novelties_urls = load_page(BASE_URL + 'novini/').css('.js-ajax-load-post .list-item a').each_with_object([]) do |link, array|
+      array << link['href']
+    end
+  end
+
+  def load_page(url)
+    until Time.new - @time > 3
+      sleep 1
+    end
+    page = Nokogiri::HTML(open(url , 'User-Agent' => 'firefox'))
+    @time = Time.new
+    page
+  end
+end
+
+class ProvceParser
+  BASE_URL = 'https://provce.ck.ua/'
+
+  def initialize
+    @time = Time.new
+  end
+
+  def save_novelties
+    parse_novelties_urls.each do |url|
+      save_novelty(url)
+    end
+    'done'
+  end
+
+  private
+
+  def save_novelty(url)
+    begin
+      page = load_page(url)
+    rescue
+      return
+    end
+    novelty = Novelty.new
+    novelty.title = page.at_css('.post-title h1').text
+    novelty.url = url
+    novelty.source = 'provce.ck.ua'
+    novelty.save
+  end
+
+  def parse_novelties_urls
+    @novelties_urls = load_page(BASE_URL + 'category/novini/').css('.news-list .clearfix.item a').each_with_object([]) do |link, array|
       array << link['href']
     end
   end
