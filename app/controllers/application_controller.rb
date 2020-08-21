@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   require 'open_weather'
 
-  require 'open-uri'
-  require_relative "#{Rails.root}/lib/news_parser"
-  before_action :parse
-
   protect_from_forgery with: :exception
   before_action :news_index
   before_action :categories_index
@@ -53,9 +49,4 @@ def weather
   weather
 end
 
-def parse
-  [ProvceParser].each do |parser_class|
-    parser_class.new.save_novelties
-  end
-end
 
