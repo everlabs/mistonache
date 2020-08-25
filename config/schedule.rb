@@ -18,8 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+env :GEM_PATH, ENV['GEM_PATH']
+set :bundle_command, "~/.rvm/bin/rvm default do bundle exec"
 set :output, 'log/whenever.log'
 
-every 1.minute do
+every 30.minutes do
   rake 'news_parser:parse_news'
 end
