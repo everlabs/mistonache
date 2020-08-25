@@ -4,9 +4,9 @@ class AnnouncementsController < ApplicationController
 
   def index
     if params[:search]
-      @announcements = Announcement.includes(:admin_user, :category).where('title ILIKE ?', "%#{params[:search]}%").announcements_feed.paginate(page: params[:page], per_page: 5)
+      @announcements = Announcement.where('title ILIKE ?', "%#{params[:search]}%").announcements_feed.paginate(page: params[:page], per_page: 5)
     else
-      @announcements = Announcement.includes(:admin_user, :category).announcements_feed.paginate(page: params[:page], per_page: 5)
+      @announcements = Announcement.announcements_feed.paginate(page: params[:page], per_page: 5)
     end
     @category_announcements = [ Category.find_by_name('Цікаві місця Черкас'), Category.find_by_name('Мальовнича Черкащина'),
                                 Category.find_by_name('Спалах минулого'), Category.find_by_name('Події і Ремарки') ]
